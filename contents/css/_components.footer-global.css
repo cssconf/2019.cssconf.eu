@@ -1,0 +1,5 @@
+.c-footer-global {
+  color: var(--c-black);
+  flex-grow: 0;
+  margin-top: var(--l-gutter);
+}

@@ -1,0 +1,30 @@
+{% from "../_macros.njk" import navItem %}
+
+<header class="c-header-global">
+  <div class="c-header-global__wrapper">
+    <a href="{{ env.config.baseUrl }}"
+      class="c-header-global__link"
+      title="Home">
+      <span class="c-header-global__text--name">CSSconf EU</span>
+      <span class="c-header-global__hide-on-mobile">
+        <span class="c-header-global__text--date">Friday, May 31st 2019</span>
+        <span class="c-header-global__text--location">Berlin, Germany</span>
+      </span>
+    </a>
+    <div class="c-header-global__button">
+      <a href="{{ buyTicketsLink }}"
+         class="c-btn">
+        Buy Ticket
+      </a>
+    </div>
+  </div>
+  <nav class="c-nav-main" id="nav-main">
+    <ul class="c-nav-main__list">
+      {{ navItem('Accessibility', contents['accessibility.json'].url) }}
+      {{ navItem('Code of Conduct', contents['code-of-conduct.json'].url) }}
+      {{ navItem('Blog', 'https://blog.cssconf.eu', true) }}
+    </ul>
+    <button class="c-nav-main__close js-nav-main-toggle">Close</button>
+  </nav>
+  <button class="c-nav-main-toggle js-nav-main-toggle">Menu</button>
+</header>

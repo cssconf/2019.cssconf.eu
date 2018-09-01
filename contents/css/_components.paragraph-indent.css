@@ -1,0 +1,5 @@
+.paragraph--is-indented {
+  padding-left: calc(var(--l-unit) * 5);
+
+  @media(--s) { padding-left: calc(var(--l-unit) * 8); }
+}

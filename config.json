@@ -1,0 +1,48 @@
+{
+  "locals": {
+    "url": "https://2019.cssconf.eu",
+    "twitterHandle": "@CSSconfeu",
+    "email": "contact@cssconf.eu",
+    "name": "CSSconf EU | Friday, May 31 2019 | Berlin, Germany",
+    "conferenceFullDate": "Friday, May 31 2019",
+    "owner": "CSSconf EU Team",
+    "description": "CSSconf EU is conference dedicated to all those passionate about design, CSS, and the web. For the community, by the community.",
+    "buyTicketsLink": "https://ti.to/cssconfeu/cssconfeu-2019/",
+    "mapLink": "https://www.google.de/maps/place/Arena+Berlin/@52.5014805,13.4399474,15z/data=!4m8!1m2!2m1!1sArena+berlin!3m4!1s0x47a84e55b04a4c0b:0x6852fd9350063186!8m2!3d52.4966473!4d13.4530078"
+  },
+  "filenameTemplate": ":file/index.html",
+  "plugins": ["./plugins/postcss.js", "./plugins/nunjucks.js", "./plugins/svg.js"],
+  "require": {
+    "moment": "moment",
+    "_": "underscore",
+    "typogr": "typogr"
+  },
+  "jade": {
+    "pretty": true
+  },
+  "markdown": {
+    "smartLists": true,
+    "smartypants": true
+  },
+  "nunjucks": {
+    "filterdir": "./templates/filters",
+    "filters": ["log", "sortObjects", "splitString", "filterObjects", "joinObjects"]
+  },
+  "postcss": {
+    "entrypoint": "css/main.css",
+    "from": "contents/css/main.css",
+    "plugins": [
+      "postcss-import",
+      {
+        "path": "postcss-custom-properties",
+        "params": {"preserve": true}
+      },
+      "postcss-nested",
+      "postcss-media-minmax",
+      "postcss-custom-media",
+      "autoprefixer",
+      "css-mqpacker",
+      "cssnano"
+    ]
+  }
+}

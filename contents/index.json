@@ -1,0 +1,6 @@
+{
+  "filename": "landing.html",
+  "template": "pages/index.html.njk",
+  "title": "CSSconf EU | Friday, May 31 2019 | Berlin, Germany",
+  "description": "CSSconf EU is conference dedicated to all those passionate about design, CSS, and the web. For the community, by the community."
+}

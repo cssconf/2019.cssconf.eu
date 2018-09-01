@@ -1,0 +1,114 @@
+.c-team {
+
+  @media(--m) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__person {
+    position: relative;
+
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 3rem;
+
+    @media(--s) {
+      flex-basis: 50%;
+    }
+
+    @media(--l) {
+      flex-basis: 45%;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -1rem;
+      width: 3rem;
+      height: 3rem;
+      background-color: var(--c-big-pink);
+      z-index: -1;
+
+      @media(--m) {
+        width: 8rem;
+        height: calc(100% + 2rem);
+      }
+    }
+  }
+
+  &__person--variant-a::before {
+    background-color: var(--c-blue-violet);
+  }
+
+  &__person--variant-b::before {
+    background-color: var(--c-mint);
+  }
+
+  &__person--variant-c::before {
+    background-color: var(--c-cinnabar);
+  }
+
+  &__person--variant-d::before {
+    background-color: var(--c-illusion);
+  }
+
+  &__avatar {
+    margin-left: 1rem;
+    width: 4.5rem;
+    height: 4.5rem;
+
+    @media(--s) {
+      width: 6rem;
+      height: 6rem;
+    }
+
+    @media(--m) {
+      width: 10rem;
+      height: 10rem;
+    }
+
+    @media(--l) {
+      width: 12rem;
+      height: 12rem;
+    }
+  }
+
+  &__caption {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  &__name {
+    font-size: 1.3125rem;
+    line-height: 1.142857143;
+
+    @media(--s) {
+      font-size: 1.75rem; /* 28 */
+      line-height: 1.285714286; /* 36 */
+    }
+  }
+
+  &__description,
+  &__link {
+    font-size: 1.125rem;
+    line-height: 1.4;
+
+    @media(--s) {
+      font-size: 1.3125rem;
+      line-height: 1.52;
+    }
+  }
+
+  &__name,
+  &__description {
+    color: var(--c-black);
+  }
+
+  &__name,
+  &__description,
+  &__link {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,56 @@
+.c-schedule-item {
+  border-top: 2px solid var(--c-black);
+  display: flex;
+
+  &__time,
+  &__title {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin-top: .8rem;
+  }
+
+  &__time {
+    width: 7.5rem;
+  }
+
+  &__details {
+    width: 100%;
+  }
+
+  &__title {
+    color: var(--c-black);
+    margin-bottom: .8rem;
+  }
+
+  &__misc {
+    background: var(--c-big-pink);
+    padding: 1rem;
+
+    b {
+      color: var(--c-blue-violet);
+      display: inline-block;
+      margin-bottom: .5rem;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.c-schedule-item--variant-a {
+  border-top-color: var(--c-blue-violet);
+  color: var(--c-blue-violet);
+}
+
+.c-schedule-item--variant-b {
+  border-top-color: var(--c-mint);
+  color: var(--c-mint);
+}
+
+.c-schedule-item--variant-c {
+  border-top-color: var(--c-cinnabar);
+  color: var(--c-cinnabar);
+}
+
+.c-schedule-item--variant-d {
+  border-top-color: var(--c-illusion);
+  color: var(--c-illusion);
+}

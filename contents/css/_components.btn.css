@@ -1,0 +1,24 @@
+.c-btn {
+  border: 0;
+  border-radius: 0;
+  background-color: var(--c-mint);
+  color: var(--c-blue-violet);
+  cursor: pointer;
+  padding: var(--l-unit) calc(var(--l-unit) * 2);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.c-btn {
+  &:hover,
+  &:focus {
+    color: var(--c-white);
+    background-color: var(--c-bittersweet);
+    outline: 2px solid var(--c-white);
+  }
+}
+
+.btn-block {
+  text-align: center;
+  padding: 2rem 0;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{% if page.title %}{{ page.title }}{% endif %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ contents.css['splash.css'].url }}?{{ cacheBuster }}">
+
+  <meta property="og:url" content="{{ url }}"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title"
+        content="{{ page.title }}"/>
+
+  {% block extraMetaData %}
+  {% set description = page.description or page.html | striptags | truncate(255) %}
+  {% set image = contents.images[page.metadata.image].url if page.metadata.image else contents.images['open-graph-image.jpg'].url %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="{{ twitterHandle }}">
+  <meta name="twitter:creator" content="{{ twitterHandle }}">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta property="og:title" content="{{ page.title }}">
+  {% if description %}
+  <meta name="description" content="{{ description }}">
+  <meta name="twitter:description" content="{{ description }}">
+  {% endif %}
+  <meta name="twitter:image" content="{{ url }}{{ image }}">
+  <meta property="og:image" content="{{ url }}{{ image }}">
+  {% endblock %}
+  {% include "../partials/favicon.html.njk" %}
+</head>
+<body>
+
+  <main class="c-info">
+    <div class="c-info__event">
+      <img src="images/cssconf-eu-logo-centered.svg"
+           class="c-info__logo"
+           alt="CSSconf EU">
+      {{ conferenceFullDate }}
+      <div class="c-info__location">
+        Berlin, Germany<br>
+        <a href="{{ mapLink }}"
+           target="_blank">
+          Arena, Eichenstraße 4
+        </a>
+      </div>
+      <a href="{{ buyTicketsLink }}"
+         class="c-btn"
+         target="_blank">
+        Buy Ticket
+      </a>
+      <a href="mailto:contact@cssconf.eu"
+         class="c-btn c-btn--alt">
+        Become a Sponsor
+      </a>
+    </div>
+    <nav class="c-info__nav">
+      <a href="https://2018.cssconf.eu/"
+         class="c-info__link">
+        CSSconf EU 2018
+      </a>
+      <a href="{{ contents['code-of-conduct.json'].url }}"
+         class="c-info__link">
+        Code of Conduct
+      </a>
+      <a href="{{ contents['imprint.json'].url }}"
+         class="c-info__link">
+        Imprint
+      </a>
+      <a href="{{ contents['privacy-policy.json'].url }}"
+         class="c-info__link">
+        Privacy Policy
+      </a>
+      <a href="https://www.youtube.com/playlist?list=PL37ZVnwpeshHJSJf46Rk4B8amvm7Ecu58"
+         class="c-info__link">
+        Videos
+      </a>
+    </nav>
+  </main>
+
+</body>
+</html>

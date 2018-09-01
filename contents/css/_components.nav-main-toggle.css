@@ -1,0 +1,16 @@
+.c-nav-main-toggle {
+  background: url("../svg/hamburger.svg") center center;
+  background-size: cover;
+  border: 0;
+  color: var(--c-white);
+  height: 32px;
+  position: relative;
+  width: 32px;
+  text-indent: -999em;
+
+  @media(--m) { display: none; }
+}
+
+.is-nav-opened .c-nav-main-toggle {
+  background-image: url("../svg/close.svg");
+}

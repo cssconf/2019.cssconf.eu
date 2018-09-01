@@ -1,0 +1,35 @@
+.c-nav-list {
+  margin-bottom: 0;
+  list-style: none;
+  padding-left: 0;
+}
+
+.c-nav-list--footer-global {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.c-nav-list__anchor {
+  color: currentColor;
+  display: inline-block;
+  padding-top: var(--l-unit);
+  padding-right: var(--l-unit);
+  padding-bottom: var(--l-unit);
+  padding-left: var(--l-unit);
+  @media(--m) {
+    padding-left: calc(var(--l-unit) * 3);
+    padding-right: calc(var(--l-unit) * 3);
+  }
+  &:hover,
+  &:focus {
+    color: var(--c-blue-violet);
+  }
+}
+
+.c-nav-list__anchor--social {
+  &:hover,
+  &:focus {
+    color: var(--c-mint);
+  }
+}
