@@ -1,0 +1,32 @@
+{% macro svgIcon(id, viewBox = '0 0 16 16', title = '') %}
+    <svg class="svg svg-{{ id }}" viewbox="{{ viewBox }}">
+        {% if title %}
+            <title id='title-{{ id }}'>{{ title }}</title>
+        {% endif %}
+
+        <use xlink:href="#{{ id }}"></use>
+    </svg>
+{% endmacro %}
+
+{% macro navItem(label, link, external) %}
+  <li class="c-nav-main__list-el">
+    <a class="c-nav-main__link" href="{{ link }}" {{ "target=\"_blank\"" if external }}>{{ label }}</a>
+  </li>
+{% endmacro %}
+
+{% macro pageIntro(title, introText, introImage) %}
+  <section class="c-intro {{ "c-intro--with-image" if introImage }}">
+    <div class="l-container">
+      <div class="c-intro__wrapper">
+        {% if introImage %}
+          <img src="{{ introImage }}"
+              class="c-intro__image">
+        {% endif %}
+        <h1 class="c-intro__title">{{ title }}</h1>
+      </div>
+      <p class="c-intro__text copy--max">
+        {{ introText }}
+      </p>
+    </div>
+  </section>
+{% endmacro %}

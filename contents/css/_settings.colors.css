@@ -1,0 +1,18 @@
+:root {
+  /* primary colors */
+  --c-black: hsl(0, 0%, 10%);
+  --c-white: hsl(0, 0%, 100%);
+  --c-martinique: hsl(243, 31%, 26%);
+  --c-blue-violet: hsl(242, 44%, 53%);
+  --c-cinnabar: hsl(359, 78%, 57%);
+  --c-illusion: hsl(343, 85%, 79%);
+  --c-mint: hsl(168, 55%, 54%);
+
+  /* secondary colors */
+  --c-big-pink: hsl(343, 85%, 92%);
+  --c-saffron: hsl(42, 94%, 61%);
+  --c-bright-sun: hsl(53, 99%, 60%);
+  --c-turquoise-blue: hsl(194, 76%, 65%);
+  --c-apple: hsl(124, 51%, 52%);
+  --c-bittersweet: hsl(7, 98%, 67%);
+}

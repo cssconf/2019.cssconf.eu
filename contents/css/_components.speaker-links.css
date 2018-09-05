@@ -1,0 +1,8 @@
+.c-speaker-links {
+  font-size: 2.125rem;
+  margin-top: 1.5rem;
+
+  @media(--l) {
+    margin-top: 3.625rem;
+  }
+}

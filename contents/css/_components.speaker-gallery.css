@@ -1,0 +1,144 @@
+.c-speaker-gallery {
+  --border-size: 3px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content;
+  grid-gap: var(--border-size);
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+  padding: var(--border-size);
+
+  @media (--m) {
+    margin-bottom: 6rem;
+    margin-top: 6rem;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  /* @TODO: refactor me */
+  .c-speaker-portrait::before {
+    transition: border-width 0.2s ease-in-out;
+  }
+
+  &__item:hover {
+    /* @TODO: refactor me */
+    .c-speaker-portrait::before {
+      border-right-width: 1rem;
+      border-left-width: 1rem;
+    }
+  }
+
+  &__name {
+    overflow: hidden;
+  }
+
+  &__title {
+    bottom: 0;
+    color: var(--c-bright-sun);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    left: 0;
+    padding: .5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+
+    &--variant-b {
+      transform: rotate(-90deg) translateY(100%);
+      transform-origin: bottom left;
+    }
+
+    &--variant-c {
+      justify-content: flex-end;
+    }
+
+    &--textcolor-white {
+      color: var(--c-white);
+    }
+
+    &--textcolor-black {
+      color: var(--c-black);
+    }
+
+    &--textcolor-bright-sun {
+      color: var(--c-bright-sun);
+    }
+
+    &--textcolor-martinique {
+      color: var(--c-martinique);
+    }
+
+    &--textcolor-blue-violet {
+      color: var(--c-blue-violet);
+    }
+
+    &--textcolor-cinnabar {
+      color: var(--c-cinnabar);
+    }
+
+    &--textcolor-illusion {
+      color: var(--c-illusion);
+    }
+
+    &--textcolor-mint {
+      color: var(--c-mint);
+    }
+  }
+
+  &__name-part {
+    span {
+      display: inline-block;
+      padding: 0 .5rem;
+    }
+
+    &:first-child,
+    &:last-child {
+      span {
+        padding-bottom: .25rem;
+        padding-top: .25rem;
+      }
+    }
+
+    &--variant-a span {
+      background-color: var(--c-cinnabar);
+    }
+
+    &--variant-b span {
+      background-color: var(--c-blue-violet);
+    }
+
+    &--variant-c span {
+      background-color: var(--c-illusion);
+    }
+
+    &--variant-d span {
+      background-color: var(--c-martinique);
+    }
+  }
+
+  &__item__title--variant-a {
+    top: 1rem;
+    left: 1rem;
+  }
+
+
+  /* @TODO: Refactor me */
+  .c-speaker-portrait {
+    /* Reimplement border with box shadow to achieve border collapse */
+    border-width: 0;
+    box-shadow: 0 0 0 var(--border-size) var(--c-black);
+  }
+
+  @media(--s) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media(--m) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

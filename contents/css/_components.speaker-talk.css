@@ -1,0 +1,8 @@
+.c-speaker-talk {
+  border: 4px solid var(--c-illusion);
+  padding: var(--l-gutter) var(--l-gutter);
+
+  @media (--m) {
+    padding: 2.75rem 2.75rem 1.4375rem;
+  }
+}

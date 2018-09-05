@@ -1,0 +1,24 @@
+{% extends "../layouts/default.html.njk" %}
+
+{% block bodyClass -%}page--coc{%- endblock %}
+
+{% from "../_macros.njk" import pageIntro %}
+
+{% block content %}
+  {% set data = contents.copy.imprint['imprint.md'] %}
+
+  {{
+    pageIntro(
+      data.metadata.title,
+      data.metadata.introText
+    )
+  }}
+
+  <div class="l-container">
+    <main>
+      <div class="c-markdown c-markdown--indented-paragraphs">
+        {{ contents.copy.imprint['imprint.md'].html }}
+      </div>
+    </main>
+  </div>
+{% endblock %}

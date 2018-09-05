@@ -1,0 +1,53 @@
+{% from "../_macros.njk" import svgIcon %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{% if page.title %}{{ page.title }}{% endif %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ contents.css["main.css"].url }}?{{ cacheBuster }}">
+
+  <meta property="og:url" content="{{ url }}"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title"
+        content="{{ page.title }}"/>
+
+  {% block extraMetaData %}
+    {% set description = page.description or page.html | striptags | truncate(255) %}
+    {% set image = contents.images[page.metadata.image].url if page.metadata.image else contents.images['open-graph-image.jpg'].url %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="{{ twitterHandle }}">
+    <meta name="twitter:creator" content="{{ twitterHandle }}">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta property="og:title" content="{{ page.title }}">
+    {% if description %}
+      <meta name="description" content="{{ description }}">
+      <meta name="twitter:description" content="{{ description }}">
+    {% endif %}
+    <meta name="twitter:image" content="{{ url }}{{ image }}">
+    <meta property="og:image" content="{{ url }}{{ image }}">
+  {% endblock %}
+  {% include "../partials/favicon.html.njk" %}
+
+  <script src="{{ contents.js['main.js'].url }}?{{ cacheBuster }}" defer></script>
+</head>
+<body class="{% block bodyClass %}{% endblock %}">
+
+{% include "../partials/header.njk" %}
+
+<div class="l-wrapper">
+  {% block content %}
+  {% endblock %}
+</div>
+
+{% include "../partials/globe.html.njk" %}
+{% include "../partials/footer.html.njk" %}
+
+<div style="height: 0; width: 0; position: absolute; visibility: hidden;">
+  {{ contents.svg['sprite.svg'].sprite }}
+</div>
+
+</body>
+</html>

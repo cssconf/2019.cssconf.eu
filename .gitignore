@@ -1,0 +1,15 @@
+node_modules
+/build
+/.wwwtfrc
+/service-account-credentials.json
+/secrets.tar
+/contents/artists/
+/contents/schedule/
+/contents/speakers/
+/contents/sponsors/
+/contents/images/artist/
+/contents/images/speaker/
+/contents/images/sponsor/
+/contents/images/team/
+/contents/talks/
+/contents/team/

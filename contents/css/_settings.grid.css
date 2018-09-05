@@ -1,0 +1,8 @@
+:root {
+  --l-unit: .5rem; /* 8 */
+  --l-gutter: 1.375rem; /* 22 */
+  --l-column: 4.375rem; /* 70 */
+  --l-width: 87.5rem; /* 1400 */
+  /*--l-width-content: 67.625rem; /* 1082 */*/
+  --l-width-content: 60rem; /* 960px */
+}

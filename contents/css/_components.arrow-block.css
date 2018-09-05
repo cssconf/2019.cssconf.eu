@@ -1,0 +1,37 @@
+.c-arrow-block {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-image: url('../svg/index-arrow.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 300%;
+  background-position: 90% 50%;
+  @media(--xs) {
+    background-size: 230%;
+  }
+  @media(--s) {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    background-size: 40%;
+  }
+  @media(--m) {
+    background-size: 110%;
+    background-position-x: -40vw;
+  }
+  @media(--l) {
+    background-size: 90%;
+    background-position-x: -30vw;
+  }
+  @media(--xxl) {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background-size: 75%;
+    background-position-x: -10vw;
+  }
+  @media(--xxxl) {
+    background-size: 70%;
+  }
+  p {
+    max-width: 38rem;
+  }
+}

@@ -1,0 +1,31 @@
+.c-diversity-supporters {
+  border: 1rem solid var(--c-mint);
+  padding: 1rem;
+
+  @media (--m) {
+    padding: 2.5rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    margin-top: 0;
+
+    @media(--s) {
+      font-size: 2.75rem; /* 44 */
+      line-height: 1.090909091; /* 48 */
+    }
+  }
+
+  &__list {
+    padding-left: 0;
+    list-style: none;
+    @media (--m) {
+      column-count: 2;
+      column-gap: 1.5rem;
+    }
+    @media (--l) {
+      column-count: 3;
+      column-gap: 2.5rem;
+    }
+  }
+}

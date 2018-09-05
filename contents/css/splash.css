@@ -1,0 +1,153 @@
+:root {
+  --ff-sans-serif-regular: "GT Walsheim Pro Regular", sans-serif;
+
+  --l-unit: .5rem; /* 8 */
+
+  /* primary colors */
+  --c-black: hsl(0, 0%, 10%);
+  --c-white: hsl(0, 0%, 100%);
+  --c-martinique: hsl(243, 31%, 26%);
+  --c-blue-violet: hsl(242, 44%, 53%);
+  --c-cinnabar: hsl(359, 78%, 57%);
+  --c-illusion: hsl(343, 85%, 79%);
+  --c-mint: hsl(168, 55%, 54%);
+
+  /* secondary colors */
+  --c-big-pink: hsl(343, 85%, 92%);
+  --c-saffron: hsl(42, 94%, 61%);
+  --c-bright-sun: hsl(53, 99%, 60%);
+  --c-turquoise-blue: hsl(194, 76%, 65%);
+  --c-apple: hsl(124, 51%, 52%);
+  --c-bittersweet: hsl(7, 98%, 67%);
+}
+
+@font-face {
+  font-family: "GT Walsheim Pro Regular";
+  src: url('../fonts/GT-Walsheim-Regular.eot');
+  src: url('../fonts/GT-Walsheim-Regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/GT-Walsheim-Regular.woff') format('woff'),
+       url('../fonts/GT-Walsheim-Regular.ttf') format('truetype');
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+img {
+  border-style: none;
+}
+
+body,
+button {
+  font-family: var(--ff-sans-serif-regular);
+}
+
+body {
+  font-size: 1.125rem;
+  line-height: 1.4; /* 32 */
+  margin: 0;
+  padding: 1rem;
+}
+
+a {
+  background-color: transparent;
+  color: var(--c-cinnabar);
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  color: var(--c-illusion);
+}
+
+.c-info {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 2rem);
+  justify-content: center;
+  width: calc(100vw - 2rem);
+}
+
+.c-info__event,
+.c-info__nav {
+  display: flex;
+}
+
+.c-info__event {
+  align-self: center;
+  flex-direction: column;
+  flex-grow: 2;
+  justify-content: center;
+  text-align: center;
+  width: 12.5rem;
+}
+
+.c-info__logo {
+  display: block;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.c-info__location,
+.c-info__location a {
+  color: var(--c-illusion);
+}
+
+.c-info__location {
+  margin-bottom: 2rem;
+}
+
+.c-info__nav {
+  flex-wrap: wrap;
+  font-size: .875rem; /* 14 */
+  justify-content: center;
+  line-height: 1.571428571; /* 22 */
+}
+
+.c-info__link {
+  margin: 0 1rem 1rem;
+}
+
+.c-btn {
+  border: 0;
+  border-radius: 0;
+  background-color: var(--c-blue-violet);
+  color: var(--c-white);
+  cursor: pointer;
+  outline: 2px solid var(--c-blue-violet);
+  padding: var(--l-unit) calc(var(--l-unit) * 2);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.c-btn:focus,
+.c-btn:hover {
+  color: var(--c-blue-violet);
+  background-color: transparent;
+}
+
+.c-btn--alt {
+  background-color: var(--c-white);
+  color: var(--c-blue-violet);
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.c-btn--alt:focus,
+.c-btn--alt:hover {
+  color: var(--c-white);
+  background-color: var(--c-blue-violet);
+}
+
+@media screen and (min-width: 30rem) {
+  body {
+    font-size: 1.3125rem; /* 21 */
+    line-height: 1.523809524; /* 32 */
+  }
+
+  .c-info__event {
+    width: 18.75rem;
+  }
+}
