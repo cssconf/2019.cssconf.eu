@@ -7,10 +7,6 @@ before_deploy:
   # - tar xvf secrets.tar
   # - npm run-script ci:build
 deploy:
-  # Fix broken deployment due to
-  # https://github.com/travis-ci/travis-ci/issues/9312
-  edge:
-    branch: v1.8.47
   provider: pages
   skip_cleanup: true
   github_token: "$GITHUB_TOKEN"
