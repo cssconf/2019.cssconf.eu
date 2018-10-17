@@ -21,7 +21,7 @@
     "prettier": "^1.10.2",
     "svgo": "^1.0.3",
     "svgstore": "^2.0.2",
-    "typogr": "~0.6.7",
+    "typogr": "^0.6.8",
     "underscore": "~1.8.3",
     "wintersmith": "^2.4.1"
   },
