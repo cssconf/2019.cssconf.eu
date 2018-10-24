@@ -7,7 +7,7 @@ introImage: info.jpg
 
 ## Mission & Values
 
-CSSconf EU is a not-for-profit community conference run by a team of [volunteers](/team/). We are all active members of the tech community, and run or contribute to various free local meetups, workshops, and education initiatives. With CSSconf EU, we aim to bring the international CSS crowd together with our beloved local Berlin community. We are humbled to look back to three sold-out events where we welcomed the world’s most excellent CSS speakers on our stage, and we are proud to have always put an inclusive and welcoming culture first. We operate under a [Code of Conduct](/code-of-conduct)<!-- , run a [scholarship program](/scholarships) -->, write [articles to be transparent](http://blog.cssconf.eu/)<!--, and are committed to [diversity](/diversity-support-tickets/) --> and [accessibility](/accessibility/).
+CSSconf EU is a not-for-profit community conference run by a team of volunteers<!-- [volunteers](/team/) -->. We are all active members of the tech community, and run or contribute to various free local meetups, workshops, and education initiatives. With CSSconf EU, we aim to bring the international CSS crowd together with our beloved local Berlin community. We are humbled to look back to three sold-out events where we welcomed the world’s most excellent CSS speakers on our stage, and we are proud to have always put an inclusive and welcoming culture first. We operate under a [Code of Conduct](/code-of-conduct)<!-- , run a [scholarship program](/scholarships) -->, write [articles to be transparent](http://blog.cssconf.eu/)<!--, and are committed to [diversity](/diversity-support-tickets/) --> and [accessibility](/accessibility/).
 
 ### Watch last year’s film
 
@@ -45,7 +45,7 @@ Introduced in 2017, we again will have a Festival Area! Part of the large and be
 
 **Community Area**: The CSS Community is awesome, and we’re proud to have some fantastic contributors and organizers as our guests. Come and meet them, get a demo, and learn how you can get involved too.
 
-**Fun Stuff**: We got you covered. During breaks, you can meet the crew behind { live : JS } and explore their audio/visual arts, learn from SDW printshop how the CSSconf bag is printed, take selfies with friends in our photo booth, play foosball, or relax in a beanbag and take a little break.
+<!-- **Fun Stuff**: We got you covered. During breaks, you can meet the crew behind { live : JS } and explore their audio/visual arts, learn from SDW printshop how the CSSconf bag is printed, take selfies with friends in our photo booth, play foosball, or relax in a beanbag and take a little break. -->
 
 ## Accessibility
 
@@ -58,7 +58,7 @@ We do our best to ensure that the conference, venue and events throughout the da
 
  -->
 
-## Travel & Transport
+<!-- ## Travel & Transport
 
 ### Berlin’s Airports
 
@@ -86,9 +86,9 @@ Below are a two hotels we recommend, both a short walk away from our venue. If n
 * [Michelberger Hotel (20 min walk)](http://michelbergerhotel.com/en/)
 
 If you’d like to team up with other attendees to travel to or stay in Berlin, let us and the community know on Twitter: #cssconfeu – we will help spread the word!
-
+ -->
 ## Stay Tuned
 
-We post all updates around [CSSconf EU on Twitter](https://twitter.com/cssconfeu). Use the hashtag #cssconfeu to tweet about the conference, connect with other attendees, and share your photos of the day when the time comes! You can also find us on [Facebook](https://www.facebook.com/cssconfeu/) and [subscribe to our newsletter](https://jsconf.us11.list-manage.com/subscribe?u=7a8adcde0f3c219f61b12a94c&id=ca2a86b0bd).
+We post all updates around [CSSconf EU on Twitter](https://twitter.com/cssconfeu). Use the hashtag #cssconfeu to tweet about the conference, connect with other attendees, and share your photos of the day when the time comes! You can also find us on [Facebook](https://www.facebook.com/cssconfeu/), [Instagram](https://www.instagram.com/cssconfeu/) and [LinkedIn](https://www.linkedin.com/company/cssconf-eu/) and [subscribe to our newsletter](https://jsconf.us11.list-manage.com/subscribe?u=7a8adcde0f3c219f61b12a94c&id=ca2a86b0bd).
 
 Any questions we didn’t address? Reach out to us at <a href="mailto:contact@cssconf.eu">contact@cssconf.eu</a>, the team is here to help!
