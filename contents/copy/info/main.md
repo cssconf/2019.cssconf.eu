@@ -15,7 +15,7 @@ CSSconf EU is a not-for-profit community conference run by a team of volunteers<
 
 ## Date & Venue
 
-CSSconf EU will take place on May 31st, 2019 in [Berlin’s Arena Halle](https://www.google.de/maps/place/Arena+Berlin/@52.4966473,13.4530078,15z/data=!4m2!3m1!1s0x0:0x6852fd9350063186?sa=X&ved=0ahUKEwjP5-7ntezYAhWBDOwKHekCBFcQ_BIIigEwCg), offering a day packed with inspiring and insightful talks and time well spent in the company of great people. Building on our 2017 experiences and improvement we’re planning on using the big venue even more and present you a wonderful CSSconf EU Festival full of surprises.
+CSSconf EU will take place on May 31st, 2019 in [Berlin’s Arena Halle](https://www.google.de/maps/place/Arena+Berlin/@52.4966473,13.4530078,15z/data=!4m2!3m1!1s0x0:0x6852fd9350063186?sa=X&ved=0ahUKEwjP5-7ntezYAhWBDOwKHekCBFcQ_BIIigEwCg), offering a day packed with inspiring and insightful talks and time well spent in the company of great people. Building on our experiences from previous years and improvement we’re planning on using the big venue even more and present you a wonderful CSSconf EU Festival full of surprises.
 
 **Arena Berlin<br>
 Eichenstraße 4, Berlin<br>
