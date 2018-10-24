@@ -1,0 +1,4 @@
+{
+  "template": "pages/info.html.njk",
+  "title": "Information"
+}

@@ -20,6 +20,7 @@
   </div>
   <nav class="c-nav-main" id="nav-main">
     <ul class="c-nav-main__list">
+      {{ navItem('Info', contents['info.json'].url) }}
       {{ navItem('Accessibility', contents['accessibility.json'].url) }}
       {{ navItem('Code of Conduct', contents['code-of-conduct.json'].url) }}
       {{ navItem('Blog', 'https://blog.cssconf.eu', true) }}
