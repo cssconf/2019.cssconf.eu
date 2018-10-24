@@ -9,9 +9,9 @@ introImage: info.jpg
 
 CSSconf EU is a not-for-profit community conference run by a team of volunteers<!-- [volunteers](/team/) -->. We are all active members of the tech community, and run or contribute to various free local meetups, workshops, and education initiatives. With CSSconf EU, we aim to bring the international CSS crowd together with our beloved local Berlin community. We are humbled to look back to three sold-out events where we welcomed the world’s most excellent CSS speakers on our stage, and we are proud to have always put an inclusive and welcoming culture first. We operate under a [Code of Conduct](/code-of-conduct)<!-- , run a [scholarship program](/scholarships) -->, write [articles to be transparent](http://blog.cssconf.eu/)<!--, and are committed to [diversity](/diversity-support-tickets/) --> and [accessibility](/accessibility/).
 
-### Watch last year’s film
+<!-- ### Watch last year’s film
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8hM7WBY7dDw" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8hM7WBY7dDw" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe> -->
 
 ## Date & Venue
 
