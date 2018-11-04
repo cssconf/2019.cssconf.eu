@@ -1,6 +1,6 @@
 {% extends "../layouts/default.html.njk" %}
 
-{% from "../_macros.njk" import pageIntro %}
+{% from "../_macros.njk" import pageIntro, teamMemberPortrait %}
 
 {% block bodyClass -%}page--coc{%- endblock %}
 
@@ -14,6 +14,38 @@
       contents.images.intros[data.metadata.introImage].url
     )
   }}
+
+  <div class="l-container">
+    <div class="c-markdown">
+      {% set teamTypes = ['organizers', 'organizer-alumni', 'core-team', 'jsconf-family', 'community-lounge-team', 'meno'] %}
+
+      {% for teamType in teamTypes %}
+        {% set teamPages = contents.team._.pages |
+          filterObjects('metadata.team.type', teamType) |
+          filterObjects('metadata.team.published', true) |
+          filterObjects('metadata.team.reviewed', true) |
+          sortObjects('metadata.team.id', 'aaa', 'string') %}
+        {% set teamTypeTitle = teamPages | first %}
+
+        {% if teamType === 'organizers' or teamType === 'core-team' %}
+          <h2>{{ teamTypeTitle.metadata.team.typeTitle }}</h2>
+        {% else %}
+          <h3>{{ teamTypeTitle.metadata.team.typeTitle }}</h3>
+        {% endif %}
+
+        <div class="c-team">
+          {% for teamPage in teamPages %}
+            {% set teamMember = teamPage.metadata.team %}
+            {% set teamMemberImage = contents.images.team[teamMember.image.filename].url %}
+            {% set defaultImage = contents.images['avatar-placeholder.jpg'].url %}
+            {% set portraitImage = teamMemberImage if teamMemberImage else defaultImage %}
+
+            {{ teamMemberPortrait(teamMember, portraitImage) }}
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 
   <div class="l-container">
     <main>
