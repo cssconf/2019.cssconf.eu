@@ -1,0 +1,4 @@
+{
+  "template": "pages/team.html.njk",
+  "title": "Team"
+}
