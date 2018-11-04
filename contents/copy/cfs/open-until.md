@@ -1,3 +1,3 @@
-## The due date has passed
+## Open until December 23rd 2018
 
- Thanks for all your great proposals! 
+We are inviting the CSS community to submit talks for the upcoming CSSconf EU (May 31st 2019, Berlin). The Call for Presentations **will close on December 23rd 2018**.
