@@ -1,6 +1,6 @@
 ## We can help
 
-We understand that not everyone is a natural-born talent on stage, or can produce kick-ass slide decks, or is a live-demo master. Not everyone knows they have something great to talk about.
+We understand that not everyone is a natural-born talent on stage, can produce gripping slide decks, or is a live-demo master. Also, we know many don't realize they have something great to talk about.
 
 There are about a million reasons why you may not consider yourself a speaker. We are here to prove you wrong. If all you have is a gut feeling that you should be on stage, we are here to help you develop or hone the skills you think you lack to deliver a great presentation.
 
