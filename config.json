@@ -8,6 +8,7 @@
     "owner": "CSSconf EU Team",
     "description": "CSSconf EU is conference dedicated to all those passionate about design, CSS, and the web. For the community, by the community.",
     "buyTicketsLink": "https://ti.to/cssconfeu/cssconfeu-2019/",
+    "callForSpeakersLink": "https://docs.google.com/forms/d/e/1FAIpQLSfXyRmnDd2R3XNer5gdP2bKg-x0kU3YXSsx0s9pNfNNsHTvRw/viewform",
     "mapLink": "https://www.google.de/maps/place/Arena+Berlin/@52.5014805,13.4399474,15z/data=!4m8!1m2!2m1!1sArena+berlin!3m4!1s0x47a84e55b04a4c0b:0x6852fd9350063186!8m2!3d52.4966473!4d13.4530078"
   },
   "filenameTemplate": ":file/index.html",
