@@ -1,6 +1,6 @@
 ## Selection Process
 
-1. All submissions are anonymized, so that there is no bias towards the submitter.
+1. All submissions are anonymized to ensure there is no bias towards the submitter.
 2. All submissions are reviewed and voted for by the conference organizers and additional invited CSS experts and community members. Each talk is rated on a scale from 1 to 5, taking into account the following criteria:
   * relevance of the topic to the CSS community
   * coherence and clarity of the proposal
