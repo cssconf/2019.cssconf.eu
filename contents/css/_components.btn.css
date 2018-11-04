@@ -18,6 +18,13 @@
   }
 }
 
+.c-btn__truncated-text {
+  display: none;
+  @media(--s) {
+    display: inline-block;
+  }
+}
+
 .btn-block {
   text-align: center;
   padding: 2rem 0;
