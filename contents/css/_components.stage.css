@@ -119,14 +119,18 @@
 }
 
 .c-stage--picture {
-  --stage-content-margin-top: 35vh;
+  --stage-content-margin-top: 30vh;
   background-image: url(../images/home-stage-small.jpg);
   background-position: center center;
   background-size: cover;
   height: 50vh;
-  margin-bottom: var(--stage-content-margin-top);
+  margin-bottom: calc(var(--stage-content-margin-top) * 2);
+  @media (--s) {
+    margin-bottom: calc(var(--stage-content-margin-top) * 2.1);
+  }
   @media (--m) {
     background-image: url(../images/home-stage.jpg);
+    margin-bottom: calc(var(--stage-content-margin-top) * 2);
   }
   .c-stage__content {
     background-color: var(--c-white);
