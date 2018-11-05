@@ -124,13 +124,13 @@
   background-position: center center;
   background-size: cover;
   height: 50vh;
-  margin-bottom: 30rem;
+  margin-bottom: 34rem;
   @media (--s) {
-    margin-bottom: 30rem;
+    margin-bottom: 34rem;
   }
   @media (--m) {
     background-image: url(../images/home-stage.jpg);
-    margin-bottom: 20rem;
+    margin-bottom: 28rem;
   }
   .c-stage__content {
     background-color: var(--c-white);
