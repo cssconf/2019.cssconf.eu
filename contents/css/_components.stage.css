@@ -124,13 +124,13 @@
   background-position: center center;
   background-size: cover;
   height: 50vh;
-  margin-bottom: calc(var(--stage-content-margin-top) * 2);
+  margin-bottom: 30rem;
   @media (--s) {
-    margin-bottom: calc(var(--stage-content-margin-top) * 2.1);
+    margin-bottom: 30rem;
   }
   @media (--m) {
     background-image: url(../images/home-stage.jpg);
-    margin-bottom: calc(var(--stage-content-margin-top) * 2);
+    margin-bottom: 20rem;
   }
   .c-stage__content {
     background-color: var(--c-white);
