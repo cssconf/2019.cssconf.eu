@@ -55,3 +55,11 @@
     </a>
   </p>
 {% endmacro %}
+
+{% macro scholarshipApplyButton(link, truncateOnMobile = false, openNewTab = true) %}
+  <p class="btn-block">
+    <a href="{{ link }}" class="c-btn" {% if openNewTab %}target="_blank"{% endif %}>
+      Submit a Talk <span class="{{ 'c-btn__truncated-text' if truncateOnMobile }}">Proposal</span>
+    </a>
+  </p>
+{% endmacro %}
