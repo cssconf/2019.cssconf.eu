@@ -30,3 +30,28 @@
     </div>
   </section>
 {% endmacro %}
+
+{% macro teamMemberPortrait(teamMember, teamMemberImage) %}
+  <div class="c-team__person c-team__person--variant-{{ teamMember.variant }}">
+    <img class="c-team__avatar"
+         src="{{ teamMemberImage }}"
+         alt="Photo of {{ teamMember.firstname }} {{ teamMember.lastname }}">
+    <div class="c-team__caption">
+      <h4 class="c-team__name">{{ teamMember.firstname }} {{ teamMember.lastname }}</h4>
+      {% if teamMember.description %}
+        <p class="c-team__description">{{ teamMember.description }}</p>
+      {% endif %}
+      {% if teamMember.twitterHandle %}
+        <a class="c-team__link" href="https://twitter.com/{{ teamMember.twitterHandle }}" target="_blank">@{{ teamMember.twitterHandle }}</a>
+      {% endif %}
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro callForSpeakersButton(link, truncateOnMobile = false, openNewTab = true) %}
+  <p class="btn-block">
+    <a href="{{ link }}" class="c-btn" {% if openNewTab %}target="_blank"{% endif %}>
+      Submit a Talk <span class="{{ 'c-btn__truncated-text' if truncateOnMobile }}">Proposal</span>
+    </a>
+  </p>
+{% endmacro %}

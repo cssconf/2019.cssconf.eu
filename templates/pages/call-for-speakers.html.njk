@@ -1,0 +1,60 @@
+{% extends "../layouts/default.html.njk" %}
+
+{% from "../_macros.njk" import pageIntro, callForSpeakersButton %}
+
+{% block content %}
+  {% set data = contents.copy.cfs['intro.md'] %}
+
+  {{
+    pageIntro(
+      data.metadata.title,
+      data.metadata.introText,
+      contents.images.intros[data.metadata.introImage].url
+    )
+  }}
+
+  <div class="l-container">
+    <main>
+      <div class="c-markdown c-markdown--indented-paragraphs">
+        {{ contents.copy.cfs['open-until.md'].html }}
+      </div>
+
+      {{ callForSpeakersButton(callForSpeakersLink) }}
+
+      <div class="c-markdown c-markdown--indented-paragraphs">
+        {{ contents.copy.cfs['topics.md'].html }}
+      </div>
+
+      {{ callForSpeakersButton(callForSpeakersLink) }}
+
+      <div class="c-markdown c-markdown--indented-paragraphs">
+        {{ contents.copy.cfs['we-can-help.md'].html }}
+      </div>
+
+      <div class="c-markdown c-markdown--indented-paragraphs">
+        {{ contents.copy.cfs['perks.md'].html }}
+      </div>
+
+      <div class="c-markdown c-markdown--indented-paragraphs">
+        {{ contents.copy.cfs['selection-process.md'].html }}
+      </div>
+
+      {{ callForSpeakersButton(callForSpeakersLink) }}
+
+      <div class="c-markdown c-markdown--indented-paragraphs">
+        {{ contents.copy.cfs['guidelines.md'].html }}
+      </div>
+
+      <div class="c-markdown c-markdown--indented-paragraphs">
+        {{ contents.copy.cfs['video-recordings.md'].html }}
+      </div>
+
+      <div class="c-markdown c-markdown--indented-paragraphs">
+        {{ contents.copy.cfs['coc.md'].html }}
+      </div>
+
+      {{ callForSpeakersButton(callForSpeakersLink) }}
+
+    </main>
+  </div>
+{% endblock %}

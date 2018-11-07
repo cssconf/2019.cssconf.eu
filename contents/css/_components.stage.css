@@ -117,3 +117,27 @@
   }
 
 }
+
+.c-stage--picture {
+  --stage-content-margin-top: 30vh;
+  background-image: url(../images/home-stage-small.jpg);
+  background-position: center center;
+  background-size: cover;
+  height: 50vh;
+  margin-bottom: 34rem;
+  @media (--s) {
+    margin-bottom: 34rem;
+  }
+  @media (--m) {
+    background-image: url(../images/home-stage.jpg);
+    margin-bottom: 28rem;
+  }
+  .c-stage__content {
+    background-color: var(--c-white);
+    border: 7px solid var(--c-black);
+    margin: var(--stage-content-margin-top) auto 0;
+    max-width: 760px;
+    padding: calc(var(--l-gutter) * 2);
+    text-align: center;
+  }
+}

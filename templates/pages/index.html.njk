@@ -1,41 +1,24 @@
 {% extends "../layouts/default.html.njk" %}
 
-{% from "../_macros.njk" import svgIcon %}
+{% from "../_macros.njk" import svgIcon, callForSpeakersButton %}
 
 {% block content %}
-<section class="c-stage">
-  <div class="l-container">
-    <div class="c-stage__logo">
-      {{ svgIcon('cssconfeu-logo') }}
-    </div>
-    <div class="c-stage__triangle">
-      <svg class="c-stage__triangle-svg" width="760px" height="1074px" viewBox="0 0 760 1074" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <path stroke="#191919" fill="white" stroke-width="7" d="M3.5,736.39465 L3.5,1070.49539 L756.5,1069.5046 L756.5,8.25318654 L3.5,736.39465 Z"></path>
-      </svg>
-    </div>
 
-    <div class="c-stage__facts">
-      <div class="c-stage__facts__top">
-        <div class="c-stage__facts__date">
-          Friday, <br />
-          May 31st 2019
-        </div>
-        <div class="c-stage__facts__loc">
-          Berlin, Germany
-          <br>
-          <a href="https://www.google.de/maps/place/Arena+Berlin/@52.5014805,13.4399474,15z/data=!4m8!1m2!2m1!1sArena+berlin!3m4!1s0x47a84e55b04a4c0b:0x6852fd9350063186!8m2!3d52.4966473!4d13.4530078" target="_blank">Arena, Eichenstraße 4</a>
-        </div>
-      </div>
-      <div class="c-stage__facts__bottom">
-        <h2 class="c-stage__facts__heading fz--delta">
-          Dedicated to everyone who loves and writes CSS
+  <section class="c-stage c-stage--picture">
+    <div class="l-container">
+      <div class="c-stage__content">
+        <h2 class="fz--delta">
+          Call for Speakers is open!
         </h2>
-        <p class="c-stage__facts__p copy">
-          CSSconf EU is a one-day, one-track community conference that unites world-class speakers, top-notch engineers &amp; web designers, and everyone else who loves CSS.</a>
+        <p class="copy">
+          We are inviting the CSS community to submit talks for the upcoming CSSconf EU.
+        </p>
+        {{ callForSpeakersButton(contents['call-for-speakers.json'].url, true, false) }}
+        <p class="copy">
+          The Call for Speakers will close <b>on December 23rd 2018</b>.
         </p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 {% endblock %}
