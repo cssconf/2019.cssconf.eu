@@ -14,7 +14,10 @@ team:
   firstname: Vanessa
   lastname: Yuen
   twitterHandle: vanessayuenn
-  image: {}
+  image:
+    filename: vanessa-yuen.jpg
+    width: 400
+    height: 400
 
 ----
 
