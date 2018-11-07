@@ -13,8 +13,11 @@ team:
   variant: b
   firstname: Wiebke
   lastname: Herger
-  twitterHandle: analogkultur
-  image: {}
+  twitterHandle:
+  image:
+    filename: wiebke-herger.jpg
+    width: 400
+    height: 400
 
 ----
 
