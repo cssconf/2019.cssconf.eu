@@ -1,7 +1,7 @@
 ---
 title: Scholarships
 introText: >
-  We are providing support for underrepresented individuals in tech.
+  We are providing support in the form of tickets, travel and accommodation for underrepresented individuals in tech.
 introImage: code-of-conduct.jpg
 ---
 
