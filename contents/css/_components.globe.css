@@ -20,35 +20,51 @@
 
 .c-globe__orb,
 [class*='c-globe__orb'] {
-  border-radius: 50%;
+  height: 1rem;
   position: absolute;
+  width: 1rem;
+
+  &::before {
+    border-radius: 50%;
+    content: '';
+    display: block;
+  }
 }
 
 .c-globe__orb-1 {
   animation: GYRATE 5s infinite ease-in-out;
-  background-color: var(--c-cinnabar);
-  height: 2rem;
   left: -4.2rem;
   top: 0;
-  width: 2rem;
+
+  &::before {
+    background-color: var(--c-cinnabar);
+    height: 2rem;
+    width: 2rem;
+  }
 }
 
 .c-globe__orb-2 {
   animation: GYRATE 4s infinite ease-in-out;
-  background-color: var(--c-mint);
-  height: 1rem;
   left: -3rem;
   top: 4rem;
-  width: 1rem;
+
+  &::before {
+    background-color: var(--c-mint);
+    height: 1rem;
+    width: 1rem;
+  }
 }
 
 .c-globe__orb-3 {
   animation: GYRATE 6s infinite ease-in-out;
-  background-color: var(--c-blue-violet);
-  height: 1.5rem;
   left: -3.9rem;
   top: 2.4rem;
-  width: 1.5rem;
+
+  &::before {
+    background-color: var(--c-blue-violet);
+    height: 1.5rem;
+    width: 1.5rem;
+  }
 }
 
 @keyframes GYRATE {
@@ -58,7 +74,7 @@
   }
 
   50% {
-    transform: translateX(13rem) scale(1);
+    transform: translateX(1300%) scale(1);
   }
 
   100% {
