@@ -13,7 +13,8 @@ team:
   variant: b
   firstname: Wiebke
   lastname: Herger
-  twitterHandle:
+  twitterHandle: null
+  description: null
   image:
     filename: wiebke-herger.jpg
     width: 400

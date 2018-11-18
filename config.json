@@ -1,4 +1,5 @@
 {
+  "port": 8888,
   "locals": {
     "url": "https://2019.cssconf.eu",
     "twitterHandle": "@CSSconfeu",

@@ -5,9 +5,9 @@ node_js:
   - "8.12.0"
 script: npm run-script build
 before_deploy:
-  # - openssl aes-256-cbc -K $encrypted_eab34e191d54_key -iv $encrypted_eab34e191d54_iv -in secrets.tar.enc -out secrets.tar -d
-  # - tar xvf secrets.tar
-  # - npm run-script ci:build
+  - openssl aes-256-cbc -K $encrypted_eab34e191d54_key -iv $encrypted_eab34e191d54_iv -in secrets.tar.enc -out secrets.tar -d
+  - tar xvf secrets.tar
+  - npm run-script ci:build
 deploy:
   provider: pages
   skip_cleanup: true
