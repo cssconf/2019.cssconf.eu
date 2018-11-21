@@ -15,10 +15,7 @@ team:
   lastname: Kugland
   twitterHandle: kotzendekrabbe
   description: null
-  image:
-    filename: felicitas-kugland.jpg
-    width: 400
-    height: 400
+  image: {}
 
 ----
 

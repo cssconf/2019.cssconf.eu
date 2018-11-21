@@ -15,10 +15,7 @@ team:
   lastname: Lorenz
   twitterHandle: verpixelt
   description: 2015 – 2017
-  image:
-    filename: kevin-lorenz.jpg
-    width: 400
-    height: 400
+  image: {}
 
 ----
 
