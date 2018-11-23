@@ -28,7 +28,7 @@
     <meta property="og:image" content="{{ url }}{{ image }}">
   {% endblock %}
   {% include "../partials/favicon.html.njk" %}
-  <meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-inline'">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-inline'; worker-src 'self'">
   <link rel="stylesheet" href="{{ contents.css["main.css"].url }}?{{ cacheBuster }}">
   <link rel="prefetch" href="https://ti.to/cssconfeu/cssconfeu-2019/">
 </head>
@@ -48,5 +48,12 @@
   {{ contents.svg['sprite.svg'].sprite }}
 </div>
 
+<script>
+onload = function() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+  }
+}
+</script>
 </body>
 </html>
