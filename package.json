@@ -20,6 +20,7 @@
     "postcss-import": "^11.0.0",
     "postcss-media-minmax": "^3.0.0",
     "postcss-nested": "^3.0.0",
+    "postcss-url": "^8.0.0",
     "prettier": "^1.10.2",
     "purify-css": "^1.2.6",
     "sharp": "^0.21.0",

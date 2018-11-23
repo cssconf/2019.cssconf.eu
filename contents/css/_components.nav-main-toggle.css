@@ -1,5 +1,5 @@
 .c-nav-main-toggle {
-  background: url("../svg/hamburger.svg") center center;
+  background: url("contents:svg/hamburger.svg") center center;
   background-size: cover;
   border: 0;
   color: var(--c-white);
@@ -12,5 +12,5 @@
 }
 
 .is-nav-opened .c-nav-main-toggle {
-  background-image: url("../svg/close.svg");
+  background-image: url("contents:svg/close.svg");
 }

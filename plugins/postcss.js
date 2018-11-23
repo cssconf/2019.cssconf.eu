@@ -40,8 +40,32 @@ module.exports = (wintersmith, callback) => {
           options.plugins = options.plugins || [];
 
           wintersmith.logger.verbose('loading postcss-plugins');
+          // Allows to refer to windersmith resource URLs as
+          // url('contents:directory/filename')
+          options.plugins.push({
+            "path": "postcss-url",
+            "params": {
+              url: asset => {
+                if (asset.url.startsWith('contents:')) {
+                  const path = asset.url.split(':')[1];
+                  const parts = path.split('/');
+                  let image = contents;
+                  parts.forEach(part => {
+                    image = image[part];
+                  });
+                  if (!image) {
+                    throw new Error('Unknown asset ' + asset.url);
+                  }
+                  return image.url;
+                }
+                if (!asset.url.startsWith('data:')) {
+                  throw new Error('Use contents: or data: URLs: ' + asset.url);
+                }
+                return asset.url;
+              }
+            }
+          });
           const plugins = options.plugins.map(loadPlugin);
-
           wintersmith.logger.verbose('compile css');
           postcss(plugins)
             .process(this._text, options)
