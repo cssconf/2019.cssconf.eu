@@ -28,7 +28,9 @@
     <meta property="og:image" content="{{ url }}{{ image }}">
   {% endblock %}
   {% include "../partials/favicon.html.njk" %}
+  <meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-inline'">
   <link rel="stylesheet" href="{{ contents.css["main.css"].url }}?{{ cacheBuster }}">
+  <link rel="prefetch" href="https://ti.to/cssconfeu/cssconfeu-2019/">
 </head>
 <body class="{% block bodyClass %}{% endblock %}">
 
