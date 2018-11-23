@@ -30,8 +30,6 @@
     <meta property="og:image" content="{{ url }}{{ image }}">
   {% endblock %}
   {% include "../partials/favicon.html.njk" %}
-
-  <script src="{{ contents.js['main.js'].url }}?{{ cacheBuster }}" defer></script>
 </head>
 <body class="{% block bodyClass %}{% endblock %}">
 

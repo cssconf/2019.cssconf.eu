@@ -27,7 +27,9 @@
       {{ navItem('Team', contents['team.json'].url) }}
       {{ navItem('Blog', 'https://blog.cssconf.eu', true) }}
     </ul>
-    <button class="c-nav-main__close js-nav-main-toggle">Close</button>
+    <button class="c-nav-main__close js-nav-main-toggle"
+        onclick="document.body.classList.toggle('is-nav-opened')">Close</button>
   </nav>
-  <button class="c-nav-main-toggle js-nav-main-toggle">Menu</button>
+  <button class="c-nav-main-toggle js-nav-main-toggle"
+      onclick="document.body.classList.toggle('is-nav-opened')">Menu</button>
 </header>
