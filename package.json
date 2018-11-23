@@ -22,6 +22,7 @@
     "postcss-nested": "^3.0.0",
     "prettier": "^1.10.2",
     "purify-css": "^1.2.6",
+    "sharp": "^0.21.0",
     "svgo": "^1.0.3",
     "svgstore": "^2.0.2",
     "typogr": "^0.6.8",
@@ -39,7 +40,7 @@
     "last 2 versions"
   ],
   "devDependencies": {
-    "chalk": "^2.3.2",
+    "chalk": "^2.4.1",
     "commander": "^2.14.1",
     "get-port": "^3.2.0",
     "googleapis": "^27.0.0",

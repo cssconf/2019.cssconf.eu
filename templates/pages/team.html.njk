@@ -36,7 +36,7 @@
         <div class="c-team">
           {% for teamPage in teamPages %}
             {% set teamMember = teamPage.metadata.team %}
-            {% set teamMemberImage = contents.images.team[teamMember.image.filename].url %}
+            {% set teamMemberImage = contents.images.cms[teamMember.image.filename_500].url %}
             {% set defaultImage = contents.images['avatar-placeholder.jpg'].url %}
             {% set portraitImage = teamMemberImage if teamMemberImage else defaultImage %}
 
