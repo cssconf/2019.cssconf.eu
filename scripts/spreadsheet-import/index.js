@@ -8,10 +8,8 @@ const {promisify} = require('util');
 const {getSheetData} = require('./spreadsheet-api');
 const {processSheet, simplifySpreadsheetData} = require('./spreadsheet-utils');
 const rimraf = promisify(require('rimraf'));
-const fetch = require('node-fetch');
-const imageType = require('image-type');
-const imageSize = require('image-size');
 const mkdirp = require('mkdirp');
+const {downloadImage} = require('./image-download');
 
 const timeout = promisify(setTimeout);
 
@@ -175,55 +173,24 @@ async function main(params) {
         let title = '';
 
         if (sheetId === 'speakers') {
-          data.image = getLocalSpeakerImage(data);
           title = `${data.name}: ${data.talkTitle}`;
-          if (!data.image) {
-            try {
-              data.image = await downloadSpeakerImage(data);
-            } catch (err) {
-              console.error('this is bad: ', err);
-            }
-          }
-          delete data.potraitImageUrl;
         }
 
         if (sheetId === 'artists') {
-          data.image = getLocalArtistImage(data);
           title = `${data.firstname} ${data.lastname}: ${data.talkTitle}`;
-          if (!data.image) {
-            try {
-              data.image = await downloadArtistImage(data);
-            } catch (err) {
-              console.error('this is bad: ', err);
-            }
-          }
-          delete data.potraitImageUrl;
         }
 
         if (sheetId === 'team') {
-          data.image = getLocalTeamImage(data);
           title = `${data.firstname} ${data.lastname}`;
-          if (!data.image) {
-            try {
-              data.image = await downloadTeamImage(data);
-            } catch (err) {
-              console.error('this is bad: ', err);
-            }
-          }
-          delete data.potraitImageUrl;
         }
 
+        let imageExtension = null;
         if (sheetId === 'sponsors') {
-          data.image = getLocalSponsorImage(data);
-          if (!data.image) {
-            try {
-              data.image = await downloadSponsorImage(data);
-            } catch (err) {
-              console.error('this is bad: ', err);
-            }
-          }
-          delete data.logoUrl;
+          imageExtension = 'svg';
+          title = `${data.name}`;
         }
+        const imageUrl = data.potraitImageUrl || data.logoUrl;
+        data.image = await downloadImage(imageUrl, title, imageExtension);
 
         const frontmatter = yaml.safeDump({
           ...templateGlobals,
@@ -253,269 +220,3 @@ async function main(params) {
   });
 }
 
-function getLocalSponsorImage(sponsor) {
-  if (!params.imagePath) {
-    return null;
-  }
-
-  const filename = getImageFilename(sponsor, 'svg');
-  const srcFilename = path.join(params.imagePath, filename);
-  const destFilename = path.join('contents/images/sponsor', filename);
-
-  if (fs.existsSync(srcFilename)) {
-    console.log(` --> image found in image-path:`, filename);
-    const buffer = fs.readFileSync(srcFilename);
-    fs.writeFileSync(destFilename, buffer);
-
-    return {
-      filename
-    };
-  }
-
-  return null;
-
-}
-
-function getLocalSpeakerImage(speaker) {
-  if (!params.imagePath) {
-    return null;
-  }
-
-  const filename = getImageFilename(speaker, 'jpg');
-  const srcFilename = path.join(params.imagePath, filename);
-  const destFilename = path.join('contents/images/speaker', filename);
-
-  if (fs.existsSync(srcFilename)) {
-    console.log(` --> image found in image-path:`, filename);
-    const buffer = fs.readFileSync(srcFilename);
-    const size = imageSize(buffer);
-    fs.writeFileSync(destFilename, buffer);
-
-    return {
-      filename,
-      width: size.width,
-      height: size.height
-    };
-  }
-
-  return null;
-}
-
-function getLocalArtistImage(speaker) {
-  if (!params.imagePath) {
-    return null;
-  }
-
-  const filename = getImageFilename(speaker, 'jpg');
-  const srcFilename = path.join(params.imagePath, filename);
-  const destFilename = path.join('contents/images/artist', filename);
-
-  if (fs.existsSync(srcFilename)) {
-    console.log(` --> image found in image-path:`, filename);
-    const buffer = fs.readFileSync(srcFilename);
-    const size = imageSize(buffer);
-    fs.writeFileSync(destFilename, buffer);
-
-    return {
-      filename,
-      width: size.width,
-      height: size.height
-    };
-  }
-
-  return null;
-}
-
-async function downloadArtistImage(artist) {
-  const url = artist.potraitImageUrl;
-  console.log('downloadImage', url);
-  if (!url) {
-    console.error(chalk.yellow('no image specified for ' + artist.id));
-    return {};
-  }
-
-  try {
-    const res = await fetch(url);
-
-    if (!res.headers.get('content-type').startsWith('image')) {
-      console.error(chalk.red.bold(' !!! url is not an image', url));
-      return {};
-    }
-
-    const buffer = await res.buffer();
-
-    const info = imageType(buffer);
-    if (!info) {
-      console.error(chalk.red.bold(' !!! no type-imformation for image', url));
-      return {};
-    }
-
-    const size = imageSize(buffer);
-    const filename = getImageFilename(artist, info.ext);
-    const fullPath = 'contents/images/artist/' + filename;
-
-    console.info(' --> image downloaded ', chalk.green(fullPath));
-    fs.writeFileSync(fullPath, buffer);
-
-    return {
-      filename,
-      width: size.width,
-      height: size.height
-    };
-  } catch (err) {
-    console.error(chalk.red.bold(' !!! failed to download', url));
-    console.error(err);
-    return {};
-  }
-}
-
-function getLocalTeamImage(team) {
-  if (!params.imagePath) {
-    return null;
-  }
-
-  const filename = getTeamFilename(team, 'jpg');
-  const srcFilename = path.join(params.imagePath, filename);
-  const destFilename = path.join('contents/images/team', filename);
-
-  if (fs.existsSync(srcFilename)) {
-    console.log(` --> image found in image-path:`, filename);
-    const buffer = fs.readFileSync(srcFilename);
-    const size = imageSize(buffer);
-    fs.writeFileSync(destFilename, buffer);
-
-    return {
-      filename,
-      width: size.width,
-      height: size.height
-    };
-  }
-
-  return null;
-}
-
-async function downloadTeamImage(team) {
-  const url = team.potraitImageUrl;
-  console.log('downloadImage', url);
-  if (!url) {
-    console.error(chalk.yellow('no image specified for ' + team.id));
-    return {};
-  }
-
-  try {
-    const res = await fetch(url);
-
-    if (!res.headers.get('content-type').startsWith('image')) {
-      console.error(chalk.red.bold(' !!! url is not an image', url));
-      return {};
-    }
-
-    const buffer = await res.buffer();
-
-    const info = imageType(buffer);
-    if (!info) {
-      console.error(chalk.red.bold(' !!! no type-imformation for image', url));
-      return {};
-    }
-
-    const size = imageSize(buffer);
-    const filename = getImageFilename(team, info.ext);
-    const fullPath = 'contents/images/team/' + filename;
-
-    console.info(' --> image downloaded ', chalk.green(fullPath));
-    fs.writeFileSync(fullPath, buffer);
-
-    return {
-      filename,
-      width: size.width,
-      height: size.height
-    };
-  } catch (err) {
-    console.error(chalk.red.bold(' !!! failed to download', url));
-    console.error(err);
-    return {};
-  }
-}
-
-async function downloadSponsorImage(sponsor) {
-  const url = sponsor.logoUrl;
-  console.log('downloadImage', url);
-  if (!url) {
-    console.error(chalk.yellow('no image specified for ' + sponsor.id));
-    return {};
-  }
-
-  try {
-    const res = await fetch(url);
-
-    if (!res.headers.get('content-type').startsWith('image')) {
-      console.error(chalk.red.bold(' !!! url is not an image', url));
-      return {};
-    }
-
-    const buffer = await res.buffer();
-
-    const filename = getImageFilename(sponsor, 'svg');
-    const fullPath = 'contents/images/sponsor/' + filename;
-
-    console.info(' --> image downloaded ', chalk.green(fullPath));
-    fs.writeFileSync(fullPath, buffer);
-
-    return {
-      filename
-    };
-  } catch (err) {
-    console.error(chalk.red.bold(' !!! failed to download', url));
-    console.error(err);
-    return {};
-  }
-}
-
-async function downloadSpeakerImage(speaker) {
-  const url = speaker.potraitImageUrl;
-  console.log('downloadImage', url);
-  if (!url) {
-    console.error(chalk.yellow('no image specified for ' + speaker.id));
-    return {};
-  }
-
-  try {
-    const res = await fetch(url);
-
-    if (!res.headers.get('content-type').startsWith('image')) {
-      console.error(chalk.red.bold(' !!! url is not an image', url));
-      return {};
-    }
-
-    const buffer = await res.buffer();
-
-    const info = imageType(buffer);
-    if (!info) {
-      console.error(chalk.red.bold(' !!! no type-imformation for image', url));
-      return {};
-    }
-
-    const size = imageSize(buffer);
-    const filename = getImageFilename(speaker, info.ext);
-    const fullPath = 'contents/images/speaker/' + filename;
-
-    console.info(' --> image downloaded ', chalk.green(fullPath));
-    fs.writeFileSync(fullPath, buffer);
-
-    return {
-      filename,
-      width: size.width,
-      height: size.height
-    };
-  } catch (err) {
-    console.error(chalk.red.bold(' !!! failed to download', url));
-    console.error(err);
-    return {};
-  }
-}
-
-function getImageFilename(data, ext) {
-  let filename = data.id;
-
-  return filename + '.' + ext;
-}
