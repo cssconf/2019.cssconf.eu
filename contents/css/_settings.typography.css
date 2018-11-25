@@ -1,6 +1,6 @@
 @font-face {
   font-family: "GT Walsheim Pro Regular";
-  font-display: swap;
+  font-display: fallback;
   src: url('contents:fonts/GT-Walsheim-Regular.eot');
   src: url('contents:fonts/GT-Walsheim-Regular.eot') format('embedded-opentype'),
        url('contents:fonts/GT-Walsheim-Regular.woff') format('woff'),
@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: "GT Walsheim Pro Medium";
-  font-display: swap;
+  font-display: fallback;
   src: url('contents:fonts/GT-Walsheim-Medium.eot');
   src: url('contents:fonts/GT-Walsheim-Medium.eot') format('embedded-opentype'),
        url('contents:fonts/GT-Walsheim-Medium.woff') format('woff'),
