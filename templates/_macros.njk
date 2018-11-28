@@ -15,7 +15,7 @@
 {% endmacro %}
 
 {% macro responsiveImage(image) %}
-  <div style="padding-top:{{ image.getImageInfo().aspectPercentage }}%;overflow:hidden;position:relative">
+  <div style="padding-top:{{ image.getImageInfo().aspectPercentage }}%;overflow:hidden;position:relative;">
     <img src="{{ image.url }}"
       style="position:absolute;top:0;left:0;right:0;bottom:0">
   </div>
@@ -27,7 +27,6 @@
       <div class="c-intro__wrapper">
         {% if introImage %}
           <div class="c-intro__image">{{ responsiveImage(introImage) }}</div>
-          </div>
         {% endif %}
         <h1 class="c-intro__title">{{ title }}</h1>
       </div>
