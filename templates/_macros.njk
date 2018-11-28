@@ -14,13 +14,20 @@
   </li>
 {% endmacro %}
 
+{% macro responsiveImage(image) %}
+  <div style="padding-top:{{ image.getImageInfo().aspectPercentage }}%;overflow:hidden;position:relative">
+    <img src="{{ image.url }}"
+      style="position:absolute;top:0;left:0;right:0;bottom:0">
+  </div>
+{% endmacro %}
+
 {% macro pageIntro(title, introText, introImage) %}
   <section class="c-intro {{ "c-intro--with-image" if introImage }}">
     <div class="l-container">
       <div class="c-intro__wrapper">
         {% if introImage %}
-          <img src="{{ introImage }}"
-              class="c-intro__image">
+          <div class="c-intro__image">{{ responsiveImage(introImage) }}</div>
+          </div>
         {% endif %}
         <h1 class="c-intro__title">{{ title }}</h1>
       </div>
