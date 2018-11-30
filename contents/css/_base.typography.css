@@ -6,7 +6,7 @@ button {
 body,
 .copy {
   font-size: 1.3125rem; /* 21 */
-  line-height: 1.3333; /* 28 */
+  line-height: 1.428751; /* 30 */
 
   @media(--s) {
     font-size: 1.5rem; /* 24 */
@@ -65,32 +65,38 @@ ol {
 
 h1,
 .fz--alpha {
-  font-size: 3rem;
-  line-height: 1;
+  font-size: 3.75rem;  /* 60 */
+  line-height: 1; /* 60 */
 
   @media(--s) {
-    font-size: 5.5rem;
-    line-height: 1.1; /* 150 */
+    font-size: 7.5rem; /* 120 */
+    line-height: 1.125; /* 90 */
   }
 }
 
 h2,
 .fz--beta {
-  font-size: 1.5rem;
-  line-height: 1.166666667;
+  font-size: 3.75rem;  /* 60 */
+  line-height: 1; /* 60 */
 
   @media(--s) {
-    font-size: 7.5rem; /* 120 */
-    line-height: .916666667; /* 110 */
+    font-size: 5rem; /* 80 */
+    line-height: 1.125; /* 90 */
   }
 }
 
+/* TO DO: Get definition from Nicolas */
 h3,
 .fz--gamma {
-  font-size: 5.5rem; /* 88 */
-  line-height: .795454545; /* 70 */
+  font-size: 2rem;
+
+  @media(--s) {
+    font-size: 2.75rem; /* 44 */
+    line-height: 1.090909091; /* 48 */
+  }
 }
 
+/* TO DO: Get definition from Nicolas */
 h4,
 .fz--delta {
   font-size: 2rem;
@@ -101,6 +107,7 @@ h4,
   }
 }
 
+/* TO DO: Get definition from Nicolas */
 h5,
 .fz--epsilon {
   font-size: 1.75rem; /* 28 */
