@@ -1,13 +1,15 @@
 ---
 title: Styleguide
 introText: >
-  This is an intro text.
+  This is an intro text. Use the class <code>.copy--max</code> to style it like this.
 introImage: code-of-conduct.jpg
 ---
 
-## Headings and paragraphs
+## Headings and Paragraphs
 
 Paragraph lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
+
+<p class="copy--mini">This is a small print text. Use the class <code>.copy--mini</code> to style it like this. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
 
 ## Level 2 Heading
 ### Level 3 Heading
@@ -27,7 +29,11 @@ This is a list:
 *   list item
 *   longer list item Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
 *   list item
+  *   nested list item
+  *   nested longer list item Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+  *   nested list item
 *   list item
+
 
 ## Inline Styles
 
@@ -36,6 +42,9 @@ Lorem ipsum dolor **bold text** sit amet, _consectetur adipisicing_ elit, sed do
 ## Links and Buttons
 
 Here is a link in a text [cool inline link](https://2019.cssconf.eu).
+
+to do: add buttons
+
 
 ## Colors
 

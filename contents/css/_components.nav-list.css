@@ -23,7 +23,7 @@
   }
   &:hover,
   &:focus {
-    color: var(--c-blue-violet);
+    color: var(--c-mint);
   }
 }
 
