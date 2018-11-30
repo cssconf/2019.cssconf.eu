@@ -1,0 +1,45 @@
+.c-header {
+  padding: 1rem;
+  border-bottom: 2px solid var(--c-black);
+}
+
+.c-header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.c-header__link {
+  display: flex;
+  align-items: center;
+}
+
+.c-header__logo {
+  height: 4.5rem;
+  width: 4.8125rem;
+  @media(--m) {
+    height: 5.625rem;
+    width: 6rem;
+  }
+}
+
+.c-header__text--name {
+  height: 2.05rem;
+  width: 10.625rem;
+}
+
+.c-header__text--date {
+  color: var(--c-violet);
+}
+
+.c-header__text--date,
+.c-header__text--name {
+  @media(--m) {
+    display: block;
+  }
+}
+
+.c-header__button {
+  display: flex;
+  align-items: center;
+}

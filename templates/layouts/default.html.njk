@@ -36,12 +36,14 @@
 </head>
 <body class="{% block bodyClass %}{% endblock %}">
 
-{% include "../partials/header.njk" %}
+{% include "../partials/header.html.njk" %}
 
-<div class="l-wrapper">
-  {% block content %}
-  {% endblock %}
-</div>
+{% block main %}
+  <main class="l-wrapper">
+    {% block content %}
+    {% endblock %}
+  </main>
+{% endblock %}
 
 {% include "../partials/globe.html.njk" %}
 {% include "../partials/footer.html.njk" %}

@@ -1,0 +1,20 @@
+.c-page-header {
+  padding: 2rem 0 8rem;
+  position: relative;
+  @media(--m) {
+    padding-bottom: 13.75rem;
+  }
+}
+
+.c-page-header__image {
+  margin: 0 0 0 -8.4375rem;
+  position: absolute;
+  bottom: -4.375rem;
+  left: 50%;
+  width: 16.875rem;
+  @media(--m) {
+    bottom: -11.25rem;
+    width: 45rem;
+    margin-left: -22.5rem;
+  }
+}

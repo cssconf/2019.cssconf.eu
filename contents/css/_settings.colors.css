@@ -1,12 +1,9 @@
 :root {
   /* primary colors */
-  --c-black: hsl(0, 0%, 10%);
-  --c-white: hsl(0, 0%, 100%);
   --c-martinique: hsl(243, 31%, 26%);
   --c-blue-violet: hsl(242, 44%, 53%);
   --c-cinnabar: hsl(359, 78%, 57%);
   --c-illusion: hsl(343, 85%, 79%);
-  --c-mint: hsl(168, 55%, 54%);
 
   /* secondary colors */
   --c-big-pink: hsl(343, 85%, 92%);
@@ -15,4 +12,19 @@
   --c-turquoise-blue: hsl(194, 76%, 65%);
   --c-apple: hsl(124, 51%, 52%);
   --c-bittersweet: hsl(7, 98%, 67%);
+
+
+  /* new colors */
+  --c-black: #111111;
+  --c-white: #ffffff;
+  --c-gray: #f8f8f8;
+  --c-blue: #2176ff;
+  --c-pink: #f29fc4;
+  --c-salmon: #fcd9e3;
+  --c-salmon-light: #ffedf2;
+  --c-orange: #ff5743;
+  --c-violet: #9a87e6;
+  --c-mint: #65cde5;
+  --c-green: #2fb646;
+  --c-yellow: #ffce00;
 }

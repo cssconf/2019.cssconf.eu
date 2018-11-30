@@ -16,9 +16,11 @@
 /* Components */
 @import "_components.arrow-block.css";
 @import "_components.btn.css";
+@import "_components.content.css";
 @import "_components.diversity-supporters.css";
 @import "_components.footer-global.css";
 @import "_components.globe.css";
+@import "_components.header.css";
 @import "_components.header-global.css";
 @import "_components.intro.css";
 @import "_components.nav-main.css";
@@ -27,6 +29,7 @@
 @import "_components.nav-pages.css";
 @import "_components.nav-social.css";
 @import "_components.markdown.css";
+@import "_components.page-header.css";
 @import "_components.schedule.css";
 @import "_components.schedule-item.css";
 @import "_components.speaker.css";
