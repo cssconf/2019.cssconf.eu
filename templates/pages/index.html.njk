@@ -26,7 +26,12 @@
         We are inviting the CSS community to submit talks for the upcoming CSSconf EU.<br>
         The Call for Speakers will close <b>on December 23rd 2018</b>.
       </p>
-      {{ callForSpeakersButton(contents['call-for-speakers.json'].url, truncateOnMobile = true, openNewTab = false) }}
+      {{ callForSpeakersButton(
+        contents['call-for-speakers.json'].url,
+        truncateOnMobile = true,
+        openNewTab = false,
+        centered = false
+      ) }}
     </div>
   </section>
 {% endblock %}

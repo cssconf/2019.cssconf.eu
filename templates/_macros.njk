@@ -66,8 +66,8 @@
   </div>
 {% endmacro %}
 
-{% macro callForSpeakersButton(link, text = '', truncateOnMobile = false, openNewTab = true) %}
-  <p class="btn-block">
+{% macro callForSpeakersButton(link, text = '', truncateOnMobile = false, openNewTab = true, centered = true) %}
+  <p {% if centered %}class="btn-block"{% endif %}>
     <a href="{{ link }}" class="c-btn" {% if openNewTab %}target="_blank"{% endif %}>
       {% if text %}
         {{ text }}
@@ -78,8 +78,8 @@
   </p>
 {% endmacro %}
 
-{% macro scholarshipApplyButton(link, truncateOnMobile = false, openNewTab = true) %}
-  <p class="btn-block">
+{% macro scholarshipApplyButton(link, truncateOnMobile = false, openNewTab = true, centered = true) %}
+  <p {% if centered %}class="btn-block"{% endif %}>
     <a href="{{ link }}" class="c-btn" {% if openNewTab %}target="_blank"{% endif %}>
       Apply now!
     </a>
