@@ -20,3 +20,10 @@
     display: inline-block;
   }
 }
+
+.c-btn__truncated-text {
+  display: none;
+  @media(--s) {
+    display: inline-block;
+  }
+}
