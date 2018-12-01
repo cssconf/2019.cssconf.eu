@@ -1,0 +1,4 @@
+{
+  "template": "pages/newsletter.html.njk",
+  "title": "Newsletter"
+}
