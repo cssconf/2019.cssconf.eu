@@ -8,6 +8,18 @@
     </svg>
 {% endmacro %}
 
+{% macro svgIconNew(contents, id, svgClass, width = 16, height = 16, title = '') %}
+  <svg viewbox="0 0 {{ width }} {{ height }}" class="svg svg-{{ id }} {{ svgClass }}">
+    {% if title %}
+      <title id='title-{{ id }}'>{{ title }}</title>
+    {% endif %}
+    <image xlink:href="{{ contents.svg[id + '.svg'].url }}"
+           height="{{ height }}px"
+           width="{{ width }}px"/>
+  </svg>
+  <link rel=preload as=image href="{{ contents.svg[id + '.svg'].url }}">
+{% endmacro %}
+
 {% macro navItem(label, link, external) %}
   <li class="c-nav-main__list-el">
     <a class="c-nav-main__link" href="{{ link }}" {{ "target=\"_blank\"" if external }}>{{ label }}</a>
@@ -54,16 +66,20 @@
   </div>
 {% endmacro %}
 
-{% macro callForSpeakersButton(link, truncateOnMobile = false, openNewTab = true) %}
-  <p class="btn-block">
+{% macro callForSpeakersButton(link, text = '', truncateOnMobile = false, openNewTab = true, centered = true) %}
+  <p {% if centered %}class="btn-block"{% endif %}>
     <a href="{{ link }}" class="c-btn" {% if openNewTab %}target="_blank"{% endif %}>
-      Submit a Talk <span class="{{ 'c-btn__truncated-text' if truncateOnMobile }}">Proposal</span>
+      {% if text %}
+        {{ text }}
+      {% else %}
+        Submit a Talk <span class="{{ 'c-btn__truncated-text' if truncateOnMobile }}">Proposal</span>
+      {% endif %}
     </a>
   </p>
 {% endmacro %}
 
-{% macro scholarshipApplyButton(link, truncateOnMobile = false, openNewTab = true) %}
-  <p class="btn-block">
+{% macro scholarshipApplyButton(link, truncateOnMobile = false, openNewTab = true, centered = true) %}
+  <p {% if centered %}class="btn-block"{% endif %}>
     <a href="{{ link }}" class="c-btn" {% if openNewTab %}target="_blank"{% endif %}>
       Apply now!
     </a>

@@ -1,0 +1,40 @@
+{% from "../_macros.njk" import svgIconNew, navItem %}
+
+<header class="c-header">
+  <div class="c-header__wrapper">
+    <a href="{{ env.config.baseUrl }}"
+       class="c-header__link"
+       title="Home">
+      <div class="c-header__logo">
+        {{ svgIconNew(contents, 'logo-icon', width = 97, height = 90) }}
+      </div>
+      <div class="c-header__text--name dn ml3 mr3">
+        {{ svgIconNew(contents, 'logo-text', width = 170, height = 22, title = 'CSSconf.EU') }}
+      </div>
+      <div class="c-header__text--date dn">{{ conferenceFullDate }}</div>
+    </a>
+    <div class="c-header__button">
+      <a href="{{ buyTicketsLink }}"
+         class="c-btn c-btn--header">
+        🚀 Buy Ticket
+      </a>
+      <button class="c-nav-main-toggle js-nav-main-toggle"
+              onclick="document.body.classList.toggle('is-nav-opened')">Menu</button>
+    </div>
+    <nav class="c-nav-main" id="nav-main">
+      <div class="c-nav-main__content">
+        <ul class="c-nav-main__list">
+          {{ navItem('🚀 Buy Ticket 🚀', buyTicketsLink) }}
+          {{ navItem('Info', contents['info.json'].url) }}
+          {{ navItem('Code of Conduct', contents['code-of-conduct.json'].url) }}
+          {{ navItem('Scholarships', contents['scholarships.json'].url) }}
+          {{ navItem('Call for Speakers', contents['call-for-speakers.json'].url) }}
+          {{ navItem('Team', contents['team.json'].url) }}
+          {{ navItem('Blog', 'https://blog.cssconf.eu', true) }}
+        </ul>
+        <button class="c-nav-main__close js-nav-main-toggle"
+                onclick="document.body.classList.toggle('is-nav-opened')">Close</button>
+      </div>
+    </nav>
+  </div>
+</header>

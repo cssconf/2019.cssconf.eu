@@ -1,0 +1,23 @@
+.c-content {
+  padding: 5rem 0;
+}
+
+.c-content--intro {
+  .svg-intro {
+    margin-bottom: 2rem;
+    @media(--m) {
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+.c-content--salmon {
+  background-color: var(--c-salmon-light);
+}
+
+.c-content--page-header {
+  padding-top: 6.875rem;
+  @media(--m) {
+    padding-top: 18.125rem;
+  }
+}

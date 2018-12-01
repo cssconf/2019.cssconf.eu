@@ -1,6 +1,6 @@
 body,
 button {
-  font-family: var(--ff-sans-serif-regular);
+  font-family: var(--ff-sans-serif);
 }
 
 body,
@@ -61,6 +61,7 @@ p,
 ul,
 ol {
   margin-top: 0;
+  hyphens: auto;
 }
 
 h1,

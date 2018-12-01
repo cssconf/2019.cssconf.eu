@@ -1,24 +1,37 @@
 {% extends "../layouts/default.html.njk" %}
 
-{% from "../_macros.njk" import svgIcon, callForSpeakersButton %}
+{% from "../_macros.njk" import svgIconNew, callForSpeakersButton %}
 
 {% block content %}
-
-  <section class="c-stage c-stage--picture">
+  <section class="c-content c-content--intro">
     <div class="l-container">
-      <div class="c-stage__content">
-        <h2 class="fz--delta">
-          Call for Speakers is open!
-        </h2>
-        <p class="copy">
-          We are inviting the CSS community to submit talks for the upcoming CSSconf EU.
-        </p>
-        {{ callForSpeakersButton(contents['call-for-speakers.json'].url, true, false) }}
-        <p class="copy">
-          The Call for Speakers will close <b>on December 23rd 2018</b>.
-        </p>
-      </div>
+      {{ svgIconNew(contents, 'intro', width = 1205, height = 458, title = 'CSSconf.EU - Berlin - May 31, 2019') }}
+      <p>
+        Dedicated to everyone who loves and writes CSS: CSSconf EU is a one-day, one-track community conference that
+        unites world-class speakers, top-notch engineers & web designers, and many more with an affinity for CSS in
+        Berlin, Germany.
+      </p>
+      <a href="{{ buyTicketsLink }}"
+         class="c-btn">
+        🚀 Buy Ticket
+      </a>
     </div>
   </section>
-
+  <section class="c-content c-content--salmon">
+    <div class="l-container">
+      <h2 class="fz--beta">
+        Call for Speakers is open!
+      </h2>
+      <p class="copy">
+        We are inviting the CSS community to submit talks for the upcoming CSSconf EU.<br>
+        The Call for Speakers will close <b>on December 23rd 2018</b>.
+      </p>
+      {{ callForSpeakersButton(
+        contents['call-for-speakers.json'].url,
+        truncateOnMobile = true,
+        openNewTab = false,
+        centered = false
+      ) }}
+    </div>
+  </section>
 {% endblock %}

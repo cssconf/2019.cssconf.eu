@@ -3,12 +3,14 @@
   background-size: cover;
   border: 0;
   color: var(--c-white);
-  height: 32px;
+  height: 3rem;
   position: relative;
-  width: 32px;
+  width: 3rem;
+  margin-left: 2rem;
   text-indent: -999em;
-
-  @media(--m) { display: none; }
+  @media(--m) {
+    margin-right: 1rem;
+  }
 }
 
 .is-nav-opened .c-nav-main-toggle {

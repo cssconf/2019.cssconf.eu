@@ -1,20 +1,23 @@
 .c-btn {
-  border: 0;
-  border-radius: 0;
-  background-color: var(--c-mint);
-  color: var(--c-blue-violet);
-  cursor: pointer;
-  padding: var(--l-unit) calc(var(--l-unit) * 2);
-  white-space: nowrap;
-  text-align: center;
-}
-
-.c-btn {
+  border-radius: 1.125rem;
+  border: 3px solid var(--c-black);
+  color: var(--c-blue);
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.75;
+  padding: .5rem 1rem;
   &:hover,
   &:focus {
-    color: var(--c-white);
-    background-color: var(--c-bittersweet);
-    outline: 2px solid var(--c-white);
+  }
+}
+
+.c-btn--header {
+  display: none;
+  font-size: 1.5rem;
+  line-height: 2;
+  @media(--s) {
+    display: inline-block;
   }
 }
 
@@ -26,6 +29,6 @@
 }
 
 .btn-block {
-  text-align: center;
   padding: 2rem 0;
+  text-align: center;
 }
