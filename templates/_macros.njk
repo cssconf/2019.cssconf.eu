@@ -78,6 +78,18 @@
   </p>
 {% endmacro %}
 
+{% macro callForArtistsButton(link, text = '', truncateOnMobile = false, openNewTab = true, centered = true) %}
+  <p {% if centered %}class="btn-block"{% endif %}>
+    <a href="{{ link }}" class="c-btn" {% if openNewTab %}target="_blank"{% endif %}>
+      {% if text %}
+        {{ text }}
+      {% else %}
+        Submit an Art
+      {% endif %}
+    </a>
+  </p>
+{% endmacro %}
+
 {% macro scholarshipApplyButton(link, truncateOnMobile = false, openNewTab = true, centered = true) %}
   <p {% if centered %}class="btn-block"{% endif %}>
     <a href="{{ link }}" class="c-btn" {% if openNewTab %}target="_blank"{% endif %}>

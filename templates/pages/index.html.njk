@@ -1,6 +1,7 @@
 {% extends "../layouts/default.html.njk" %}
 
 {% from "../_macros.njk" import svgIconNew, callForSpeakersButton %}
+{% from "../_macros.njk" import svgIconNew, callForArtistsButton %}
 
 {% block content %}
   <section class="c-content c-content--intro">
@@ -24,7 +25,7 @@
       </h2>
       <p class="copy">
         We are inviting the CSS community to submit talks for the upcoming CSSconf EU.<br>
-        The Call for Speakers will close <b>on December 23rd 2018</b>.
+        The Call for Speakers will close on <b class="tc-orange">December 23rd 2018</b>.
       </p>
       {{ callForSpeakersButton(
         contents['call-for-speakers.json'].url,
@@ -32,6 +33,36 @@
         openNewTab = false,
         centered = false
       ) }}
+    </div>
+  </section>
+  <section class="c-content">
+    <div class="l-container">
+      <h2 class="fz--beta">
+        Call for Artists is open!
+      </h2>
+      <p class="copy">
+        We are inviting the creative web technology community to submit artistic project ideas.<br>
+        If you draw and animate with CSS, make music in the browser, play with typography, or do anything else really: please submit a proposal.
+      </p>
+      {{ callForArtistsButton(
+        'https://docs.google.com/forms/d/e/1FAIpQLSd3vGFs8_0_pcMAYEUq8uP3-reyzPMVJwBXSpkjbct9svrBkg/viewform',
+        truncateOnMobile = true,
+        openNewTab = false,
+        centered = false
+      ) }}
+    </div>
+  </section>
+  <section class="c-content c-content--salmon">
+    <div class="l-container">
+      <h2 class="fz--beta">
+        Become a Sponsor!
+      </h2>
+      <p class="copy">
+        We are currently offering sponsorship packages for CSSconf EU and JSConf EU 2019 – the big 10th anniversary Festival edition.
+        Contact us to learn more about our available packages, or talk with us about your unique idea and custom offers.
+        <br>
+        <a href="mailto:contact@cssconf.eu">contact@cssconf.eu</a>
+      </p>
     </div>
   </section>
 {% endblock %}
