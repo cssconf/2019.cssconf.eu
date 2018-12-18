@@ -31,19 +31,19 @@
   }
 
   &--variant-a::before {
-    --bg-color: var(--c-cinnabar);
+    --bg-color: var(--c-orange);
   }
 
   &--variant-b::before {
-    --bg-color: var(--c-blue-violet);
+    --bg-color: var(--c-violet);
   }
 
   &--variant-c::before {
-    --bg-color: var(--c-illusion);
+    --bg-color: var(--c-pink);
   }
 
   &--variant-d::before {
-    --bg-color: var(--c-martinique);
+    --bg-color: var(--c-violet);
   }
 }
 
@@ -71,7 +71,7 @@
   --left: 2rem;
 
   bottom: var(--bottom);
-  color: var(--c-bright-sun);
+  color: var(--c-yellow);
   left: var(--left);
   margin-bottom: 0;
   position: absolute;

@@ -49,7 +49,7 @@
   &--footer {
     margin-bottom: 0;
     overflow: hidden;
-    background-color: var(--c-big-pink);
+    background-color: var(--c-salmon-light);
   }
 
   &--footer &__logo {

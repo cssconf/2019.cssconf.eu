@@ -37,7 +37,7 @@
   top: 0;
 
   &::before {
-    background-color: var(--c-cinnabar);
+    background-color: var(--c-orange);
     height: 2rem;
     width: 2rem;
   }
@@ -61,7 +61,7 @@
   top: 2.4rem;
 
   &::before {
-    background-color: var(--c-blue-violet);
+    background-color: var(--c-violet);
     height: 1.5rem;
     width: 1.5rem;
   }

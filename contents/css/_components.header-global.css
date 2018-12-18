@@ -1,6 +1,6 @@
 .c-header-global {
   align-items: center;
-  background-color: var(--c-martinique);
+  background-color: var(--c-violet);
   color: var(--c-mint);
   display: flex;
   flex-grow: 0;
@@ -37,7 +37,7 @@
 }
 
 .c-header-global__text--date {
-  color: var(--c-cinnabar);
+  color: var(--c-orange);
 }
 
 .c-header-global__text--location {

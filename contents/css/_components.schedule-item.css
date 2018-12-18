@@ -23,11 +23,11 @@
   }
 
   &__misc {
-    background: var(--c-big-pink);
+    background: var(--c-salmon-light);
     padding: 1rem;
 
     b {
-      color: var(--c-blue-violet);
+      color: var(--c-violet);
       display: inline-block;
       margin-bottom: .5rem;
       text-transform: uppercase;
@@ -36,8 +36,8 @@
 }
 
 .c-schedule-item--variant-a {
-  border-top-color: var(--c-blue-violet);
-  color: var(--c-blue-violet);
+  border-top-color: var(--c-violet);
+  color: var(--c-violet);
 }
 
 .c-schedule-item--variant-b {
@@ -46,11 +46,11 @@
 }
 
 .c-schedule-item--variant-c {
-  border-top-color: var(--c-cinnabar);
-  color: var(--c-cinnabar);
+  border-top-color: var(--c-orange);
+  color: var(--c-orange);
 }
 
 .c-schedule-item--variant-d {
-  border-top-color: var(--c-illusion);
-  color: var(--c-illusion);
+  border-top-color: var(--c-pink);
+  color: var(--c-pink);
 }
