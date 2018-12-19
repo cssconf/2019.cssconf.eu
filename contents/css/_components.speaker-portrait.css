@@ -8,7 +8,7 @@
   height: 100%;
 
   &--variant-a {
-    --color: var(--c-blue-violet);
+    --color: var(--c-violet);
   }
 
   &--variant-b {
@@ -16,11 +16,11 @@
   }
 
   &--variant-c {
-    --color: var(--c-cinnabar);
+    --color: var(--c-orange);
   }
 
   &--variant-d {
-    --color: var(--c-illusion);
+    --color: var(--c-pink);
   }
 
   &::before {

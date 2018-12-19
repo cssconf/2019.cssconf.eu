@@ -28,7 +28,7 @@
       top: -1rem;
       width: 3rem;
       height: 3rem;
-      background-color: var(--c-big-pink);
+      background-color: var(--c-salmon-light);
       z-index: -1;
 
       @media(--m) {
@@ -39,7 +39,7 @@
   }
 
   &__person--variant-a::before {
-    background-color: var(--c-blue-violet);
+    background-color: var(--c-violet);
   }
 
   &__person--variant-b::before {
@@ -47,11 +47,11 @@
   }
 
   &__person--variant-c::before {
-    background-color: var(--c-cinnabar);
+    background-color: var(--c-orange);
   }
 
   &__person--variant-d::before {
-    background-color: var(--c-illusion);
+    background-color: var(--c-pink);
   }
 
   &__avatar {

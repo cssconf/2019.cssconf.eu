@@ -1,0 +1,37 @@
+/* text colors, prefix: tc- */
+.tc-black {
+  color: var(--c-black);
+}
+.tc-white {
+  color: var(--c-white);
+}
+.tc-gray {
+  color: var(--c-gray);
+}
+.tc-blue {
+  color: var(--c-blue);
+}
+.tc-pink {
+  color: var(--c-pink);
+}
+.tc-salmon {
+  color: var(--c-salmon);
+}
+.tc-salmon-light {
+  color: var(--c-salmon-light);
+}
+.tc-orange {
+  color: var(--c-orange);
+}
+.tc-violet {
+  color: var(--c-violet);
+}
+.tc-mint {
+  color: var(--c-mint);
+}
+.tc-green {
+  color: var(--c-green);
+}
+.tc-yellow {
+  color: var(--c-yellow);
+}

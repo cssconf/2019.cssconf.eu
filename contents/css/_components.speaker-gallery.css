@@ -37,7 +37,7 @@
 
   &__title {
     bottom: 0;
-    color: var(--c-bright-sun);
+    color: var(--c-yellow);
     display: flex;
     flex-direction: column;
     margin-bottom: 0;
@@ -65,24 +65,24 @@
       color: var(--c-black);
     }
 
-    &--textcolor-bright-sun {
-      color: var(--c-bright-sun);
+    &--textcolor-yellow {
+      color: var(--c-yellow);
     }
 
-    &--textcolor-martinique {
-      color: var(--c-martinique);
+    &--textcolor-violet {
+      color: var(--c-violet);
     }
 
-    &--textcolor-blue-violet {
-      color: var(--c-blue-violet);
+    &--textcolor-violet {
+      color: var(--c-violet);
     }
 
-    &--textcolor-cinnabar {
-      color: var(--c-cinnabar);
+    &--textcolor-orange {
+      color: var(--c-orange);
     }
 
-    &--textcolor-illusion {
-      color: var(--c-illusion);
+    &--textcolor-pink {
+      color: var(--c-pink);
     }
 
     &--textcolor-mint {
@@ -105,19 +105,19 @@
     }
 
     &--variant-a span {
-      background-color: var(--c-cinnabar);
+      background-color: var(--c-orange);
     }
 
     &--variant-b span {
-      background-color: var(--c-blue-violet);
+      background-color: var(--c-violet);
     }
 
     &--variant-c span {
-      background-color: var(--c-illusion);
+      background-color: var(--c-pink);
     }
 
     &--variant-d span {
-      background-color: var(--c-martinique);
+      background-color: var(--c-violet);
     }
   }
 

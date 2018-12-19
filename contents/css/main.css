@@ -42,7 +42,9 @@
 @import "_components.team.css";
 @import "_components.paragraph-indent.css";
 @import "_components.speaker.css";
+
 /* Utilities */
+@import "_utilities.inline-styles.css";
 
 /* Page specific styles */
 @import "_pages.coc.css";

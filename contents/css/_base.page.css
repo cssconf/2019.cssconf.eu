@@ -22,10 +22,10 @@ html {
 }
 
 a {
-  color: var(--c-cinnabar);
+  color: var(--c-blue);
   text-decoration: none;
   &:hover,
   &:focus {
-    color: var(--c-illusion);
+    color: var(--c-violet);
   }
 }
