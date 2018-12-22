@@ -29,7 +29,7 @@
     <meta property="og:image" content="{{ url }}{{ image }}">
   {% endblock %}
   {% include "../partials/favicon.html.njk" %}
-  <link rel="stylesheet" href="{{ contents.css["main.css"].url }}?{{ cacheBuster }}">
+  <link rel="stylesheet" href="{{ contents.css['main.css'].url }}?{{ cacheBuster }}">
   <link rel="prefetch" href="https://ti.to/cssconfeu/cssconfeu-2019/">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#302e57">
@@ -46,7 +46,10 @@
 {% endblock %}
 
 {% include "../partials/globe.html.njk" %}
-{% include "../partials/footer.html.njk" %}
+
+{% block footer %}
+  {% include "../partials/footer.html.njk" %}
+{% endblock %}
 
 <div style="height: 0; width: 0; position: absolute; visibility: hidden;">
   {{ contents.svg['sprite.svg'].sprite }}
