@@ -1,7 +1,50 @@
-@custom-media --xs (width >= 24rem);
 @custom-media --s (width >= 30rem);
 @custom-media --m (width >= 48rem);
 @custom-media --l (width >= 64rem);
-@custom-media --xl (width >= 80rem);
-@custom-media --xxl (width >= 100rem);
-@custom-media --xxxl (width >= 112rem);
+
+:root {
+  --breakpoint-s: 30rem;
+  --breakpoint-m: 48rem;
+  --breakpoint-l: 64rem;
+}
+
+
+/*  just debugging mediaqueries here */
+/*  DO NOT DELETE THIS: Declaring all available breakpoints here fixes an issue where postcss outputs the mediaqueries in the wrong order. */
+body {
+  &::before {
+    display: block;
+    display: none; /* un-comment this line to test media queries in DEV mode */
+    color: white;
+    background: black;
+    position: fixed;
+    width: 200px;
+    text-align: center;
+    content: 'breakpoint: none';
+    opacity: .8;
+    font-size: .875rem;
+    font-family: monospace;
+    padding: .25rem;
+    z-index: 10;
+  }
+  @media(--s) {
+    /* background: red; */
+    &::before {
+      content: 'breakpoint --s (30rem)';
+    }
+  }
+
+  @media(--m) {
+    /* background: green; */
+    &::before {
+      content: 'breakpoint --m (48rem)';
+    }
+  }
+
+  @media(--l) {
+    /* background: blue; */
+    &::before {
+      content: 'breakpoint --l (64rem)';
+    }
+  }
+}

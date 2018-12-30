@@ -15,7 +15,7 @@
     )
   }}
 
-  <div class="l-container">
+  <div class="l-container l-container--xxl">
     <div class="c-markdown">
       {% set teamTypes = ['organizers', 'organizer-alumni', 'core-team', 'jsconf-family', 'community-lounge-team', 'talk-selection-committee', 'meno'] %}
 
@@ -42,6 +42,7 @@
 
             {{ teamMemberPortrait(teamMember, portraitImage) }}
           {% endfor %}
+
         </div>
       {% endfor %}
     </div>
