@@ -1,7 +1,5 @@
 {% extends "../layouts/default.html.njk" %}
 
-{% from "../_macros.njk" import callForSpeakersButton %}
-
 {% block main %}
   {% set data = contents.copy.cfs['intro.md'] %}
 
@@ -9,7 +7,9 @@
     <div class="l-container">
       <h1>{{ data.metadata.title }}</h1>
       <p class="copy--max">{{ data.metadata.introText }}</p>
-      {{ callForSpeakersButton(callForSpeakersLink, text = "Apply Now") }}
+      <div class="tc-orange">
+        {{ contents.copy.cfs['open-until.md'].html }}
+      </div>
       <figure class="c-page-header__image">
         <img src="{{ contents.images.intros['call-for-speakers-mobile.png'].url }}"
              srcset="{{ contents.images.intros['call-for-speakers.png'].url }} 768w"
@@ -46,6 +46,9 @@
     <div class="l-container">
       <div class="c-markdown c-markdown--indented-paragraphs">
         {{ contents.copy.cfs['selection-process.md'].html }}
+        <div class="tc-orange">
+          {{ contents.copy.cfs['open-until.md'].html }}
+        </div>
       </div>
     </div>
   </section>
