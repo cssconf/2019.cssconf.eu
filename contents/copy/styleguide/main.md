@@ -11,10 +11,10 @@ Paragraph lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 
 <p class="copy--mini">This is a small print text. Use the class <code>.copy--mini</code> to style it like this. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
 
-## Level 2 Heading
-### Level 3 Heading
-#### Level 4 Heading
-##### Level 5 Heading
+## Level 2 Heading Let's make this longer to see what it looks like with multiple lines
+### Level 3 Heading Let's make this longer to see what it looks like with multiple lines
+#### Level 4 Heading Let's make this longer to see what it looks like with multiple lines
+##### Level 5 Heading Let's make this longer to see what it looks like with multiple lines Let's make this longer to see what it looks like with multiple lines
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor. Here comes a horizontal ruler:
 
