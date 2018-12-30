@@ -1,0 +1,26 @@
+{% set newsList = contents.news._.pages | filterObjects('metadata.article.published', true) | filterObjects('metadata.article.reviewed', true) | sortObjects('metadata.date', '2017-01-01', 'date') | reverse %}
+
+{% if newsList | length > 0 %}
+  <section class="c-content">
+    <div class="l-container">
+      <h2 class="fz--beta">
+        News
+      </h2>
+
+      <div class="c-news">
+        {% for news in newsList %}
+          <article class="c-news__item" onclick="location=this.querySelector('a').href">
+            <time>{{ moment(news.metadata.date).utcOffset(8).format('ddd, DD MMM YYYY') }}</time>
+            <h3 class="c-news__title">{{ news.title }}</h3>
+            <p>
+              {{ news.html | striptags | truncate('150') }}
+            </p>
+            <p>
+              <a href="{{ news.url }}">Read more</a>
+            </p>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
