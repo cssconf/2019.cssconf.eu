@@ -1,6 +1,6 @@
 {% extends "../layouts/default.html.njk" %}
 
-{% from "../_macros.njk" import svgIconNew, callForSpeakersButton, callForArtistsButton %}
+{% from "../_macros.njk" import svgIconNew, callForArtistsButton %}
 
 {% block content %}
   <section class="c-content c-content--intro">
@@ -20,18 +20,14 @@
   <section class="c-content c-content--salmon">
     <div class="l-container">
       <h2 class="fz--beta">
-        Call for Speakers is open!
+        Become a Sponsor!
       </h2>
       <p class="copy">
-        We are inviting the CSS community to submit talks for the upcoming CSSconf EU.<br>
-        The Call for Speakers will close on <b class="tc-orange">December 30th 2018</b>.
+        We are currently offering sponsorship packages for CSSconf EU and JSConf EU 2019 – the big 10th anniversary Festival edition.
+        Contact us to learn more about our available packages, or talk with us about your unique idea and custom offers.
+        <br>
+        <a href="mailto:contact@cssconf.eu">contact@cssconf.eu</a>
       </p>
-      {{ callForSpeakersButton(
-        contents['call-for-speakers.json'].url,
-        truncateOnMobile = true,
-        openNewTab = false,
-        centered = false
-      ) }}
     </div>
   </section>
   <section class="c-content">
@@ -54,13 +50,10 @@
   <section class="c-content c-content--salmon">
     <div class="l-container">
       <h2 class="fz--beta">
-        Become a Sponsor!
+        Call for Speakers is closed!
       </h2>
       <p class="copy">
-        We are currently offering sponsorship packages for CSSconf EU and JSConf EU 2019 – the big 10th anniversary Festival edition.
-        Contact us to learn more about our available packages, or talk with us about your unique idea and custom offers.
-        <br>
-        <a href="mailto:contact@cssconf.eu">contact@cssconf.eu</a>
+        Our Call for Speakers is now closed – thanks for submitting over 200 fantastic proposals! Our talk selection committee is busy reviewing and we will announce the final speaker selection in early spring 2019.
       </p>
     </div>
   </section>
