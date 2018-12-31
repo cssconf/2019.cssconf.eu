@@ -1,3 +1,13 @@
+ @font-face {
+   font-family: "GT Walsheim Pro";
+   font-display: fallback;
+   font-weight: normal;
+   src: url('contents:fonts/GT-Walsheim-Regular.eot');
+   src: url('contents:fonts/GT-Walsheim-Regular.eot') format('embedded-opentype'),
+   url('contents:fonts/GT-Walsheim-Regular.woff') format('woff'),
+   url('contents:fonts/GT-Walsheim-Regular.ttf') format('truetype');
+ }
+
 @font-face {
   font-family: "GT Walsheim Pro";
   font-display: fallback;
