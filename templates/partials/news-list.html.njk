@@ -1,7 +1,7 @@
 {% set newsList = contents.news._.pages | filterObjects('metadata.article.published', true) | filterObjects('metadata.article.reviewed', true) | sortObjects('metadata.date', '2017-01-01', 'date') | reverse %}
 
 {% if newsList | length > 0 %}
-  <section class="c-content">
+  <section class="c-content c-content--salmon">
     <div class="l-container">
       <h2 class="fz--beta">
         News
