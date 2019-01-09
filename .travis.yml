@@ -8,10 +8,12 @@ before_deploy:
   - openssl aes-256-cbc -K $encrypted_c8d619f32365_key -iv $encrypted_c8d619f32365_iv -in secrets.tar.enc -out secrets.tar -d
   - tar xvf secrets.tar
   - npm run-script ci:build
+  - cp contents/README.md build/
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: "$GITHUB_TOKEN"
+  repo: lukaszklis/ghpages.2019.cssconf.eu
   local_dir: build
   on:
     branch: master
