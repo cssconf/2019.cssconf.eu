@@ -59,6 +59,9 @@
       {% if teamMember.description %}
         <p class="c-team__description">{{ teamMember.description }}</p>
       {% endif %}
+      {% if teamMember.tags and teamMember.type === 'team' %}
+        <p class="c-team__description">{{ teamMember.tags }}</p>
+      {% endif %}
       {% if teamMember.twitterHandle %}
         <a class="c-team__link" href="https://twitter.com/{{ teamMember.twitterHandle }}" target="_blank">@{{ teamMember.twitterHandle }}</a>
       {% endif %}

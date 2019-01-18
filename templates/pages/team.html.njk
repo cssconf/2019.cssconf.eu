@@ -17,21 +17,17 @@
 
   <div class="l-container l-container--xxl">
     <div class="c-markdown">
-      {% set teamTypes = ['organizers', 'organizer-alumni', 'core-team', 'jsconf-family', 'community-lounge-team', 'talk-selection-committee', 'meno'] %}
+      {% set teamTypes = ['organizers', 'team', 'alumni'] %}
 
       {% for teamType in teamTypes %}
-        {% set teamPages = contents.team._.pages |
+        {% set teamPages = contents['team-preview']._.pages |
           filterObjects('metadata.team.type', teamType) |
           filterObjects('metadata.team.published', true) |
           filterObjects('metadata.team.reviewed', true) |
           sortObjects('metadata.team.id', 'aaa', 'string') %}
         {% set teamTypeTitle = teamPages | first %}
 
-        {% if teamType === 'organizers' or teamType === 'core-team' %}
-          <h2>{{ teamTypeTitle.metadata.team.typeTitle }}</h2>
-        {% else %}
-          <h3>{{ teamTypeTitle.metadata.team.typeTitle }}</h3>
-        {% endif %}
+        <h2>{{ teamTypeTitle.metadata.team.typeTitle }}</h2>
 
         <div class="c-team">
           {% for teamPage in teamPages %}
@@ -42,7 +38,6 @@
 
             {{ teamMemberPortrait(teamMember, portraitImage) }}
           {% endfor %}
-
         </div>
       {% endfor %}
     </div>
