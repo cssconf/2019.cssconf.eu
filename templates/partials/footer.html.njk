@@ -27,11 +27,14 @@
     </ul>
   </nav>
   {% block sponsors %}
-    <div class="c-sponsor-footer c-sponsors--footer">
-      <div class="l-container l-container--xl">
-        {% include '../partials/sponsors-gallery.html.njk' %}
+    {% set sponsorsPages = contents.sponsors._.pages | filterObjects('metadata.sponsor.type', sponsorType) | filterObjects('metadata.sponsor.published', true) | sortObjects('metadata.sponsor.order', '', 'number') | reverse %}
+    {% if sponsorsPages.length %}
+      <div class="c-sponsor-footer c-sponsors--footer">
+        <div class="l-container l-container--xl">
+          {% include '../partials/sponsors-gallery.html.njk' %}
+        </div>
       </div>
-    </div>
+    {% endif %}
   {% endblock %}
   <nav class="c-nav-social">
     <ul class="c-nav-list c-nav-list--footer-global copy--midi">
