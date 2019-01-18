@@ -39,6 +39,10 @@
             {{ teamMemberPortrait(teamMember, portraitImage) }}
           {% endfor %}
         </div>
+
+        {% if teamType === 'alumni' %}
+          {{ contents.copy.team['alumni.md'].html }}
+        {% endif %}
       {% endfor %}
     </div>
   </div>
