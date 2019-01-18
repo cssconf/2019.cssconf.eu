@@ -78,13 +78,18 @@ const sheetParams = {
     dataFieldName: 'team',
     contentPath: 'team'
   },
+  'team-preview': {
+    templateGlobals: {},
+    dataFieldName: 'team',
+    contentPath: 'team-preview'
+  },
   articles: {
     templateGlobals: {
       template: 'pages/placeholder.html.njk'
     },
     dataFieldName: 'article',
     contentPath: 'news'
-  },
+  }
 };
 
 const wwwtfrcFile = __dirname + '/../../.wwwtfrc';
@@ -136,7 +141,14 @@ async function main(params) {
   if (params.doCleanup) {
     console.log(chalk.gray('cleaning up...'));
 
-    await Promise.all([rimraf(path.join(contentRoot, '{artists,schedule,speakers,sponsors,talks,team}/*md'))]);
+    await Promise.all([
+      rimraf(
+        path.join(
+          contentRoot,
+          '{artists,schedule,speakers,sponsors,talks,team,team-preview}/*md'
+        )
+      )
+    ]);
   }
 
   // ---- fetch spreadsheet-data...
