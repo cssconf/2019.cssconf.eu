@@ -48,11 +48,11 @@ const sheetParams = {
     dataFieldName: 'artist',
     contentPath: 'artists'
   },
-  schedule: {
+  /*schedule: {
     templateGlobals: {},
     dataFieldName: 'schedule',
     contentPath: 'schedule'
-  },
+  },*/
   speakers: {
     templateGlobals: {
       template: 'pages/speaker.html.njk'
