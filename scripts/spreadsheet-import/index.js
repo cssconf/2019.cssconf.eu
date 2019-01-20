@@ -192,6 +192,11 @@ async function main(params) {
         if (sheetId === 'team') {
           title = `${data.firstname} ${data.lastname}`;
         }
+        if (!title) {
+          title = 'missing title';
+          console.error(chalk.red('Missing title'));
+          console.dir(data);
+        }
 
         let imageExtension = null;
         if (sheetId === 'sponsors') {
