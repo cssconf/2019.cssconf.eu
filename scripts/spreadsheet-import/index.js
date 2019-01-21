@@ -78,11 +78,6 @@ const sheetParams = {
     dataFieldName: 'team',
     contentPath: 'team'
   },
-  'team-preview': {
-    templateGlobals: {},
-    dataFieldName: 'team',
-    contentPath: 'team-preview'
-  },
   articles: {
     templateGlobals: {
       template: 'pages/placeholder.html.njk'
@@ -145,7 +140,7 @@ async function main(params) {
       rimraf(
         path.join(
           contentRoot,
-          '{artists,schedule,speakers,sponsors,talks,team,team-preview}/*md'
+          '{artists,schedule,speakers,sponsors,talks,team}/*md'
         )
       )
     ]);

@@ -20,7 +20,7 @@
       {% set teamTypes = ['organizers', 'team', 'alumni'] %}
 
       {% for teamType in teamTypes %}
-        {% set teamPages = contents['team-preview']._.pages |
+        {% set teamPages = contents.team._.pages |
           filterObjects('metadata.team.type', teamType) |
           filterObjects('metadata.team.published', true) |
           filterObjects('metadata.team.reviewed', true) |
