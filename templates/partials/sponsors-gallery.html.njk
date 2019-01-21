@@ -1,0 +1,24 @@
+<div class="c-sponsors">
+  {% set sponsorTypes = ['main', 'supporting', 'community'] %}
+
+  {% for sponsorType in sponsorTypes %}
+    {% set sponsorsPages = contents.sponsors._.pages | filterObjects('metadata.sponsor.type', sponsorType) | filterObjects('metadata.sponsor.published', true) | sortObjects('metadata.sponsor.order', '', 'number') | reverse %}
+
+    {% if sponsorsPages.length %}
+      <h2 class="c-sponsors__title">
+        {{ sponsorType | capitalize }}
+        Sponsors
+      </h2>
+
+      <div class="c-sponsors__logos">
+        {% for sponsorPage in sponsorsPages %}
+          {% set sponsor = sponsorPage.metadata.sponsor %}
+
+          <a class="c-sponsors__logo c-sponsors__logo--{{ sponsorType }}" href="{{ sponsor.link }}" title="{{ sponsor.name }}" rel="nofollow">
+            <img class="c-sponsors__image" src="{{ contents.images.cms[sponsor.image.filename].url }}?{{ cacheBuster }}">
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>

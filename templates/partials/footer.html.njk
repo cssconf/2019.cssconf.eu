@@ -26,40 +26,40 @@
       </li>
     </ul>
   </nav>
+  {% block sponsors %}
+    {% set sponsorsPages = contents.sponsors._.pages | filterObjects('metadata.sponsor.type', sponsorType) | filterObjects('metadata.sponsor.published', true) | sortObjects('metadata.sponsor.order', '', 'number') | reverse %}
+    {% if sponsorsPages.length %}
+      <div class="c-sponsor-footer c-sponsors--footer">
+        <div class="l-container l-container--xl">
+          {% include '../partials/sponsors-gallery.html.njk' %}
+        </div>
+      </div>
+    {% endif %}
+  {% endblock %}
   <nav class="c-nav-social">
     <ul class="c-nav-list c-nav-list--footer-global copy--midi">
       <li>
-        <a class="c-nav-list__anchor c-nav-list__anchor--social"
-           target="_blank"
-           href="https://github.com/cssconf/2019.cssconf.eu">
+        <a class="c-nav-list__anchor c-nav-list__anchor--social" target="_blank" href="https://github.com/cssconf/2019.cssconf.eu">
           GitHub
         </a>
       </li>
       <li>
-        <a class="c-nav-list__anchor c-nav-list__anchor--social"
-           target="_blank"
-           href="https://www.facebook.com/cssconfeu/">
+        <a class="c-nav-list__anchor c-nav-list__anchor--social" target="_blank" href="https://www.facebook.com/cssconfeu/">
           Facebook
         </a>
       </li>
       <li>
-        <a class="c-nav-list__anchor c-nav-list__anchor--social"
-           target="_blank"
-           href="https://twitter.com/cssconfeu">
+        <a class="c-nav-list__anchor c-nav-list__anchor--social" target="_blank" href="https://twitter.com/cssconfeu">
           Twitter
         </a>
       </li>
       <li>
-        <a class="c-nav-list__anchor c-nav-list__anchor--social"
-           target="_blank"
-           href="https://plus.google.com/+CssconfEu/">
+        <a class="c-nav-list__anchor c-nav-list__anchor--social" target="_blank" href="https://plus.google.com/+CssconfEu/">
           Google+
         </a>
       </li>
       <li>
-        <a class="c-nav-list__anchor c-nav-list__anchor--social"
-           target="_blank"
-           href="https://www.youtube.com/playlist?list=PL37ZVnwpeshF0XmpjKBJ3-0kvr3b5ZpJR">
+        <a class="c-nav-list__anchor c-nav-list__anchor--social" target="_blank" href="https://www.youtube.com/playlist?list=PL37ZVnwpeshF0XmpjKBJ3-0kvr3b5ZpJR">
           YouTube
         </a>
       </li>
