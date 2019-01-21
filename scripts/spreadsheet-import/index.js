@@ -4,12 +4,15 @@ const yaml = require('js-yaml');
 const wordwrap = require('wordwrap')(80);
 const chalk = require('chalk');
 const program = require('commander');
-const {promisify} = require('util');
-const {getSheetData} = require('./spreadsheet-api');
-const {processSheet, simplifySpreadsheetData} = require('./spreadsheet-utils');
+const { promisify } = require('util');
+const { getSheetData } = require('./spreadsheet-api');
+const {
+  processSheet,
+  simplifySpreadsheetData
+} = require('./spreadsheet-utils');
 const rimraf = promisify(require('rimraf'));
 const mkdirp = require('mkdirp');
-const {downloadImage} = require('./image-download');
+const { downloadImage } = require('./image-download');
 
 const timeout = promisify(setTimeout);
 
@@ -81,7 +84,7 @@ const sheetParams = {
     },
     dataFieldName: 'article',
     contentPath: 'news'
-  },
+  }
 };
 
 const wwwtfrcFile = __dirname + '/../../.wwwtfrc';
@@ -114,7 +117,7 @@ if (!hasRcFile) {
   console.log('saving settings to', chalk.green('.wwwtfrc'));
   fs.writeFileSync(
     wwwtfrcFile,
-    JSON.stringify({spreadsheetId: params.spreadsheetId}, null, 2)
+    JSON.stringify({ spreadsheetId: params.spreadsheetId }, null, 2)
   );
 }
 
@@ -133,7 +136,14 @@ async function main(params) {
   if (params.doCleanup) {
     console.log(chalk.gray('cleaning up...'));
 
-    await Promise.all([rimraf(path.join(contentRoot, '{artists,schedule,speakers,sponsors,talks,team}/*md'))]);
+    await Promise.all([
+      rimraf(
+        path.join(
+          contentRoot,
+          '{artists,schedule,speakers,sponsors,talks,team}/*md'
+        )
+      )
+    ]);
   }
 
   // ---- fetch spreadsheet-data...
@@ -171,14 +181,17 @@ async function main(params) {
       console.log(chalk.red('Missing metadata for'), sheetId);
       return;
     }
-    const {templateGlobals, dataFieldName, contentPath} = sheetParams[sheetId];
+    const { templateGlobals, dataFieldName, contentPath } = sheetParams[
+      sheetId
+    ];
     ensureDirExists(contentPath);
     const records = processSheet(sheets[sheetId]);
 
     console.log(chalk.white('processing sheet %s'), chalk.yellow(sheetId));
-    processedRecords.push.apply(processedRecords, records
-      .map(async function(record) {
-        let {content = '', ...data} = record;
+    processedRecords.push.apply(
+      processedRecords,
+      records.map(async function(record) {
+        let { content = '', ...data } = record;
         let title = data.name;
 
         if (sheetId === 'speakers') {
@@ -232,14 +245,16 @@ async function main(params) {
           filename = `${filename}-${secret}`;
           previewFiles.push({
             url: `/${cpath}/${filename}.html`,
-            name: data.name,
+            name: data.name
           });
         }
         const fullpath = path.join(contentRoot, cpath, `${filename}.md`);
 
         console.log(
           ' --> write markdown %s',
-          chalk.green(path.relative(process.cwd(), fullpath.replace(secret, '...')))
+          chalk.green(
+            path.relative(process.cwd(), fullpath.replace(secret, '...'))
+          )
         );
 
         const frontmatter = yaml.safeDump(metadata);
@@ -252,20 +267,27 @@ async function main(params) {
             '\n\n----\n\n' +
             wordwrap(content || '');
 
-            fs.writeFile(fullpath, markdownContent, () => {/*fire and forget*/});
+          fs.writeFile(fullpath, markdownContent, () => {
+            /*fire and forget*/
+          });
         } catch (err) {
           console.error('whoopsie', err);
         }
-      }));
+      })
+    );
   });
   await Promise.all(processedRecords);
   ensureDirExists('preview');
-  fs.writeFileSync(`${contentRoot}/preview/${secret}.md`,
-      '----\n\ntemplate: pages/simple.html.njk\n' +
+  fs.writeFileSync(
+    `${contentRoot}/preview/${secret}.md`,
+    '----\n\ntemplate: pages/simple.html.njk\n' +
       'filename: :file.html\n\n----\n\n' +
-      previewFiles.map(file => {
-        return `<a href="${file.url}">${file.name}</a>`;
-      }).join('<br>\n'));
+      previewFiles
+        .map(file => {
+          return `<a href="${file.url}">${file.name}</a>`;
+        })
+        .join('<br>\n')
+  );
 }
 
 function extractFrontmatter(data, content) {
@@ -275,7 +297,7 @@ function extractFrontmatter(data, content) {
   }
   let sepCount = 0;
   let yamlString = '';
-  let rest = ''
+  let rest = '';
   content.split('\n').forEach(line => {
     if (line == '----') {
       sepCount++;
@@ -294,7 +316,7 @@ function extractFrontmatter(data, content) {
   try {
     return {
       frontmatter: yaml.safeLoad(yamlString),
-      content: rest,
+      content: rest
     };
   } catch (e) {
     console.log(chalk.red('Invalid frontmatter in'), data.name, e.message);
