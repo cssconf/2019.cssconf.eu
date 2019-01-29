@@ -224,6 +224,13 @@ async function main(params) {
           content = extracted.content;
           frontmatterFromContent = extracted.frontmatter;
         }
+
+        const imagesInContent = [];
+        content = await downloadContentUrls(content, imagesInContent);
+        if (!data.image.filename && imagesInContent.length) {
+          data.image = imagesInContent[0];
+        }
+
         const metadata = {
           ...templateGlobals,
           title,
@@ -331,4 +338,28 @@ function getFilename(name) {
   filename = filename.replace(/-$/g, '');
   filename = filename.replace(/^-/g, '');
   return filename.toLowerCase();
+}
+
+
+// Turn the text pattern DOWNLOAD(https://some.com/url)
+// into a contents:images/cms/filename.jpg URL that is later
+// resolved when rendering to the actual URL.
+async function downloadContentUrls(text, imagesOut) {
+  const imagePromises = [];
+  const re = /DOWNLOAD\(([^\)]+)\)/g;
+  text.replace(re, (match, url) => {
+    imagePromises.push(downloadImage(url, 'image'));
+  });
+  const images = await Promise.all(imagePromises);
+  let i = 0;
+  text = text.replace(re, () => {
+    const image = images[i++];
+    let filename = image.filename;
+    if (image.originalType == 'jpg') {
+      filename = image.filename_1000;
+    }
+    return 'contents:images/cms/' + filename;
+  });
+  imagesOut.push.apply(imagesOut, images);
+  return text;
 }
