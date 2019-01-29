@@ -14,7 +14,7 @@
   <div class="l-container">
     <main>
       <div class="c-markdown c-markdown--indented-paragraphs">
-        {{ page.html }}
+        {{ page.html | contentUrls(contents) }}
       </div>
     </main>
   </div>
