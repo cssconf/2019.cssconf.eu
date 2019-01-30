@@ -121,7 +121,10 @@ if (!hasRcFile) {
   );
 }
 
-main(params).catch(err => console.error(err));
+main(params).catch(err => {
+  console.error(chalk.red(err))
+  process.exit(1);
+});
 
 function ensureDirExists(dir) {
   const fullDir = `${__dirname}/../../contents/${dir}`;
@@ -299,14 +302,14 @@ async function main(params) {
 
 function extractFrontmatter(data, content) {
   let frontmatterFromContent;
-  if (!content.startsWith('----\n')) {
+  if (!/^----*\n/.test(content.trim())) {
     return;
   }
   let sepCount = 0;
   let yamlString = '';
-  let rest = '';
+  let rest = ''
   content.split('\n').forEach(line => {
-    if (line == '----') {
+    if (/^----*$/.test(line)) {
       sepCount++;
       return;
     }
@@ -323,7 +326,7 @@ function extractFrontmatter(data, content) {
   try {
     return {
       frontmatter: yaml.safeLoad(yamlString),
-      content: rest
+      content: rest,
     };
   } catch (e) {
     console.log(chalk.red('Invalid frontmatter in'), data.name, e.message);
