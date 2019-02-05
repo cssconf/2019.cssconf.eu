@@ -100,3 +100,30 @@
     </a>
   </p>
 {% endmacro %}
+
+{% macro sponsorsGallery(cmsImages, sponsors, sponsorTypes = ['main', 'supporting', 'community'], headline = true) %}
+  <div class="c-sponsors">
+    {% for sponsorType in sponsorTypes %}
+      {% set sponsorsPages = sponsors  | filterObjects('metadata.sponsor.type', sponsorType) %}
+
+      {% if sponsorsPages.length %}
+        {% if headline %}
+          <h2 class="c-sponsors__title">
+            {{ sponsorType | capitalize }}
+            Sponsors
+          </h2>
+        {% endif %}
+
+        <div class="c-sponsors__logos">
+          {% for sponsorPage in sponsorsPages %}
+            {% set sponsor = sponsorPage.metadata.sponsor %}
+
+            <a class="c-sponsors__logo c-sponsors__logo--{{ sponsorType }}" href="{{ sponsor.link }}" title="{{ sponsor.name }}" rel="nofollow">
+              <img class="c-sponsors__image" src="{{ cmsImages[sponsor.image.filename].url }}?{{ cacheBuster }}">
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endmacro %}
