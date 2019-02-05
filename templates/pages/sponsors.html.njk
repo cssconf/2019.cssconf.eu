@@ -1,6 +1,6 @@
 {% extends "../layouts/default.html.njk" %}
 
-{% from "../_macros.njk" import pageIntro %}
+{% from "../_macros.njk" import pageIntro, sponsorsGallery %}
 
 {% block content %}
   {% set data = contents
@@ -16,7 +16,12 @@
   }}
 
   <div class="l-container l-container--xl">
-    {% include '../partials/sponsors-gallery.html.njk' %}
+    {% set sponsorsPages = contents.sponsors._.pages
+      | filterObjects('metadata.sponsor.published', false)
+      | sortObjects('metadata.sponsor.order', '', 'number')
+      | reverse
+    %}
+    {{ sponsorsGallery(contents.images.cms, sponsorsPages) }}
   </div>
 
   <div class="l-container">
@@ -25,6 +30,16 @@
         {{ contents.copy.sponsors['sponsors.md'].html }}
       </div>
     </main>
+  </div>
+
+  <div class="l-container l-container--xl">
+    <h3>A heartfelt thanks to our 2018 sponsors:</h3>
+    {% set sponsorsPages = contents.sponsors._.pages
+      | filterObjects('metadata.sponsor.published', true)
+      | sortObjects('metadata.sponsor.order', '', 'number')
+      | reverse
+    %}
+    {{ sponsorsGallery(contents.images.cms, sponsorsPages, ['legacy'], false) }}
   </div>
 {% endblock %}
 

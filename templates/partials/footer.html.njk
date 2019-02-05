@@ -1,3 +1,5 @@
+{% from "../_macros.njk" import sponsorsGallery %}
+
 <footer class="c-footer-global">
   <nav class="c-nav-pages">
     <ul class="c-nav-list c-nav-list--footer-global copy--midi">
@@ -30,11 +32,16 @@
     </ul>
   </nav>
   {% block sponsors %}
-    {% set sponsorsPages = contents.sponsors._.pages | filterObjects('metadata.sponsor.type', sponsorType) | filterObjects('metadata.sponsor.published', true) | sortObjects('metadata.sponsor.order', '', 'number') | reverse %}
+    {% set sponsorsPages = contents.sponsors._.pages
+      | filterObjects('metadata.sponsor.published', true)
+      | filterObjects('metadata.sponsor.footerLogo', true)
+      | sortObjects('metadata.sponsor.order', '', 'number')
+      | reverse
+    %}
     {% if sponsorsPages.length %}
       <div class="c-sponsor-footer c-sponsors--footer">
         <div class="l-container l-container--xl">
-          {% include '../partials/sponsors-gallery.html.njk' %}
+          {{ sponsorsGallery(contents.images.cms, sponsorsPages)}}
         </div>
       </div>
     {% endif %}
