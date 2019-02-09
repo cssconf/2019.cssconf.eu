@@ -1,0 +1,21 @@
+{% set speakers = contents.speakers._.pages
+  | filterObjects('metadata.speaker.reviewed', true)
+  | filterObjects('metadata.speaker.published', true) %}
+
+{% if speakers.length %}
+  <div class="c-speakers-gallery">
+    {% for speaker in speakers %}
+      <div class="c-speakers-gallery__speaker">
+        <div class="c-speakers-gallery__speaker-name">{{ speaker.metadata.speaker.name }}</div>
+      </div>
+    {% endfor %}
+    <div class="c-speakers-gallery__progress">
+      {% set progress = speakers.length | speakersProgress(12) %}
+      <div class="c-speakers-gallery__progress-label">
+        <strong>{{ progress }}%</strong><br>
+        Speaker Announcement
+      </div>
+      <progress class="c-speakers-gallery__progress-value" value="{{ progress }}" max="100">{{ progress }}%</progress>
+    </div>
+  </div>
+{% endif %}

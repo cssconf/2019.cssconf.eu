@@ -5,7 +5,8 @@
 .c-content--intro {
   .svg-intro {
     margin-bottom: 2rem;
-    @media(--m) {
+
+    @media (--m) {
       margin-bottom: 4rem;
     }
   }
@@ -17,7 +18,14 @@
 
 .c-content--page-header {
   padding-top: 6.875rem;
-  @media(--m) {
+
+  @media (--m) {
     padding-top: 18.125rem;
+  }
+}
+
+.c-content--speakers-gallery {
+  p {
+    margin-bottom: 3rem;
   }
 }
