@@ -1,13 +1,40 @@
 /* special handling for classless html generated from markdown-files */
 
 .c-markdown--indented-paragraphs {
-  p, h3, h4, h5 {
+  p,
+  h3,
+  h4,
+  h5 {
     padding-left: calc(var(--l-unit) * 5);
-    @media(--s) { padding-left: calc(var(--l-unit) * 8); }
+    @media (--s) {
+      padding-left: calc(var(--l-unit) * 8);
+    }
   }
 
-  ul, ol {
+  ul,
+  ol {
     padding-left: calc(var(--l-unit) * 9);
-    @media(--s) { padding-left: calc(var(--l-unit) * 12); }
+    @media (--s) {
+      padding-left: calc(var(--l-unit) * 12);
+    }
+  }
+
+  .youtube {
+    margin-bottom: 1em;
+    margin-left: calc(var(--l-unit) * 5);
+    padding-top: 56.25%;
+    position: relative;
+
+    @media (--s) {
+      margin-left: calc(var(--l-unit) * 8);
+    }
+
+    iframe {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
   }
 }
