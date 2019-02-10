@@ -7,7 +7,7 @@ introImage: info.jpg
 
 ## Mission & Values
 
-CSSconf EU is a not-for-profit community conference run by a team of volunteers<!-- [volunteers](/team/) -->. We are all active members of the tech community, and run or contribute to various free local meetups, workshops, and education initiatives. With CSSconf EU, we aim to bring the international CSS crowd together with our beloved local Berlin community. We are humbled to look back to three sold-out events where we welcomed the world’s most excellent CSS speakers on our stage, and we are proud to have always put an inclusive and welcoming culture first. We operate under a [Code of Conduct](/code-of-conduct)<!-- , run a [scholarship program](/scholarships) -->, write [articles to be transparent](http://blog.cssconf.eu/), and are committed to <!-- [diversity](/diversity-support-tickets/) and--> [accessibility](/accessibility/).
+CSSconf EU is a not-for-profit community conference run by a team of volunteers<!-- [volunteers](/team/) -->. We are all active members of the tech community, and run or contribute to various free local meetups, workshops, and education initiatives. With CSSconf EU, we aim to bring the international CSS crowd together with our beloved local Berlin community. We are humbled to look back to five sold-out events where we welcomed the world’s most excellent CSS speakers on our stage, and we are proud to have always put an inclusive and welcoming culture first. We operate under a [Code of Conduct](/code-of-conduct), run a [scholarship program](/scholarships), and are committed to [accessibility](/accessibility/).
 
 <!-- ### Watch last year’s film
 
@@ -43,20 +43,16 @@ You’ll be able to: meet the companies that support CSSconf EU, chat with the p
 
 **Supporting Companies**: CSSconf EU wouldn’t be possible without the support of great companies: our sponsors! Many of them will be available for chats and demos in our Festival Area. Make sure to stop by at the booths of our supporters.
 
-**Community Area**: The CSS Community is awesome, and we’re proud to have some fantastic contributors and organizers as our guests. Come and meet them, get a demo, and learn how you can get involved too.
+**Community Lounge**: The CSS Community is awesome, and we’re proud to have some fantastic contributors and organizers as our guests. Come and meet them, get a demo, and learn how you can get involved too.
 
 ## Accessibility
 
-We do our best to ensure that the conference, venue and events throughout the day are fully accessible, so that all attendees can wholly participate in and enjoy the conference. To do this, we work closely with venue and volunteer staff prior to and on the day of the event to ensure disability access to all areas.
+We do our best to ensure that the conference, venue and events throughout the day are accessible, so that all attendees can wholly participate in and enjoy the conference. As part of our commitment to accessibility, we’re bringing real-time transcription (CART) to CSSconf EU. There will be a live feed of every word of each talk. [Read our full accessibility statement](/accessibility).
 
 <!-- We’re happy to be able to offer free, all-day childcare at the venue for children aged 3 and above. For parents with younger infants, we will provide a quiet room equipped with comfy seats, diapers and other essentials where you can retreat to throughout the day.
 [Read more and register a free childcare ticket](/childcare/) -->
 
-<!-- As part of our commitment to accessibility, we’re bringing real-time transcription (CART) to CSSconf EU. There will be a live feed of every word of each talk.
-
- -->
-
-<!-- ## Travel & Transport
+## Travel & Transport
 
 ### Berlin’s Airports
 
