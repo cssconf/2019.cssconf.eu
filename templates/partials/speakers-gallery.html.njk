@@ -5,9 +5,15 @@
 {% if speakers.length %}
   <div class="c-speakers-gallery">
     {% for speaker in speakers %}
-      <div class="c-speakers-gallery__speaker">
+      <a class="c-speakers-gallery__speaker" href="{{ speaker.url }}">
         <div class="c-speakers-gallery__speaker-name">{{ speaker.metadata.speaker.name }}</div>
-      </div>
+        <div class="c-speakers-gallery__speaker-image">
+          <img
+            src="{{ contents.images.cms[speaker.metadata.speaker.image.filename_500].url }}"
+            alt="{{ speaker.metadata.speaker.name }}"
+          />
+        </div>
+      </a>
     {% endfor %}
     <div class="c-speakers-gallery__progress">
       {% set progress = speakers.length | speakersProgress(12) %}

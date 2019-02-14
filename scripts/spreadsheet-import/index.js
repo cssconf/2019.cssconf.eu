@@ -24,7 +24,7 @@ const secret = process.env.preview_filename_component || 'secret';
 program
   .description(
     'import speaker- and talk-data from the specified spreadheet and ' +
-      'update the files in contents/speakers and contents/talks'
+      'update the files in contents/speakers'
   )
   .arguments('<spreadsheet>')
   .action(spreadsheet => {
@@ -67,11 +67,6 @@ const sheetParams = {
     templateGlobals: {},
     dataFieldName: 'sponsor',
     contentPath: 'sponsors'
-  },
-  talks: {
-    templateGlobals: {},
-    dataFieldName: 'talk',
-    contentPath: 'talks'
   },
   team: {
     templateGlobals: {},
@@ -141,10 +136,7 @@ async function main(params) {
 
     await Promise.all([
       rimraf(
-        path.join(
-          contentRoot,
-          '{artists,schedule,speakers,sponsors,talks,team}/*md'
-        )
+        path.join(contentRoot, '{artists,schedule,speakers,sponsors,team}/*md')
       )
     ]);
   }
@@ -197,7 +189,7 @@ async function main(params) {
         let { content = '', ...data } = record;
         let title = data.name;
 
-        if (sheetId === 'speakers') {
+        if (sheetId === 'speakers' && data.type === 'speaker') {
           title = `${data.name}: ${data.talkTitle}`;
         }
 
@@ -208,6 +200,7 @@ async function main(params) {
         if (sheetId === 'team') {
           title = `${data.firstname} ${data.lastname}`;
         }
+
         if (!title) {
           title = 'missing title';
           console.error(chalk.red('Missing title'));
@@ -221,17 +214,20 @@ async function main(params) {
         const imageUrl = data.potraitImageUrl || data.logoUrl;
         data.image = await downloadImage(imageUrl, title, imageExtension);
 
-        const extracted = extractFrontmatter(data, content);
         let frontmatterFromContent = {};
-        if (extracted) {
-          content = extracted.content;
-          frontmatterFromContent = extracted.frontmatter;
-        }
 
-        const imagesInContent = [];
-        content = await downloadContentUrls(content, imagesInContent);
-        if (!data.image.filename && imagesInContent.length) {
-          data.image = imagesInContent[0];
+        if (content) {
+          const extracted = extractFrontmatter(data, content);
+          if (extracted) {
+            content = extracted.content;
+            frontmatterFromContent = extracted.frontmatter;
+          }
+
+          const imagesInContent = [];
+          content = await downloadContentUrls(content, imagesInContent);
+          if (!data.image.filename && imagesInContent.length) {
+            data.image = imagesInContent[0];
+          }
         }
 
         const metadata = {

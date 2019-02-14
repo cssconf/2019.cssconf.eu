@@ -1,25 +1,24 @@
 .c-speakers-gallery {
-  --speakers-gallery-border: 4px;
+  --gallery-border: 4px;
   --speaker-spacing: 1.8rem;
-  border: var(--speakers-gallery-border) solid var(--c-black);
+  border: var(--gallery-border) solid var(--c-black);
   font-weight: bold;
 
   @media (--m) {
-    --speakers-gallery-border: 9px;
+    --gallery-border: 9px;
   }
 
   &__speaker {
-    --speaker-horizontal-spacing-multiplier: 3;
+    --spacing-multiplier: 3;
+    align-items: baseline;
+    color: var(--c-black);
     display: flex;
-    margin-top: var(--speakers-gallery-border);
-    margin-left: calc(var(--speakers-gallery-border) * -1);
-    margin-right: calc(var(--speakers-gallery-border) * -1);
-    padding: var(--speaker-spacing)
-      calc(
-        var(--speakers-gallery-border) *
-          var(--speaker-horizontal-spacing-multiplier)
-      )
-      0;
+    margin-top: var(--gallery-border);
+    margin-left: calc(var(--gallery-border) * -1);
+    margin-right: calc(var(--gallery-border) * -1);
+    padding-top: var(--speaker-spacing);
+    padding-left: calc(var(--gallery-border) * var(--spacing-multiplier));
+    padding-right: calc(var(--gallery-border) * var(--spacing-multiplier));
     position: relative;
     font-size: 1.75rem;
     line-height: 1.65rem;
@@ -27,29 +26,55 @@
     @media (--m) {
       font-size: 5.5rem;
       line-height: 4.6rem;
-      padding-top: calc(var(--speaker-spacing) * 2);
     }
 
     @media (--l) {
-      --speaker-horizontal-spacing-multiplier: 6;
+      --spacing-multiplier: 6;
     }
 
     &::after {
       background-color: var(--c-black);
       bottom: 0;
       content: '';
-      height: var(--speakers-gallery-border);
+      height: var(--gallery-border);
       left: 0;
       right: 0;
       position: absolute;
       width: 100%;
     }
 
-    /* &:hover {
+    &:hover {
+      color: var(--c-black);
+
       &::after {
         background-color: var(--c-violet);
       }
-    } */
+    }
+
+    &:nth-child(3n + 1) &-image {
+      order: -1;
+      margin-left: 0;
+      margin-right: 1rem;
+    }
+  }
+
+  &__speaker-image {
+    margin-left: 1rem;
+    position: relative;
+    top: -0.5rem;
+
+    @media (--m) {
+      top: -1rem;
+    }
+
+    img {
+      --speaker-image-height: 3rem;
+      height: var(--speaker-image-height);
+
+      @media (--m) {
+        --speaker-image-height: 5rem;
+      }
+    }
   }
 
   &__progress {
@@ -59,9 +84,8 @@
     &-label {
       font-size: 0.875rem;
       line-height: 1;
-      padding: calc(var(--speakers-gallery-border) * 4)
-        calc(var(--speakers-gallery-border) * 3)
-        calc(var(--speakers-gallery-border) * 3);
+      padding: calc(var(--gallery-border) * 4) calc(var(--gallery-border) * 3)
+        calc(var(--gallery-border) * 3);
       position: relative;
       z-index: 1;
 
