@@ -56,13 +56,13 @@ const sheetParams = {
     dataFieldName: 'schedule',
     contentPath: 'schedule'
   },*/
-  speakers: {
-    templateGlobals: {
-      template: 'pages/speaker.html.njk'
-    },
-    dataFieldName: 'speaker',
-    contentPath: 'speakers'
-  },
+  // speakers: {
+  //   templateGlobals: {
+  //     template: 'pages/speaker.html.njk'
+  //   },
+  //   dataFieldName: 'speaker',
+  //   contentPath: 'speakers'
+  // },
   sponsors: {
     templateGlobals: {},
     dataFieldName: 'sponsor',
@@ -122,7 +122,7 @@ if (!hasRcFile) {
 }
 
 main(params).catch(err => {
-  console.error(chalk.red(err))
+  console.error(chalk.red(err));
   process.exit(1);
 });
 
@@ -307,7 +307,7 @@ function extractFrontmatter(data, content) {
   }
   let sepCount = 0;
   let yamlString = '';
-  let rest = ''
+  let rest = '';
   content.split('\n').forEach(line => {
     if (/^----*$/.test(line)) {
       sepCount++;
@@ -326,7 +326,7 @@ function extractFrontmatter(data, content) {
   try {
     return {
       frontmatter: yaml.safeLoad(yamlString),
-      content: rest,
+      content: rest
     };
   } catch (e) {
     console.log(chalk.red('Invalid frontmatter in'), data.name, e.message);
@@ -342,7 +342,6 @@ function getFilename(name) {
   filename = filename.replace(/^-/g, '');
   return filename.toLowerCase();
 }
-
 
 // Turn the text pattern DOWNLOAD(https://some.com/url)
 // into a contents:images/cms/filename.jpg URL that is later
