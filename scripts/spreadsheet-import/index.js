@@ -56,13 +56,13 @@ const sheetParams = {
     dataFieldName: 'schedule',
     contentPath: 'schedule'
   },*/
-  // speakers: {
-  //   templateGlobals: {
-  //     template: 'pages/speaker.html.njk'
-  //   },
-  //   dataFieldName: 'speaker',
-  //   contentPath: 'speakers'
-  // },
+  speakers: {
+    templateGlobals: {
+      template: 'pages/speaker.html.njk'
+    },
+    dataFieldName: 'speaker',
+    contentPath: 'speakers'
+  },
   sponsors: {
     templateGlobals: {},
     dataFieldName: 'sponsor',
