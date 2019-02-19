@@ -1,0 +1,14 @@
+{% set speakers = contents.speakers._.pages
+  | filterObjects('metadata.speaker.reviewed', true)
+  | filterObjects('metadata.speaker.published', true) %}
+{% set data = contents.copy.speakers['intro.md'] %}
+
+{% if speakers.length %}
+  <section class="c-content c-content--speakers-gallery">
+    <div class="l-container">
+      <h2 class="fz--beta">{{ data.metadata.title }}</h2>
+      <p class="copy">{{ data.metadata.introText }}</p>
+      {% include "../partials/speakers-gallery.html.njk" %}
+    </div>
+  </section>
+{% endif %}

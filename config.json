@@ -29,7 +29,7 @@
   },
   "nunjucks": {
     "filterdir": "./templates/filters",
-    "filters": ["log", "sortObjects", "splitString", "filterObjects", "joinObjects", "contentUrls"]
+    "filters": ["log", "sortObjects", "splitString", "filterObjects", "joinObjects", "contentUrls", "speakersProgress"]
   },
   "postcss": {
     "entrypoint": "css/main.css",

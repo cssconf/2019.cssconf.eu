@@ -1,0 +1,47 @@
+{% extends "../layouts/default.html.njk" %}
+
+{% from "../_macros.njk" import pageIntro %}
+
+{% set speaker = page.metadata.speaker %}
+
+{% block content %}
+  {{
+    pageIntro(
+      speaker.name,
+      speaker.talkTitle,
+      contents.images.cms[speaker.image.filename_500]
+    )
+  }}
+
+  <div class="l-container">
+    <main>
+      {{ page.html }}
+
+      <ul class="c-speaker-links list pl0">
+        {% if speaker.twitterHandle %}
+          <li>
+            <a href="https://twitter.com/{{ speaker.twitterHandle }}">
+              @{{ speaker.twitterHandle }}
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </main>
+  </div>
+{% endblock %}
+
+{% block extraMetaData %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="{{ twitterHandle }}">
+  {% if speaker.twitterHandle %}
+    <meta name="twitter:creator" content="{{ speaker.twitterHandle }}">
+  {% endif %}
+  <meta name="twitter:title" content="{{ speaker.talkTitle | escape }}">
+  <meta property="og:title" content="{{ speaker.talkTitle | escape }}">
+  <meta name="twitter:description" content="{{ speaker.name }} is speaking at CSSconf EU 2019">
+  <meta name="description" content="{{ page.html | striptags | truncate(255) }}">
+  {% if speaker.image %}
+    <meta name="twitter:image" content="{{ url }}{{ contents.images.cms[speaker.image.filename].url }}">
+    <meta property="og:image" content="{{ url }}{{ contents.images.cms[speaker.image.filename].url }}" />
+  {% endif %}
+{% endblock %}

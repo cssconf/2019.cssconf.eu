@@ -13,6 +13,7 @@ const {
 const rimraf = promisify(require('rimraf'));
 const mkdirp = require('mkdirp');
 const { downloadImage } = require('./image-download');
+const slug = require('slug');
 
 const timeout = promisify(setTimeout);
 
@@ -24,7 +25,7 @@ const secret = process.env.preview_filename_component || 'secret';
 program
   .description(
     'import speaker- and talk-data from the specified spreadheet and ' +
-      'update the files in contents/speakers and contents/talks'
+      'update the files in contents/speakers'
   )
   .arguments('<spreadsheet>')
   .action(spreadsheet => {
@@ -56,22 +57,17 @@ const sheetParams = {
     dataFieldName: 'schedule',
     contentPath: 'schedule'
   },*/
-  // speakers: {
-  //   templateGlobals: {
-  //     template: 'pages/speaker.html.njk'
-  //   },
-  //   dataFieldName: 'speaker',
-  //   contentPath: 'speakers'
-  // },
+  speakers: {
+    templateGlobals: {
+      template: 'pages/speaker.html.njk'
+    },
+    dataFieldName: 'speaker',
+    contentPath: 'speakers'
+  },
   sponsors: {
     templateGlobals: {},
     dataFieldName: 'sponsor',
     contentPath: 'sponsors'
-  },
-  talks: {
-    templateGlobals: {},
-    dataFieldName: 'talk',
-    contentPath: 'talks'
   },
   team: {
     templateGlobals: {},
@@ -141,10 +137,7 @@ async function main(params) {
 
     await Promise.all([
       rimraf(
-        path.join(
-          contentRoot,
-          '{artists,schedule,speakers,sponsors,talks,team}/*md'
-        )
+        path.join(contentRoot, '{artists,schedule,speakers,sponsors,team}/*md')
       )
     ]);
   }
@@ -197,7 +190,7 @@ async function main(params) {
         let { content = '', ...data } = record;
         let title = data.name;
 
-        if (sheetId === 'speakers') {
+        if (sheetId === 'speakers' && data.type === 'speaker') {
           title = `${data.name}: ${data.talkTitle}`;
         }
 
@@ -208,6 +201,7 @@ async function main(params) {
         if (sheetId === 'team') {
           title = `${data.firstname} ${data.lastname}`;
         }
+
         if (!title) {
           title = 'missing title';
           console.error(chalk.red('Missing title'));
@@ -221,17 +215,20 @@ async function main(params) {
         const imageUrl = data.potraitImageUrl || data.logoUrl;
         data.image = await downloadImage(imageUrl, title, imageExtension);
 
-        const extracted = extractFrontmatter(data, content);
         let frontmatterFromContent = {};
-        if (extracted) {
-          content = extracted.content;
-          frontmatterFromContent = extracted.frontmatter;
-        }
 
-        const imagesInContent = [];
-        content = await downloadContentUrls(content, imagesInContent);
-        if (!data.image.filename && imagesInContent.length) {
-          data.image = imagesInContent[0];
+        if (content) {
+          const extracted = extractFrontmatter(data, content);
+          if (extracted) {
+            content = extracted.content;
+            frontmatterFromContent = extracted.frontmatter;
+          }
+
+          const imagesInContent = [];
+          content = await downloadContentUrls(content, imagesInContent);
+          if (!data.image.filename && imagesInContent.length) {
+            data.image = imagesInContent[0];
+          }
         }
 
         const metadata = {
@@ -247,7 +244,8 @@ async function main(params) {
           ensureDirExists(cpath);
         }
 
-        let filename = getFilename(title);
+        let filename =
+          sheetId === 'speakers' ? getFilename(data.name) : getFilename(title);
         if (!data.published && params.publishedOnly) {
           metadata.filename = ':file.html';
           cpath = 'preview';
@@ -335,12 +333,7 @@ function extractFrontmatter(data, content) {
 }
 
 function getFilename(name) {
-  let filename = name.trim();
-  filename = filename.replace(/[^\w]/g, '-');
-  filename = filename.replace(/--/g, '-');
-  filename = filename.replace(/-$/g, '');
-  filename = filename.replace(/^-/g, '');
-  return filename.toLowerCase();
+  return slug(name.toLowerCase());
 }
 
 // Turn the text pattern DOWNLOAD(https://some.com/url)
