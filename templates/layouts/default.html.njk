@@ -11,7 +11,7 @@
   <meta property="og:url" content="{{ url }}"/>
   <meta property="og:type" content="website"/>
   <meta property="og:title"
-        content="{{ page.title }}"/>
+        content="{{ page.title | escape }}"/>
 
   {% block extraMetaData %}
     {% set description = page.description or page.html | striptags | truncate(255) %}
@@ -19,8 +19,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="{{ twitterHandle }}">
     <meta name="twitter:creator" content="{{ twitterHandle }}">
-    <meta name="twitter:title" content="{{ page.title }}">
-    <meta property="og:title" content="{{ page.title }}">
+    <meta name="twitter:title" content="{{ page.title | escape }}">
+    <meta property="og:title" content="{{ page.title | escape }}">
     {% if description %}
       <meta name="description" content="{{ description }}">
       <meta name="twitter:description" content="{{ description }}">

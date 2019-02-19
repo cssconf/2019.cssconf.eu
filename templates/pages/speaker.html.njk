@@ -36,8 +36,8 @@
   {% if speaker.twitterHandle %}
     <meta name="twitter:creator" content="{{ speaker.twitterHandle }}">
   {% endif %}
-  <meta name="twitter:title" content="{{ speaker.talkTitle }}">
-  <meta property="og:title" content="{{ speaker.talkTitle }}">
+  <meta name="twitter:title" content="{{ speaker.talkTitle | escape }}">
+  <meta property="og:title" content="{{ speaker.talkTitle | escape }}">
   <meta name="twitter:description" content="{{ speaker.name }} is speaking at CSSconf EU 2019">
   <meta name="description" content="{{ page.html | striptags | truncate(255) }}">
   {% if speaker.image %}
