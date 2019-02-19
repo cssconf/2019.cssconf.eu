@@ -1,5 +1,9 @@
 {% from "../_macros.njk" import svgIconNew, navItem %}
 
+{% set speakers = contents.speakers._.pages
+  | filterObjects('metadata.speaker.reviewed', true)
+  | filterObjects('metadata.speaker.published', true) %}
+
 <header class="c-header">
   <div class="c-header__wrapper">
     <a href="{{ env.config.baseUrl }}"
@@ -27,6 +31,9 @@
           {{ navItem('🚀 Buy Ticket 🚀', buyTicketsLink) }}
           {{ navItem('Info', contents['info.json'].url) }}
           {{ navItem('Code of Conduct', contents['code-of-conduct.json'].url) }}
+          {% if speakers.length %}
+            {{ navItem('Speakers', contents['speakers.json'].url) }}
+          {% endif %}
           {{ navItem('Scholarships', contents['scholarships.json'].url) }}
           {{ navItem('Sponsors', contents['sponsors.json'].url) }}
           {{ navItem('Team', contents['team.json'].url) }}
