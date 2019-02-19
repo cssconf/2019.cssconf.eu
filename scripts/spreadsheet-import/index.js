@@ -13,6 +13,7 @@ const {
 const rimraf = promisify(require('rimraf'));
 const mkdirp = require('mkdirp');
 const { downloadImage } = require('./image-download');
+const slug = require('slug');
 
 const timeout = promisify(setTimeout);
 
@@ -331,12 +332,7 @@ function extractFrontmatter(data, content) {
 }
 
 function getFilename(name) {
-  let filename = name.trim();
-  filename = filename.replace(/[^\w]/g, '-');
-  filename = filename.replace(/--/g, '-');
-  filename = filename.replace(/-$/g, '');
-  filename = filename.replace(/^-/g, '');
-  return filename.toLowerCase();
+  return slug(name.toLowerCase());
 }
 
 // Turn the text pattern DOWNLOAD(https://some.com/url)
