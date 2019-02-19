@@ -244,7 +244,8 @@ async function main(params) {
           ensureDirExists(cpath);
         }
 
-        let filename = getFilename(title);
+        let filename =
+          sheetId === 'speakers' ? getFilename(data.name) : getFilename(title);
         if (!data.published && params.publishedOnly) {
           metadata.filename = ':file.html';
           cpath = 'preview';
