@@ -7,14 +7,21 @@
     "name": "CSSconf EU | Friday, May 31st 2019 | Berlin, Germany",
     "conferenceFullDate": "May 31st 2019",
     "owner": "CSSconf EU Team",
-    "description": "CSSconf EU is conference dedicated to all those passionate about design, CSS, and the web. For the community, by the community.",
+    "description":
+      "CSSconf EU is conference dedicated to all those passionate about design, CSS, and the web. For the community, by the community.",
     "buyTicketsLink": "https://ti.to/cssconfeu/cssconfeu-2019/",
-    "callForSpeakersLink": "https://docs.google.com/forms/d/e/1FAIpQLSfXyRmnDd2R3XNer5gdP2bKg-x0kU3YXSsx0s9pNfNNsHTvRw/viewform",
+    "callForSpeakersLink":
+      "https://docs.google.com/forms/d/e/1FAIpQLSfXyRmnDd2R3XNer5gdP2bKg-x0kU3YXSsx0s9pNfNNsHTvRw/viewform",
     "scholarshipApplyLink": "https://goo.gl/forms/DlnIYammVTEGcTsC3",
-    "mapLink": "https://www.google.de/maps/place/Arena+Berlin/@52.5014805,13.4399474,15z/data=!4m8!1m2!2m1!1sArena+berlin!3m4!1s0x47a84e55b04a4c0b:0x6852fd9350063186!8m2!3d52.4966473!4d13.4530078"
+    "mapLink":
+      "https://www.google.de/maps/place/Arena+Berlin/@52.5014805,13.4399474,15z/data=!4m8!1m2!2m1!1sArena+berlin!3m4!1s0x47a84e55b04a4c0b:0x6852fd9350063186!8m2!3d52.4966473!4d13.4530078"
   },
   "filenameTemplate": ":file/index.html",
-  "plugins": ["./plugins/postcss.js", "./plugins/nunjucks.js", "./plugins/svg.js"],
+  "plugins": [
+    "./plugins/postcss.js",
+    "./plugins/nunjucks.js",
+    "./plugins/svg.js"
+  ],
   "require": {
     "moment": "moment",
     "_": "underscore",
@@ -29,7 +36,16 @@
   },
   "nunjucks": {
     "filterdir": "./templates/filters",
-    "filters": ["log", "sortObjects", "splitString", "filterObjects", "joinObjects", "contentUrls", "speakersProgress"]
+    "filters": [
+      "log",
+      "sortObjects",
+      "splitString",
+      "filterObjects",
+      "joinObjects",
+      "contentUrls",
+      "speakersProgress",
+      "simplifiedUrls"
+    ]
   },
   "postcss": {
     "entrypoint": "css/main.css",
@@ -38,7 +54,7 @@
       "postcss-import",
       {
         "path": "postcss-custom-properties",
-        "params": {"preserve": true}
+        "params": { "preserve": true }
       },
       "postcss-nested",
       "postcss-media-minmax",
