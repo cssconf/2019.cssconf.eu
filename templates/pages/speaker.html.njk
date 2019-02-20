@@ -25,6 +25,20 @@
             </a>
           </li>
         {% endif %}
+        {% if speaker.githubHandle %}
+          <li>
+            <a href="https://github.com/{{ speaker.githubHandle }}">
+              github.com/{{ speaker.githubHandle }}
+            </a>
+          </li>
+        {% endif %}
+        {% if speaker.homepage %}
+          <li>
+            <a href="{{ speaker.homepage }}">
+              {{ speaker.homepage | simplifiedUrls }}
+            </a>
+          </li>
+        {% endif %}
       </ul>
     </main>
   </div>
