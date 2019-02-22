@@ -40,11 +40,13 @@
         {% if introImage %}
           <div class="c-intro__image">{{ responsiveImage(introImage) }}</div>
         {% endif %}
-        <h1 class="c-intro__title">{{ title }}</h1>
+        <h1 class="c-intro__title {% if not introText %}mb0{% endif %}">{{ title }}</h1>
       </div>
-      <p class="c-intro__text copy--max">
-        {{ introText }}
-      </p>
+      {% if introText %}
+        <p class="c-intro__text copy--max">
+          {{ introText }}
+        </p>
+      {% endif %}
     </div>
   </section>
 {% endmacro %}
