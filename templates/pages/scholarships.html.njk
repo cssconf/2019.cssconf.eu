@@ -1,6 +1,6 @@
 {% extends "../layouts/default.html.njk" %}
 
-{% from "../_macros.njk" import pageIntro, scholarshipApplyButton %}
+{% from "../_macros.njk" import pageIntro, ctaButton %}
 
 {% block content %}
   {% set data = contents.copy.scholarships['introduction.md'] %}
@@ -19,7 +19,7 @@
         {{ data.html }}
       </div>
 
-      {{ scholarshipApplyButton(scholarshipApplyLink) }}
+      {{ ctaButton(scholarshipApplyLink, 'Apply Now!') }}
 
       <div class="c-markdown c-markdown--indented-paragraphs">
         {{ contents.copy.scholarships['voting.md'].html }}
