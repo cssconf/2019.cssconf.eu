@@ -81,22 +81,10 @@
   </p>
 {% endmacro %}
 
-{% macro callForDonationsButton(link, text = '', truncateOnMobile = false, openNewTab = true, centered = true) %}
+{% macro ctaButton(link, text = '', openNewTab = true, centered = true) %}
   <p {% if centered %}class="btn-block"{% endif %}>
     <a href="{{ link }}" class="c-btn" {% if openNewTab %}target="_blank"{% endif %}>
-      {% if text %}
-        {{ text }}
-      {% else %}
-        🙏 Donate Now
-      {% endif %}
-    </a>
-  </p>
-{% endmacro %}
-
-{% macro scholarshipApplyButton(link, truncateOnMobile = false, openNewTab = true, centered = true) %}
-  <p {% if centered %}class="btn-block"{% endif %}>
-    <a href="{{ link }}" class="c-btn" {% if openNewTab %}target="_blank"{% endif %}>
-      Apply now!
+      {{ text }}
     </a>
   </p>
 {% endmacro %}

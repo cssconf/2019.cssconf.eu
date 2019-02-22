@@ -1,6 +1,6 @@
 {% extends "../layouts/default.html.njk" %}
 
-{% from "../_macros.njk" import svgIconNew, callForDonationsButton %}
+{% from "../_macros.njk" import svgIconNew, ctaButton %}
 
 {% block content %}
   <section class="c-content c-content--intro">
@@ -11,10 +11,7 @@
         unites world-class speakers, top-notch engineers & web designers, and many more with an affinity for CSS in
         Berlin, Germany.
       </p>
-      <a href="{{ buyTicketsLink }}"
-         class="c-btn">
-        🚀 Buy Ticket
-      </a>
+      {{ ctaButton(buyTicketsLink, '🚀 Buy Ticket', true, false) }}
     </div>
   </section>
   {% include "../partials/speakers-index.html.njk" %}
@@ -27,9 +24,7 @@
         We are currently offering sponsorship packages for CSSconf EU and JSConf EU 2019 – the big 10th anniversary Festival edition.
         Contact us to learn more about our available packages, or talk with us about your unique idea and custom offers.
       </p>
-      <a href="{{ contents['sponsors.json'].url }}" class="c-btn">
-        Learn more
-      </a>
+      {{ ctaButton(contents['sponsors.json'].url, 'Learn More', true, false) }}
     </div>
   </section>
   <section class="c-content">
@@ -40,11 +35,11 @@
       <p class="copy">
         The CSSconf EU scholarship program supports folks from underrepresented groups to be able to attend our event - which is only possible due to the generosity of many attendees and sponsors. This year we added a new option to directly help the program: by donating!
       </p>
-      {{ callForDonationsButton(
+      {{ ctaButton(
         'https://ti.to/cssconfeu/cssconfeu-2019/with/xmt7jc66z2k',
-        truncateOnMobile = true,
-        openNewTab = false,
-        centered = false
+        '🙏 Donate Now',
+        true,
+        false
       ) }}
     </div>
   </section>

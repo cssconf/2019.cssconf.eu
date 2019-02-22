@@ -1,6 +1,6 @@
 {% extends "../layouts/default.html.njk" %}
 
-{% from "../_macros.njk" import pageIntro %}
+{% from "../_macros.njk" import ctaButton, pageIntro %}
 
 {% set speaker = page.metadata.speaker %}
 
@@ -40,6 +40,7 @@
           </li>
         {% endif %}
       </ul>
+      {{ ctaButton(buyTicketsLink, '🚀 Buy Ticket', true, false) }}
     </main>
   </div>
 {% endblock %}
