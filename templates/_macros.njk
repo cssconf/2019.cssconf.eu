@@ -40,11 +40,13 @@
         {% if introImage %}
           <div class="c-intro__image">{{ responsiveImage(introImage) }}</div>
         {% endif %}
-        <h1 class="c-intro__title">{{ title }}</h1>
+        <h1 class="c-intro__title {% if not introText %}mb0{% endif %}">{{ title }}</h1>
       </div>
-      <p class="c-intro__text copy--max">
-        {{ introText }}
-      </p>
+      {% if introText %}
+        <p class="c-intro__text copy--max">
+          {{ introText }}
+        </p>
+      {% endif %}
     </div>
   </section>
 {% endmacro %}
@@ -55,7 +57,7 @@
          src="{{ teamMemberImage }}"
          alt="Photo of {{ teamMember.firstname }} {{ teamMember.lastname }}">
     <div class="c-team__caption">
-      <h4 class="c-team__name">{{ teamMember.firstname }} {{ teamMember.lastname }}</h4>
+      <strong class="fz-delta c-team__name">{{ teamMember.firstname }} {{ teamMember.lastname }}</strong>
       {% if teamMember.description %}
         <p class="c-team__description">{{ teamMember.description }}</p>
       {% endif %}

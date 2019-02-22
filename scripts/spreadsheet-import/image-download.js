@@ -5,7 +5,7 @@ const chalk = require('chalk');
 const imageType = require('image-type');
 const imageSize = require('image-size');
 const sharp = require('sharp');
-const {promisify} = require('util');
+const { promisify } = require('util');
 
 function getImageFilename(originalUrl, name, ext) {
   let filename = name.trim();
@@ -14,8 +14,10 @@ function getImageFilename(originalUrl, name, ext) {
   filename = filename.replace(/-$/g, '');
   filename = filename.replace(/^-/g, '');
   // Filename changes if underlying URL changes.
-  const hash = require('crypto').createHash('sha1')
-      .update(originalUrl).digest('hex');
+  const hash = require('crypto')
+    .createHash('sha1')
+    .update(originalUrl)
+    .digest('hex');
   filename += '-' + hash.substr(0, 8);
   return (filename + '.' + ext).toLowerCase();
 }
@@ -32,7 +34,7 @@ async function existingImage(url, name, opt_extension) {
       return {
         ext,
         filename,
-        buffer: await promisify(fs.readFile)(fullPath(filename)),
+        buffer: await promisify(fs.readFile)(fullPath(filename))
       };
     }
   }
@@ -71,9 +73,11 @@ async function downloadImage(url, name, opt_extension) {
       const buffer = await res.buffer();
       info.buffer = buffer;
 
-      const type = opt_extension == 'svg' ? {ext: 'svg'} : imageType(buffer);
+      const type = opt_extension == 'svg' ? { ext: 'svg' } : imageType(buffer);
       if (!type) {
-        console.error(chalk.red.bold(' !!! no type-information for image', name, url));
+        console.error(
+          chalk.red.bold(' !!! no type-information for image', name, url)
+        );
         return {};
       }
       info.ext = type.ext;
@@ -82,8 +86,9 @@ async function downloadImage(url, name, opt_extension) {
 
       const path = fullPath(filename);
       console.info(' --> image downloaded ', chalk.green(path));
-      fs.writeFile(path, buffer, () => {/*fire and forget*/});
-
+      fs.writeFile(path, buffer, () => {
+        /*fire and forget*/
+      });
     }
     resize(500, info.buffer, info.filename);
     resize(1000, info.buffer, info.filename);
@@ -91,7 +96,7 @@ async function downloadImage(url, name, opt_extension) {
     try {
       size = imageSize(info.buffer) || {};
     } catch (e) {
-      console.error(chalk.yellow('Can\'t get image size' + e.message));
+      console.error(chalk.yellow("Can't get image size" + e.message));
     }
     return {
       filename: info.filename,
@@ -115,14 +120,14 @@ async function resize(width, buffer, filename) {
     return;
   }
   sharp(buffer)
-      .resize(width)
-      .jpeg()
-      .toFile(path, function(err) {
-        if (err) {
-          console.error(chalk.red.bold(' !!! Resize failed', name, path));
-        }
-        console.info('Resized', width, path);
-      });
+    .resize(width)
+    .jpeg()
+    .toFile(path, function(err) {
+      if (err) {
+        console.error(chalk.red.bold(' !!! Resize failed', filename, path));
+      }
+      console.info('Resized', width, path);
+    });
 }
 
-module.exports = {downloadImage};
+module.exports = { downloadImage };
