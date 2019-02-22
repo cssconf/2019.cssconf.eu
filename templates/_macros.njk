@@ -55,7 +55,7 @@
          src="{{ teamMemberImage }}"
          alt="Photo of {{ teamMember.firstname }} {{ teamMember.lastname }}">
     <div class="c-team__caption">
-      <h4 class="c-team__name">{{ teamMember.firstname }} {{ teamMember.lastname }}</h4>
+      <strong class="fz-delta c-team__name">{{ teamMember.firstname }} {{ teamMember.lastname }}</strong>
       {% if teamMember.description %}
         <p class="c-team__description">{{ teamMember.description }}</p>
       {% endif %}

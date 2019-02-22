@@ -1,5 +1,14 @@
 /* special handling for classless html generated from markdown-files */
 
+.c-markdown {
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin-top: 2em;
+  }
+}
+
 .c-markdown--indented-paragraphs {
   p,
   h3,
