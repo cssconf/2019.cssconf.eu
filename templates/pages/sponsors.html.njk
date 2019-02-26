@@ -22,6 +22,17 @@
       | reverse
     %}
     {{ sponsorsGallery(contents.images.cms, sponsorsPages) }}
+
+    {% set sponsorsPages = contents.sponsors._.pages
+      | filterObjects('metadata.sponsor.published', true)
+      | filterObjects('metadata.sponsor.type', 'travel')
+      | sortObjects('metadata.sponsor.order', '', 'number')
+      | reverse
+    %}
+    {% if sponsorsPages | length > 0 %}
+      <h2 class="c-sponsors__title">Travel Sponsors</h2>
+      {{ sponsorsGallery(contents.images.cms, sponsorsPages, ['travel'], false) }}
+    {% endif %}
   </div>
 
   <div class="l-container">
