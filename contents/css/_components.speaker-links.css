@@ -8,4 +8,11 @@
   @media (--l) {
     margin-top: 3.625rem;
   }
+
+  .svg {
+    display: inline-block;
+    height: 1.2em;
+    margin-right: 0.8rem;
+    vertical-align: middle;
+  }
 }
