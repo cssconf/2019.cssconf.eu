@@ -1,6 +1,6 @@
 {% extends "../layouts/default.html.njk" %}
 
-{% from "../_macros.njk" import ctaButton, pageIntro %}
+{% from "../_macros.njk" import ctaButton, pageIntro, svgIconNew %}
 
 {% set speaker = page.metadata.speaker %}
 
@@ -20,6 +20,7 @@
       <ul class="c-speaker-links list pl0">
         {% if speaker.twitterHandle %}
           <li>
+            {{ svgIconNew(contents, 'icon-twitter-dark', width = 16, height = 16)}}
             <a href="https://twitter.com/{{ speaker.twitterHandle }}">
               @{{ speaker.twitterHandle }}
             </a>
@@ -27,6 +28,7 @@
         {% endif %}
         {% if speaker.githubHandle %}
           <li>
+            {{ svgIconNew(contents, 'icon-github', width = 16, height = 16)}}
             <a href="https://github.com/{{ speaker.githubHandle }}">
               github.com/{{ speaker.githubHandle }}
             </a>
@@ -34,6 +36,7 @@
         {% endif %}
         {% if speaker.homepage %}
           <li>
+            {{ svgIconNew(contents, 'icon-website', width = 16, height = 16)}}
             <a href="{{ speaker.homepage }}">
               {{ speaker.homepage | simplifiedUrls }}
             </a>
