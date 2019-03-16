@@ -122,3 +122,11 @@ code {
   line-height: 1;
   background-color: var(--c-salmon-light);
 }
+
+[onclick] {
+  cursor: pointer;
+}
+
+h1[id], h2[id], h3[id], h4[id] {
+  cursor: pointer;
+}
