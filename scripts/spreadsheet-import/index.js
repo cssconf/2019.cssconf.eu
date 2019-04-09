@@ -254,7 +254,7 @@ async function main(params) {
           filenameSource = `${data.name}-${data.type}`;
         }
 
-        const filename = filenameSource ? getFilename(filenameSource) : getFilename(title);
+        let filename = filenameSource ? getFilename(filenameSource) : getFilename(title);
 
         if (!data.published && params.publishedOnly) {
           metadata.filename = ':file.html';
