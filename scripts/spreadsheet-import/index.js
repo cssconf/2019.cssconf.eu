@@ -244,8 +244,18 @@ async function main(params) {
           ensureDirExists(cpath);
         }
 
-        let filename =
-          sheetId === 'speakers' ? getFilename(data.name) : getFilename(title);
+        let filenameSource = title;
+
+        if (sheetId === 'speakers') {
+          filenameSource = data.name;
+        }
+
+        if (sheetId === 'sponsors') {
+          filenameSource = `${data.name}-${data.type}`;
+        }
+
+        const filename = filenameSource ? getFilename(filenameSource) : getFilename(title);
+
         if (!data.published && params.publishedOnly) {
           metadata.filename = ':file.html';
           cpath = 'preview';
