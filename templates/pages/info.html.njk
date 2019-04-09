@@ -1,10 +1,13 @@
 {% extends "../layouts/default.html.njk" %}
 
+{% from "../partials/content-grid.html.njk" import contentGrid %}
 {% from "../_macros.njk" import pageIntro %}
 
-{% block content %}
-  {% set data = contents.copy.info['main.md'] %}
+{% set data = contents.copy.info['main.md'] %}
+{% set items = [
+] %}
 
+{% block content %}
   {{
     pageIntro(
       data.metadata.title,
@@ -15,6 +18,7 @@
 
   <div class="l-container">
     <main>
+      {{ contentGrid(items) }}
       <div class="c-markdown c-markdown--indented-paragraphs">
         {{ data.html }}
       </div>
