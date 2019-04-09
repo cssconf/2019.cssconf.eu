@@ -34,7 +34,8 @@
 
     &--legacy,
     &--supporting,
-    &--community {
+    &--community,
+    &--travel {
       flex-basis: calc(100% / 3);
 
       @media (--l) {
