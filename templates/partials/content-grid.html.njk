@@ -1,18 +1,20 @@
 {% macro contentGrid(items, moment) %}
-  <div class="c-content-grid">
-    {% for item in items %}
-      <article onclick="location=this.querySelector('a').href">
-        {% if moment %}
-          <time>{{ moment(item.metadata.date).utcOffset(8).format('ddd, DD MMM YYYY') }}</time>
-        {% endif %}
-        <h3 class="mb4">{{ item.title }}</h3>
-        <p>
-          {{ item.html | striptags | truncate('150') }}
-        </p>
-        <p>
-          <a href="{{ item.url }}">Read more</a>
-        </p>
-      </article>
-    {% endfor %}
-  </div>
+  {% if items | length > 0 %}
+    <div class="c-content-grid">
+      {% for item in items %}
+        <article onclick="location=this.querySelector('a').href">
+          {% if moment %}
+            <time>{{ moment(item.metadata.date).utcOffset(8).format('ddd, DD MMM YYYY') }}</time>
+          {% endif %}
+          <h3 class="mb4">{{ item.title }}</h3>
+          <p>
+            {{ item.html | striptags | truncate('150') }}
+          </p>
+          <p>
+            <a href="{{ item.url }}">Read more</a>
+          </p>
+        </article>
+      {% endfor %}
+    </div>
+  {% endif %}
 {% endmacro %}
