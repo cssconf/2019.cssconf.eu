@@ -17,7 +17,7 @@
 
   <div class="l-container l-container--xl">
     {% set sponsorsPages = contents.sponsors._.pages
-      | filterObjects('metadata.sponsor.published', false)
+      | filterObjects('metadata.sponsor.published', true)
       | sortObjects('metadata.sponsor.order', '', 'number')
       | reverse
     %}
