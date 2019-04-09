@@ -96,7 +96,7 @@
     {% for sponsorType in sponsorTypes %}
       {% set sponsorsPages = sponsors  | filterObjects('metadata.sponsor.type', sponsorType) %}
 
-      {% if sponsorsPages.length %}
+      {% if sponsorsPages | length > 0 %}
         {% if headline %}
           <h2 class="c-sponsors__title">
             {{ sponsorType | capitalize }}
