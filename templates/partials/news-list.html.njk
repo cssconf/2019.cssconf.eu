@@ -1,5 +1,7 @@
 {% set newsList = contents.news._.pages | filterObjects('metadata.article.published', true) | filterObjects('metadata.article.reviewed', true) | sortObjects('metadata.date', '2017-01-01', 'date') | reverse %}
 
+{% from "../partials/content-grid.html.njk" import contentGrid %}
+
 {% if newsList | length > 0 %}
   <section class="c-content c-content--salmon">
     <div class="l-container">
@@ -7,20 +9,7 @@
         News
       </h2>
 
-      <div class="c-news">
-        {% for news in newsList %}
-          <article onclick="location=this.querySelector('a').href">
-            <time>{{ moment(news.metadata.date).utcOffset(8).format('ddd, DD MMM YYYY') }}</time>
-            <h3 class="mb4">{{ news.title }}</h3>
-            <p>
-              {{ news.html | striptags | truncate('150') }}
-            </p>
-            <p>
-              <a href="{{ news.url }}">Read more</a>
-            </p>
-          </article>
-        {% endfor %}
-      </div>
+      {{ contentGrid(newsList, moment) }}
     </div>
   </section>
 {% endif %}
