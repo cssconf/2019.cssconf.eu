@@ -15,43 +15,43 @@
     )
   }}
 
-  <div class="l-container l-container--xl">
-    {% set sponsorsPages = contents.sponsors._.pages
-      | filterObjects('metadata.sponsor.published', true)
-      | sortObjects('metadata.sponsor.order', '', 'number')
-      | reverse
-    %}
-    {{ sponsorsGallery(contents.images.cms, sponsorsPages) }}
+  <section class="c-sponsors-container">
+    <div class="l-container l-container--xl">
+      {% set sponsorsPages = contents.sponsors._.pages
+        | filterObjects('metadata.sponsor.published', true)
+        | filterObjects('metadata.sponsor.type', 'organizing')
+        | sortObjects('metadata.sponsor.order', '', 'number')
+        | reverse
+      %}
+      {{ sponsorsGallery(contents.images.cms, sponsorsPages, ['organizing'], false) }}
 
-    {% set sponsorsPages = contents.sponsors._.pages
-      | filterObjects('metadata.sponsor.published', true)
-      | filterObjects('metadata.sponsor.type', 'travel')
-      | sortObjects('metadata.sponsor.order', '', 'number')
-      | reverse
-    %}
-    {% if sponsorsPages | length > 0 %}
-      <h2 class="c-sponsors__title">Travel Sponsors</h2>
-      {{ sponsorsGallery(contents.images.cms, sponsorsPages, ['travel'], false) }}
-    {% endif %}
-  </div>
+      {% set sponsorsPages = contents.sponsors._.pages
+        | filterObjects('metadata.sponsor.published', true)
+        | sortObjects('metadata.sponsor.order', '', 'number')
+        | reverse
+      %}
+      {{ sponsorsGallery(contents.images.cms, sponsorsPages) }}
 
-  <div class="l-container">
-    <main>
-      <div class="c-markdown c-markdown--indented-paragraphs">
-        {{ contents.copy.sponsors['sponsors.md'].html }}
-      </div>
-    </main>
-  </div>
+      {% set sponsorsPages = contents.sponsors._.pages
+        | filterObjects('metadata.sponsor.published', true)
+        | filterObjects('metadata.sponsor.type', 'travel')
+        | sortObjects('metadata.sponsor.order', '', 'number')
+        | reverse
+      %}
+      {% if sponsorsPages | length > 0 %}
+        <h2 class="c-sponsors__title">Travel Sponsors</h2>
+        {{ sponsorsGallery(contents.images.cms, sponsorsPages, ['travel'], false) }}
+      {% endif %}
 
-  <div class="l-container l-container--xl">
-    <h3>A heartfelt thanks to our 2018 sponsors:</h3>
-    {% set sponsorsPages = contents.sponsors._.pages
-      | filterObjects('metadata.sponsor.published', true)
-      | sortObjects('metadata.sponsor.order', '', 'number')
-      | reverse
-    %}
-    {{ sponsorsGallery(contents.images.cms, sponsorsPages, ['legacy'], false) }}
-  </div>
+      <h3>A heartfelt thanks to our 2018 sponsors:</h3>
+      {% set sponsorsPages = contents.sponsors._.pages
+        | filterObjects('metadata.sponsor.published', true)
+        | sortObjects('metadata.sponsor.order', '', 'number')
+        | reverse
+      %}
+      {{ sponsorsGallery(contents.images.cms, sponsorsPages, ['legacy'], false) }}
+    </div>
+  </section>
 {% endblock %}
 
 {% block footer %}

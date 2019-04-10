@@ -32,19 +32,27 @@
     </ul>
   </nav>
   {% block sponsors %}
-    {% set sponsorsPages = contents.sponsors._.pages
-      | filterObjects('metadata.sponsor.published', true)
-      | filterObjects('metadata.sponsor.footerLogo', true)
-      | sortObjects('metadata.sponsor.order', '', 'number')
-      | reverse
-    %}
-    {% if sponsorsPages.length %}
-      <div class="c-sponsor-footer c-sponsors--footer">
-        <div class="l-container l-container--xl">
-          {{ sponsorsGallery(contents.images.cms, sponsorsPages)}}
-        </div>
+    <div class="c-sponsors--footer">
+      <div class="l-container l-container--xl">
+        <h2 class="tc mt5">Sponsors</h2>
+        {% set sponsorsPages = contents.sponsors._.pages
+          | filterObjects('metadata.sponsor.published', true)
+          | filterObjects('metadata.sponsor.type', 'organizing')
+          | filterObjects('metadata.sponsor.footerLogo', true)
+          | sortObjects('metadata.sponsor.order', '', 'number')
+          | reverse
+        %}
+        {{ sponsorsGallery(contents.images.cms, sponsorsPages, ['organizing'], false)}}
+
+        {% set sponsorsPages = contents.sponsors._.pages
+          | filterObjects('metadata.sponsor.published', true)
+          | filterObjects('metadata.sponsor.footerLogo', true)
+          | sortObjects('metadata.sponsor.order', '', 'number')
+          | reverse
+        %}
+        {{ sponsorsGallery(contents.images.cms, sponsorsPages)}}
       </div>
-    {% endif %}
+    </div>
   {% endblock %}
   <nav class="c-nav-social">
     <ul class="c-nav-list c-nav-list--footer-global copy--midi">
