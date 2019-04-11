@@ -15,13 +15,7 @@ Many of our behind-the-scene staff has been working with us for years, and won�
 
 [Björn Kloos + artribute-team](http://artribute.de/)
 
-<!-- Vivienne Popp, Jule Küppers, Tim Felix Dreske, Philipp Großmann, Gregor Elsner, Harald Höllrigl, Sven Kunze, Amin Motamedi – -->
-
 Event Planning and Project Management, Catering, Event Technology, Stage and Grandstand Construction, Furniture, Decorations
-
-[Marina Ostrowski](http://www.marinaos.com) – Concept, Art Consulting
-
-<!-- [WECAP](https://wecap.de/) – Video Recording
 
 [keep on](http://wearekeepon.com/) – Moodfilm
 
