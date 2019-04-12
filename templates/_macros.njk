@@ -91,15 +91,21 @@
   </p>
 {% endmacro %}
 
-{% macro sponsorsGallery(cmsImages, sponsors, sponsorTypes = ['main', 'supporting', 'community'], headline = true) %}
+{% macro sponsorsGallery(cmsImages, sponsors) %}
+  {% set sponsorTypes = ['organizing', 'festival', 'main', 'supporting', 'community', 'travel'] %}
+
   <div class="c-sponsors">
     {% for sponsorType in sponsorTypes %}
       {% set sponsorsPages = sponsors  | filterObjects('metadata.sponsor.type', sponsorType) %}
 
       {% if sponsorsPages | length > 0 %}
-        {% if headline %}
+        {% if sponsorType !== 'organizing' %}
           <h2 class="c-sponsors__title">
-            {{ sponsorType | capitalize }}
+            {% if sponsorType === 'festival' %}
+              Festival X<sup>2</sup>
+            {% else %}
+              {{ sponsorType | capitalize }}
+            {% endif %}
             Sponsors
           </h2>
         {% endif %}

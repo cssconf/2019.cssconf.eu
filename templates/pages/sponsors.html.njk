@@ -19,37 +19,10 @@
     <div class="l-container l-container--xl">
       {% set sponsorsPages = contents.sponsors._.pages
         | filterObjects('metadata.sponsor.published', true)
-        | filterObjects('metadata.sponsor.type', 'organizing')
-        | sortObjects('metadata.sponsor.order', '', 'number')
-        | reverse
-      %}
-      {{ sponsorsGallery(contents.images.cms, sponsorsPages, ['organizing'], false) }}
-
-      {% set sponsorsPages = contents.sponsors._.pages
-        | filterObjects('metadata.sponsor.published', true)
         | sortObjects('metadata.sponsor.order', '', 'number')
         | reverse
       %}
       {{ sponsorsGallery(contents.images.cms, sponsorsPages) }}
-
-      {% set sponsorsPages = contents.sponsors._.pages
-        | filterObjects('metadata.sponsor.published', true)
-        | filterObjects('metadata.sponsor.type', 'travel')
-        | sortObjects('metadata.sponsor.order', '', 'number')
-        | reverse
-      %}
-      {% if sponsorsPages | length > 0 %}
-        <h2 class="c-sponsors__title">Travel Sponsors</h2>
-        {{ sponsorsGallery(contents.images.cms, sponsorsPages, ['travel'], false) }}
-      {% endif %}
-
-      <h3>A heartfelt thanks to our 2018 sponsors:</h3>
-      {% set sponsorsPages = contents.sponsors._.pages
-        | filterObjects('metadata.sponsor.published', true)
-        | sortObjects('metadata.sponsor.order', '', 'number')
-        | reverse
-      %}
-      {{ sponsorsGallery(contents.images.cms, sponsorsPages, ['legacy'], false) }}
     </div>
   </section>
 {% endblock %}
