@@ -37,15 +37,6 @@
         <h2 class="tc mt5">Sponsors</h2>
         {% set sponsorsPages = contents.sponsors._.pages
           | filterObjects('metadata.sponsor.published', true)
-          | filterObjects('metadata.sponsor.type', 'organizing')
-          | filterObjects('metadata.sponsor.footerLogo', true)
-          | sortObjects('metadata.sponsor.order', '', 'number')
-          | reverse
-        %}
-        {{ sponsorsGallery(contents.images.cms, sponsorsPages, ['organizing'], false)}}
-
-        {% set sponsorsPages = contents.sponsors._.pages
-          | filterObjects('metadata.sponsor.published', true)
           | filterObjects('metadata.sponsor.footerLogo', true)
           | sortObjects('metadata.sponsor.order', '', 'number')
           | reverse

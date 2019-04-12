@@ -1,9 +1,9 @@
 .c-sponsors {
-  margin-bottom: 4rem;
+  padding-bottom: calc(var(--l-gutter) * 2);
 
   &__title {
     font-size: 2rem;
-    margin-top: 2em;
+    margin-top: calc(var(--l-gutter) * 2);
     text-align: center;
 
     @media (--s) {
@@ -23,26 +23,39 @@
     background-color: var(--c-white);
     display: flex;
     justify-content: center;
-    margin: 1.5rem;
-    padding: 1.5rem;
+    margin: calc(var(--l-gutter) / 2);
+    padding: calc(var(--l-gutter) / 2);
+
+    @media (--m) {
+      margin: var(--l-gutter);
+      padding: var(--l-gutter);
+    }
 
     &--organizing,
+    &--festival,
     &--main {
-      flex-basis: calc(50% - 3rem);
+      flex-basis: calc(50% - var(--l-gutter));
+
+      @media (--m) {
+        flex-basis: calc((100% / 2) - calc(var(--l-gutter) * 2));
+      }
 
       @media (--l) {
-        flex-basis: calc((100% / 3) - 3rem);
+        flex-basis: calc((100% / 3) - calc(var(--l-gutter) * 2));
       }
     }
 
-    &--legacy,
     &--supporting,
     &--community,
     &--travel {
-      flex-basis: calc((100% / 3) - 3rem);
+      flex-basis: calc((100% / 2) - calc(var(--l-gutter) * 2));
+
+      @media (--m) {
+        flex-basis: calc((100% / 3) - calc(var(--l-gutter) * 2));
+      }
 
       @media (--l) {
-        flex-basis: calc((100% / 4) - 3rem);
+        flex-basis: calc((100% / 4) - calc(var(--l-gutter) * 2));
       }
     }
   }
@@ -55,22 +68,6 @@
     background-color: var(--c-salmon-light);
     margin-bottom: 0;
     overflow: hidden;
-    padding-top: 1.5rem;
-  }
-
-  &--footer &__logo {
-    margin: 1rem;
-    padding: 1rem;
-
-    &--organizing,
-    &--main,
-    &--supporting,
-    &--community {
-      flex-basis: calc((100% / 2) - 2rem);
-
-      @media (--m) {
-        flex-basis: calc((100% / 3) - 2rem);
-      }
-    }
+    padding-top: var(--l-gutter);
   }
 }
