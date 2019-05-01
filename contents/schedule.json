@@ -1,0 +1,4 @@
+{
+  "template": "pages/schedule.html.njk",
+  "title": "Schedule"
+}

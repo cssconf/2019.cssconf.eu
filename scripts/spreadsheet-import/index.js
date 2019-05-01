@@ -52,11 +52,11 @@ const sheetParams = {
     dataFieldName: 'artist',
     contentPath: 'artists'
   },
-  /*schedule: {
+  schedule: {
     templateGlobals: {},
     dataFieldName: 'schedule',
     contentPath: 'schedule'
-  },*/
+  },
   speakers: {
     templateGlobals: {
       template: 'pages/speaker.html.njk'
@@ -202,6 +202,10 @@ async function main(params) {
           title = `${data.firstname} ${data.lastname}`;
         }
 
+        if (sheetId === 'schedule') {
+          title = data.title;
+        }
+
         if (!title) {
           title = 'missing title';
           console.error(chalk.red('Missing title'));
@@ -213,7 +217,10 @@ async function main(params) {
           imageExtension = 'svg';
         }
         const imageUrl = data.potraitImageUrl || data.logoUrl;
-        data.image = await downloadImage(imageUrl, title, imageExtension);
+
+        if (sheetId !== 'schedule') {
+          data.image = await downloadImage(imageUrl, title, imageExtension);
+        }
 
         let frontmatterFromContent = {};
 
@@ -254,7 +261,13 @@ async function main(params) {
           filenameSource = `${data.name}-${data.type}`;
         }
 
-        let filename = filenameSource ? getFilename(filenameSource) : getFilename(title);
+        if (sheetId === 'schedule') {
+          filenameSource = data.id;
+        }
+
+        let filename = filenameSource
+          ? getFilename(filenameSource)
+          : getFilename(title);
 
         if (!data.published && params.publishedOnly) {
           metadata.filename = ':file.html';
