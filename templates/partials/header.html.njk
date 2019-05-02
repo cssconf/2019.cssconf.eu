@@ -12,10 +12,10 @@
       <div class="c-header__logo">
         {{ svgIconNew(contents, 'logo-icon', width = 97, height = 90) }}
       </div>
-      <div class="c-header__text--name dn ml3 mr3">
+      <div class="c-header__text--name">
         {{ svgIconNew(contents, 'logo-text', width = 170, height = 22, title = 'CSSconf.EU') }}
       </div>
-      <div class="c-header__text--date dn">{{ conferenceFullDate }}</div>
+      <div class="c-header__text--date dn ml3 nowrap">{{ conferenceFullDate }}</div>
     </a>
     <div class="c-header__button">
       <a href="{{ buyTicketsLink }}"
@@ -58,7 +58,7 @@
           </ul>
           <p class="joke copy--mini">
             <a class="c-nav-sublist__link" href="mailto:{{ email }}">
-              CSS is awesome. {{ email }} 
+              CSS is awesome. {{ email }}
             </a>
           </p>
         </div>

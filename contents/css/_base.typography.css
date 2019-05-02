@@ -175,3 +175,18 @@ code {
 h1[id], h2[id], h3[id], h4[id] {
   cursor: pointer;
 }
+
+.heading-has-line {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  &:after {
+    content: '';
+    display: block;
+    background-color: currentColor;
+    min-width: 5rem;
+    height: 5px;
+    flex-grow: 1;
+  }
+}

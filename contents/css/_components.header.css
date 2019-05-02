@@ -10,36 +10,55 @@
 }
 
 .c-header__link {
+  display: block;
   display: flex;
   align-items: center;
+  min-height: 2rem;
 }
 
 .c-header__logo {
-  position: relative;
-  height: 3rem;
+  position: absolute;
+  height: 3.25rem;
   width: 3.25rem;
   z-index: 100;
-  @media(--m) {
-    height: 4.5rem;
-    width: 4.8125rem;
+  @media(--xs) {
+    height: 4rem;
+    width: 4rem;
   }
-  @media(--l) {
-    height: 5.625rem;
-    width: 6rem;
+  @media(--m) {
+    height: 5.5rem;
+    width: 5.5rem;
+  }
+  @media(--xl) {
+    position: fixed;
   }
 }
 
 .c-header__text--name {
-  height: 2.05rem;
-  width: 10.625rem;
+  width: 8rem;
+  height: 1.035294rem;
+  margin-left: 4rem;
+  svg {
+    display: block;
+  }
+  @media(--xs) {
+    margin-left: 4.5rem;
+  }
+  @media(--s) {
+    width: 10rem;
+    height: 1.2942rem;
+  }
+  @media(--m) {
+    margin-left: 6rem;
+  }
+  @media(--l) {
+    margin-left: 6rem;
+  }
 }
 
 .c-header__text--date {
   color: var(--c-violet);
-}
-
-.c-header__text--date,
-.c-header__text--name {
+  font-size: 1.5rem;
   @media(--m) {
     display: block;
   }

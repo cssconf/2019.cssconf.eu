@@ -2,6 +2,7 @@
 @custom-media --s (width >= 40rem); /* 640px */
 @custom-media --m (width >= 48rem); /* 768px */
 @custom-media --l (width >= 64rem); /* 1024px */
+@custom-media --xl (width >= 80rem); /* 1280px */
 @custom-media --xxl (width >= 120rem); /* 1920px */
 
 :root {
@@ -9,6 +10,7 @@
   --breakpoint-s: 40rem;
   --breakpoint-m: 48rem;
   --breakpoint-l: 64rem;
+  --breakpoint-xl: 80rem;
   --breakpoint-xxl: 120rem;
 }
 
@@ -56,6 +58,13 @@ body {
     /* background: blue; */
     &::before {
       content: 'breakpoint --l (64rem)';
+    }
+  }
+
+  @media(--xl) {
+    /* background: rose; */
+    &::before {
+      content: 'breakpoint --xl (80rem)';
     }
   }
 

@@ -3,19 +3,21 @@
   background-size: 2rem 2rem;
   border: 0;
   color: var(--c-white);
-  position: relative;
+  position: absolute;
+  right: 1rem;
   height: 3rem;
   width: 3rem;
   padding: 1rem;
-  margin-left: 2rem;
   text-indent: -999em;
   cursor: pointer;
   z-index: 100;
   @media(--m) {
-    background-size: 3rem 3rem;
+    background-size: 2.5rem 2.5rem;
     height: 4rem;
     width: 4rem;
-    margin-right: 1rem;
+  }
+  @media(--xl) {
+    position: fixed;
   }
   &:focus,
   &:hover {
