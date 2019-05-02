@@ -1,0 +1,59 @@
+{% extends "../layouts/default.html.njk" %}
+
+{% block content %}
+  {% set data = contents.copy.schedule['main.md'] %}
+
+  <section class="c-intro c-intro--centered">
+    <div class="l-container">
+      <h1 class="c-intro__title">{{ data.metadata.title }}</h1>
+      {% if data.metadata.introText %}
+        <p class="c-intro__text copy--max">{{ data.metadata.introText }}</p>
+      {% endif %}
+    </div>
+  </section>
+
+  <div class="l-container">
+    {% set schedulePages = contents.schedule._.pages |
+      filterObjects('metadata.schedule.published', true) |
+      filterObjects('metadata.schedule.excluded', false) |
+      sortObjects('metadata.schedule.order', 100, 'number') %}
+
+    {% if schedulePages %}
+      <ol class="c-schedule">
+        {% for schedulePage in schedulePages %}
+          <li class="c-schedule__item">
+            {% set data = schedulePage.metadata.schedule %}
+            {% set speakers = [] if not data.isTalk else contents.speakers._.pages |
+              filterObjects('metadata.speaker.talkTitle', data.title) %}
+            {% set speaker = null if not data.isTalk else speakers | first %}
+
+            {% if data.isTalk %}
+              <a href="{{ speaker.url }}#talk" target="_blank">
+            {% endif %}
+              <div class="c-schedule-item">
+                <time class="c-schedule-item__time">{{ data.time }}</time>
+                <div class="c-schedule-item__details">
+                  {% if data.isTalk %}
+                    <h2 class="c-schedule-item__title">
+                      {{ speakers | joinObjects(' & ', 'metadata.speaker.name')}}
+                    </h2>
+                    {{ data.title }}
+                  {% else %}
+                    <h2 class="c-schedule-item__title">{{ data.title }}</h2>
+                  {% endif %}
+                  {% if data.misc %}
+                    <div class="c-schedule-item__misc">
+                      {{ data.misc | nl2br }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% if data.isTalk %}
+              </a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    {% endif %}
+  </div>
+{% endblock %}
