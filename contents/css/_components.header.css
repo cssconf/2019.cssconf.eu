@@ -15,8 +15,10 @@
 }
 
 .c-header__logo {
+  position: relative;
   height: 3rem;
   width: 3.25rem;
+  z-index: 100;
   @media(--m) {
     height: 4.5rem;
     width: 4.8125rem;

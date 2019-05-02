@@ -1,20 +1,29 @@
 .c-nav-main-toggle {
-  background: url("contents:svg/hamburger.svg") center center;
-  background-size: cover;
+  background: url("contents:svg/hamburger.svg") center center no-repeat;
+  background-size: 2rem 2rem;
   border: 0;
   color: var(--c-white);
-  height: 2rem;
   position: relative;
-  width: 2rem;
+  height: 3rem;
+  width: 3rem;
+  padding: 1rem;
   margin-left: 2rem;
   text-indent: -999em;
+  cursor: pointer;
+  z-index: 100;
   @media(--m) {
-    height: 3rem;
-    width: 3rem;
+    background-size: 3rem 3rem;
+    height: 4rem;
+    width: 4rem;
     margin-right: 1rem;
+  }
+  &:focus,
+  &:hover {
+    outline: none;
   }
 }
 
 .is-nav-opened .c-nav-main-toggle {
   background-image: url("contents:svg/close.svg");
+  background-color: var(--c-blue);
 }

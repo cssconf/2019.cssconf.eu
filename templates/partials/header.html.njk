@@ -28,18 +28,41 @@
     <nav class="c-nav-main" id="nav-main">
       <div class="c-nav-main__content">
         <ul class="c-nav-main__list">
-          {{ navItem('🚀 Buy Ticket 🚀', buyTicketsLink) }}
+          {{ navItem('Speakers', contents['speakers.json'].url) }}
+          {# @lukasz #}
+          {{ navItem('Artists', buyTicketsLink) }}
+          {# @lukasz #}
+          {{ navItem('Schedule', buyTicketsLink) }}
           {{ navItem('Info', contents['info.json'].url) }}
-          {{ navItem('Code of Conduct', contents['code-of-conduct.json'].url) }}
-          {% if speakers.length %}
-            {{ navItem('Speakers', contents['speakers.json'].url) }}
-          {% endif %}
-          {{ navItem('Sponsors', contents['sponsors.json'].url) }}
           {{ navItem('Team', contents['team.json'].url) }}
-          {{ navItem('Newsletter', contents['newsletter.json'].url) }}
+          {{ navItem('Sponsors', contents['sponsors.json'].url) }}
         </ul>
-        <button class="c-nav-main__close js-nav-main-toggle"
-                onclick="document.body.classList.toggle('is-nav-opened')">Close</button>
+
+        <div class="copy--mini">
+          <ul class="c-nav-sublist">
+            <li>
+              <a class="c-nav-sublist__link" href="{{ contents['code-of-conduct.json'].url }}">Code of Conduct</a>
+            </li>
+            <li>
+              <a class="c-nav-sublist__link" href="/faq">FAQ</a>
+            </li>
+            <li>
+              <a class="c-nav-sublist__link" href="/accessibility">Accessibility</a>
+            </li>
+            <li>
+              <a class="c-nav-sublist__link" href="{{ contents['scholarships.json'].url }}">Scholarships</a>
+            </li>
+            <li>
+              <a class="c-nav-sublist__link" href="{{ contents['newsletter.json'].url }}">Newsletter</a>
+            </li>
+          </ul>
+          <p class="joke copy--mini">
+            <a class="c-nav-sublist__link" href="mailto:{{ email }}">
+              CSS is awesome. {{ email }} 
+            </a>
+          </p>
+        </div>
+
       </div>
     </nav>
   </div>
