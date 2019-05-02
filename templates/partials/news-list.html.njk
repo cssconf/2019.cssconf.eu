@@ -5,10 +5,12 @@
 {% if newsList | length > 0 %}
   <section class="c-content c-content--salmon">
     <div class="l-container">
-      <h2 class="fz--beta mb5">
+      <h2 class="fz--beta mb5 mb6-l">
         News
       </h2>
+    </div>
 
+    <div class="l-container l-container--xxxl">
       {{ contentGrid(newsList, moment) }}
     </div>
   </section>

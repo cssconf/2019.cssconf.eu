@@ -4,14 +4,12 @@
       {% for item in items %}
         <article onclick="location=this.querySelector('a').href">
           {% if moment %}
-            <time>{{ moment(item.metadata.date).utcOffset(8).format('ddd, DD MMM YYYY') }}</time>
+            <time class="copy--mini">{{ moment(item.metadata.date).utcOffset(8).format('ddd, DD MMM YYYY') }}</time>
           {% endif %}
-          <h3 class="mb4">{{ item.title }}</h3>
-          <p>
+          <h3 class="measure-wide fz--delta mb4">{{ item.title }}</h3>
+          <p class="measure-wide">
             {{ item.html | striptags | truncate('150') }}
-          </p>
-          <p>
-            <a href="{{ item.url }}">Read more</a>
+            <a href="{{ item.url }}" class="nowrap">Read more →</a>
           </p>
         </article>
       {% endfor %}
