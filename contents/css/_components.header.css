@@ -15,9 +15,13 @@
 }
 
 .c-header__logo {
-  height: 4.5rem;
-  width: 4.8125rem;
+  height: 3rem;
+  width: 3.25rem;
   @media(--m) {
+    height: 4.5rem;
+    width: 4.8125rem;
+  }
+  @media(--l) {
     height: 5.625rem;
     width: 6rem;
   }

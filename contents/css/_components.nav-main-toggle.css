@@ -3,12 +3,14 @@
   background-size: cover;
   border: 0;
   color: var(--c-white);
-  height: 3rem;
+  height: 2rem;
   position: relative;
-  width: 3rem;
+  width: 2rem;
   margin-left: 2rem;
   text-indent: -999em;
   @media(--m) {
+    height: 3rem;
+    width: 3rem;
     margin-right: 1rem;
   }
 }
