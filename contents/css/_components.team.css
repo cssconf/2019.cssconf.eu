@@ -7,6 +7,16 @@
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   }
 
+  @media(--l) {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  }
+
+  &.c-team--organizers {
+    @media(--m) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
   &__person {
     position: relative;
     display: flex;
