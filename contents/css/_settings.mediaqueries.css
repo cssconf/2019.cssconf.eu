@@ -1,9 +1,11 @@
-@custom-media --s (width >= 30rem);
-@custom-media --m (width >= 48rem);
-@custom-media --l (width >= 64rem);
+@custom-media --xs (width >= 30rem); /* 480px */
+@custom-media --s (width >= 40rem); /* 640px */
+@custom-media --m (width >= 48rem); /* 768px */
+@custom-media --l (width >= 64rem); /* 1024px */
 
 :root {
-  --breakpoint-s: 30rem;
+  --breakpoint-xs: 30rem;
+  --breakpoint-s: 40rem;
   --breakpoint-m: 48rem;
   --breakpoint-l: 64rem;
 }
@@ -27,10 +29,17 @@ body {
     padding: .25rem;
     z-index: 10;
   }
+  @media(--xs) {
+    /* background: orange; */
+    &::before {
+      content: 'breakpoint --xs (30rem)';
+    }
+  }
+
   @media(--s) {
     /* background: red; */
     &::before {
-      content: 'breakpoint --s (30rem)';
+      content: 'breakpoint --s (40rem)';
     }
   }
 
