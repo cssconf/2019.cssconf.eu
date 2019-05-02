@@ -83,12 +83,10 @@
   </p>
 {% endmacro %}
 
-{% macro ctaButton(link, text = '', openNewTab = true, centered = true) %}
-  <p {% if centered %}class="btn-block"{% endif %}>
-    <a href="{{ link }}" class="c-btn" {% if openNewTab %}target="_blank"{% endif %}>
-      {{ text }}
-    </a>
-  </p>
+{% macro ctaButton(link, text = '', openNewTab = true) %}
+  <a href="{{ link }}" class="c-btn" {% if openNewTab %}target="_blank"{% endif %}>
+    {{ text }}
+  </a>
 {% endmacro %}
 
 {% macro sponsorsGallery(cmsImages, sponsors) %}

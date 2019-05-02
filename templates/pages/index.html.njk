@@ -6,41 +6,65 @@
   <section class="c-content">
     <div class="l-container">
       {{ svgIconNew(contents, 'intro', width = 1205, height = 458, title = 'CSSconf.EU - Berlin - May 31, 2019') }}
-      <p class="mt4 mb4">
+      <p class="copy--max mt5 mb4 mt6-l mb5-l measure-cssconf center">
         Dedicated to everyone who loves and writes CSS: CSSconf EU is a one-day, one-track community conference that
         unites world-class speakers, top-notch engineers & web designers, and many more with an affinity for CSS in
         Berlin, Germany.
       </p>
-      {{ ctaButton(buyTicketsLink, '🚀 Buy Ticket', true, false) }}
+      <p class="measure-cssconf center">
+        {{ ctaButton(buyTicketsLink, '🚀 Buy Ticket', true) }}
+      </p>
     </div>
   </section>
   {% include "../partials/speakers-index.html.njk" %}
   <section class="c-content c-content--salmon">
     <div class="l-container">
       <h2 class="fz--beta mb4">
-        Become a Sponsor!
+        View Schedule
       </h2>
-      <p class="copy mb4">
-        We are currently offering sponsorship packages for CSSconf EU and JSConf EU 2019 – the big 10th anniversary Festival edition.
-        Contact us to learn more about our available packages, or talk with us about your unique idea and custom offers.
+      <p class="copy mb4 mb5-l measure-cssconf center">
+        Plan your CSSconf week: Our detailed schedule of the talk programme and all surrounding events is ready.
       </p>
-      {{ ctaButton(contents['sponsors.json'].url, 'Learn More', true, false) }}
+      <p class="copy mb4 mb5-l measure-cssconf center">
+        {{ ctaButton(
+          '#',
+          '⏱️ Schedule',
+          true,
+          false
+        ) }}
+      </p>
     </div>
   </section>
   <section class="c-content">
     <div class="l-container">
       <h2 class="fz--beta mb4">
-        Make a Scholarship Donation!
+        Make a Scholarship Donation
       </h2>
-      <p class="copy mb4">
+      <p class="copy mb4 mb5-l measure-cssconf center">
         The CSSconf EU scholarship program supports folks from underrepresented groups to be able to attend our event - which is only possible due to the generosity of many attendees and sponsors. This year we added a new option to directly help the program: by donating!
       </p>
-      {{ ctaButton(
-        'https://ti.to/cssconfeu/cssconfeu-2019/with/xmt7jc66z2k',
-        '🙏 Donate Now',
-        true,
-        false
-      ) }}
+      <p class="copy mb4 mb5-l measure-cssconf center">
+        {{ ctaButton(
+          'https://ti.to/cssconfeu/cssconfeu-2019/with/xmt7jc66z2k',
+          '🙏 Donate Now',
+          true,
+          false
+        ) }}
+      </p>
+    </div>
+  </section>
+  <section class="c-content c-content--salmon">
+    <div class="l-container">
+      <h2 class="fz--beta mb4">
+        Become a Sponsor
+      </h2>
+      <p class="copy mb4 mb5-l measure-cssconf center">
+        We are currently offering sponsorship packages for CSSconf EU and JSConf EU 2019 – the big 10th anniversary Festival edition.
+        Contact us to learn more about our available packages, or talk with us about your unique idea and custom offers.
+      </p>
+      <p class="copy mb4 mb5-l measure-cssconf center">
+        {{ ctaButton(contents['sponsors.json'].url, '🎗️ Learn More', true, false) }}
+      </p>
     </div>
   </section>
   {% include "../partials/news-list.html.njk" %}
