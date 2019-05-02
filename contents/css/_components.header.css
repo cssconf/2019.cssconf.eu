@@ -25,6 +25,12 @@
       display: unset;
     }
   }
+  .show-at-xxxl {
+    display: none;
+    @media(--xxxl) {
+      display: unset;
+    }
+  }
 }
 
 .c-header__wrapper {

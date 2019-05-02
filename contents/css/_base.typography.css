@@ -11,7 +11,7 @@ button {
     max-width: 54rem;
   }
 
-  @media(--xxl) {
+  @media(--xxxl) {
     max-width: 60rem;
   }
 }
