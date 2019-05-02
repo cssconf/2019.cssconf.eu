@@ -1,6 +1,30 @@
 .c-header {
   padding: 1rem;
   border-bottom: 2px solid var(--c-black);
+  .show-at-m {
+    display: none;
+    @media(--m) {
+      display: unset;
+    }
+  }
+  .show-at-l {
+    display: none;
+    @media(--l) {
+      display: unset;
+    }
+  }
+  .show-at-xl {
+    display: none;
+    @media(--xl) {
+      display: unset;
+    }
+  }
+  .show-at-xxl {
+    display: none;
+    @media(--xxl) {
+      display: unset;
+    }
+  }
 }
 
 .c-header__wrapper {
@@ -59,12 +83,15 @@
 .c-header__text--date {
   color: var(--c-violet);
   font-size: 1.5rem;
-  @media(--m) {
-    display: block;
-  }
 }
 
-.c-header__button {
+.c-header__buttons {
   display: flex;
   align-items: center;
+  @media(--xs) {
+    margin-right: 4rem;
+  }
+  @media(--m) {
+    margin-right: 5rem;
+  }
 }

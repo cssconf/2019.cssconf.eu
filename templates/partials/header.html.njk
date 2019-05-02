@@ -15,12 +15,18 @@
       <div class="c-header__text--name">
         {{ svgIconNew(contents, 'logo-text', width = 170, height = 22, title = 'CSSconf.EU') }}
       </div>
-      <div class="c-header__text--date dn ml3 nowrap">{{ conferenceFullDate }}</div>
+      <div class="c-header__text--date show-at-m ml3 nowrap">{{ conferenceFullDate }}</div>
     </a>
-    <div class="c-header__button">
+
+    <div class="c-header__buttons">
+      <a class="c-btn c-btn--header show-at-xl" href="{{ contents['speakers.json'].url }}">Speakers</a>
+      <a class="c-btn c-btn--header show-at-l" href="{{ contents['schedule.json'].url }}">Schedule</a>
+      <a class="c-btn c-btn--header show-at-m" href="{{ contents['info.json'].url }}">Info</a>
+      <a class="c-btn c-btn--header show-at-xxl" href="{{ contents['team.json'].url }}">Team</a>
+      <a class="c-btn c-btn--header show-at-xxl" href="{{ contents['sponsors.json'].url }}">Sponsors</a>
       <a href="{{ buyTicketsLink }}"
          class="c-btn c-btn--header">
-        🚀 Buy Ticket
+        🚀 Tickets
       </a>
       <button class="c-nav-main-toggle js-nav-main-toggle"
               onclick="document.body.classList.toggle('is-nav-opened')">Menu</button>

@@ -20,13 +20,14 @@
 
 .c-btn--header {
   display: none;
+  margin-left: 1rem;
+  white-space: nowrap;
+  border: 0;
   @media(--xs) {
     display: block;
-    margin-right: 4rem;
   }
   @media(--m) {
     font-size: 1.5rem;
-    margin-right: 5rem;
   }
 }
 
