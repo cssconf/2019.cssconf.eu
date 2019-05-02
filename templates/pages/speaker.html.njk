@@ -15,9 +15,11 @@
 
   <div class="l-container">
     <main>
-      {{ page.html }}
+      <div class=" measure-cssconf center">
+        {{ page.html }}        
+      </div>
 
-      <ul class="c-speaker-links list pl0">
+      <ul class="c-speaker-links list pl0 measure-cssconf center">
         {% if speaker.twitterHandle %}
           <li>
             {{ svgIconNew(contents, 'icon-twitter-dark', width = 16, height = 16)}}
@@ -43,7 +45,9 @@
           </li>
         {% endif %}
       </ul>
-      {{ ctaButton(buyTicketsLink, '🚀 Buy Ticket', true, false) }}
+      <p class=" measure-cssconf center">
+        {{ ctaButton(buyTicketsLink, '🚀 Buy Ticket', true, false) }}
+      </p>
     </main>
   </div>
 {% endblock %}

@@ -3,21 +3,30 @@
   border: 3px solid var(--c-black);
   color: var(--c-blue);
   display: inline-block;
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: bold;
   line-height: 1.75;
   padding: .5rem 1rem;
   &:hover,
   &:focus {
   }
+  @media(--s) {
+    font-size: 1.5rem;
+  }
+  @media(--m) {
+    font-size: 2rem;
+  }
 }
 
 .c-btn--header {
   display: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 2;
-  @media(--s) {
+  @media(--xs) {
     display: inline-block;
+  }
+  @media(--m) {
+    font-size: 1.5rem;
   }
 }
 

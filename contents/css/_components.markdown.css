@@ -11,12 +11,21 @@
 
 .c-markdown--indented-paragraphs {
   p,
+  ul,
+  ol,
   h3,
   h4,
-  h5 {
-    padding-left: calc(var(--l-unit) * 5);
-    @media (--s) {
-      padding-left: calc(var(--l-unit) * 8);
+  h5  {
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media(--l) {
+      max-width: 54rem;
+    }
+
+    @media(--xxl) {
+      max-width: 60rem;
     }
   }
 

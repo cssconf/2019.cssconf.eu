@@ -43,7 +43,7 @@
         <h1 class="c-intro__title {% if not introText %}mb0{% endif %}">{{ title }}</h1>
       </div>
       {% if introText %}
-        <p class="c-intro__text copy--max">
+        <p class="c-intro__text copy--max measure-cssconf center">
           {{ introText }}
         </p>
       {% endif %}
@@ -83,12 +83,10 @@
   </p>
 {% endmacro %}
 
-{% macro ctaButton(link, text = '', openNewTab = true, centered = true) %}
-  <p {% if centered %}class="btn-block"{% endif %}>
-    <a href="{{ link }}" class="c-btn" {% if openNewTab %}target="_blank"{% endif %}>
-      {{ text }}
-    </a>
-  </p>
+{% macro ctaButton(link, text = '', openNewTab = true) %}
+  <a href="{{ link }}" class="c-btn" {% if openNewTab %}target="_blank"{% endif %}>
+    {{ text }}
+  </a>
 {% endmacro %}
 
 {% macro sponsorsGallery(cmsImages, sponsors) %}
