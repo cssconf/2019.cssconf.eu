@@ -23,7 +23,7 @@
   margin: 2rem;
   border: 3px solid var(--c-white);
   @media(--m) {
-    margin: 3.5rem;
+    margin: 3rem;
   }
 }
 
