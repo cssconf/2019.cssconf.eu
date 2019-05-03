@@ -12,15 +12,21 @@
       <div class="c-header__logo">
         {{ svgIconNew(contents, 'logo-icon', width = 97, height = 90) }}
       </div>
-      <div class="c-header__text--name dn ml3 mr3">
+      <div class="c-header__text--name">
         {{ svgIconNew(contents, 'logo-text', width = 170, height = 22, title = 'CSSconf.EU') }}
       </div>
-      <div class="c-header__text--date dn">{{ conferenceFullDate }}</div>
+      <div class="c-header__text--date show-at-m ml3 nowrap">{{ conferenceFullDate }}</div>
     </a>
-    <div class="c-header__button">
+
+    <div class="c-header__buttons">
+      <a class="c-btn c-btn--header show-at-xl" href="{{ contents['speakers.json'].url }}">Speakers</a>
+      <a class="c-btn c-btn--header show-at-l" href="{{ contents['schedule.json'].url }}">Schedule</a>
+      <a class="c-btn c-btn--header show-at-m" href="{{ contents['info.json'].url }}">Info</a>
+      <a class="c-btn c-btn--header show-at-xxl" href="{{ contents['team.json'].url }}">Team</a>
+      <a class="c-btn c-btn--header show-at-xxl" href="{{ contents['sponsors.json'].url }}">Sponsors</a>
       <a href="{{ buyTicketsLink }}"
          class="c-btn c-btn--header">
-        🚀 Buy Ticket
+        🚀 Tickets
       </a>
       <button class="c-nav-main-toggle js-nav-main-toggle"
               onclick="document.body.classList.toggle('is-nav-opened')">Menu</button>
@@ -28,18 +34,40 @@
     <nav class="c-nav-main" id="nav-main">
       <div class="c-nav-main__content">
         <ul class="c-nav-main__list">
-          {{ navItem('🚀 Buy Ticket 🚀', buyTicketsLink) }}
+          {{ navItem('Speakers', contents['speakers.json'].url) }}
+          {# @lukasz #}
+          {# {{ navItem('Artists', buyTicketsLink) }} #}
+          {{ navItem('Schedule', contents['schedule.json'].url) }}
           {{ navItem('Info', contents['info.json'].url) }}
-          {{ navItem('Code of Conduct', contents['code-of-conduct.json'].url) }}
-          {% if speakers.length %}
-            {{ navItem('Speakers', contents['speakers.json'].url) }}
-          {% endif %}
-          {{ navItem('Sponsors', contents['sponsors.json'].url) }}
           {{ navItem('Team', contents['team.json'].url) }}
-          {{ navItem('Newsletter', contents['newsletter.json'].url) }}
+          {{ navItem('Sponsors', contents['sponsors.json'].url) }}
         </ul>
-        <button class="c-nav-main__close js-nav-main-toggle"
-                onclick="document.body.classList.toggle('is-nav-opened')">Close</button>
+
+        <div class="copy--mini">
+          <ul class="c-nav-sublist">
+            <li>
+              <a class="c-nav-sublist__link" href="{{ contents['code-of-conduct.json'].url }}">Code of Conduct</a>
+            </li>
+            <li>
+              <a class="c-nav-sublist__link" href="/faq">FAQ</a>
+            </li>
+            <li>
+              <a class="c-nav-sublist__link" href="/accessibility">Accessibility</a>
+            </li>
+            <li>
+              <a class="c-nav-sublist__link" href="{{ contents['scholarships.json'].url }}">Scholarships</a>
+            </li>
+            <li>
+              <a class="c-nav-sublist__link" href="{{ contents['newsletter.json'].url }}">Newsletter</a>
+            </li>
+          </ul>
+          <p class="joke copy--mini">
+            <a class="c-nav-sublist__link" href="mailto:{{ email }}">
+              CSS is awesome. {{ email }}
+            </a>
+          </p>
+        </div>
+
       </div>
     </nav>
   </div>

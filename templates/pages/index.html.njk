@@ -17,7 +17,7 @@
     </div>
   </section>
   {% include "../partials/speakers-index.html.njk" %}
-  {# <section class="c-content c-content--salmon">
+  <section class="c-content c-content--salmon">
     <div class="l-container">
       <h2 class="fz--beta mb4">
         View Schedule
@@ -26,14 +26,9 @@
         Plan your CSSconf week: Our detailed schedule of the talk programme and all surrounding events is ready.
       </p>
       <p class="copy mb4 mb5-l measure-cssconf center">
-        {{ ctaButton(
-          '#',
-          '⏱️ Schedule',
-          true,
-          false
-        ) }}
+        {{ ctaButton(contents['schedule.json'].url, '⏱️ Schedule', false) }}
       </p>
-    </div> #}
+    </div>
   </section>
   <section class="c-content c-content">
     <div class="l-container">
@@ -45,7 +40,7 @@
         Contact us to learn more about our available packages, or talk with us about your unique idea and custom offers.
       </p>
       <p class="copy mb4 mb5-l measure-cssconf center">
-        {{ ctaButton(contents['sponsors.json'].url, '🎗️ Learn More', true, false) }}
+        {{ ctaButton(contents['sponsors.json'].url, '🎗️ Learn More', false) }}
       </p>
     </div>
   </section>

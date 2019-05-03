@@ -1,6 +1,36 @@
 .c-header {
   padding: 1rem;
   border-bottom: 2px solid var(--c-black);
+  .show-at-m {
+    display: none;
+    @media(--m) {
+      display: unset;
+    }
+  }
+  .show-at-l {
+    display: none;
+    @media(--l) {
+      display: unset;
+    }
+  }
+  .show-at-xl {
+    display: none;
+    @media(--xl) {
+      display: unset;
+    }
+  }
+  .show-at-xxl {
+    display: none;
+    @media(--xxl) {
+      display: unset;
+    }
+  }
+  .show-at-xxxl {
+    display: none;
+    @media(--xxxl) {
+      display: unset;
+    }
+  }
 }
 
 .c-header__wrapper {
@@ -10,40 +40,64 @@
 }
 
 .c-header__link {
+  display: block;
   display: flex;
   align-items: center;
+  min-height: 2rem;
 }
 
 .c-header__logo {
-  height: 3rem;
+  position: absolute;
+  height: 3.25rem;
   width: 3.25rem;
-  @media(--m) {
-    height: 4.5rem;
-    width: 4.8125rem;
+  z-index: 100;
+  @media(--xs) {
+    height: 4rem;
+    width: 4rem;
   }
-  @media(--l) {
-    height: 5.625rem;
-    width: 6rem;
+  @media(--m) {
+    height: 5.5rem;
+    width: 5.5rem;
+  }
+  @media(--xl) {
+    position: fixed;
   }
 }
 
 .c-header__text--name {
-  height: 2.05rem;
-  width: 10.625rem;
+  width: 8rem;
+  height: 1.035294rem;
+  margin-left: 4rem;
+  svg {
+    display: block;
+  }
+  @media(--xs) {
+    margin-left: 4.5rem;
+  }
+  @media(--s) {
+    width: 10rem;
+    height: 1.2942rem;
+  }
+  @media(--m) {
+    margin-left: 6rem;
+  }
+  @media(--l) {
+    margin-left: 6rem;
+  }
 }
 
 .c-header__text--date {
   color: var(--c-violet);
+  font-size: 1.5rem;
 }
 
-.c-header__text--date,
-.c-header__text--name {
-  @media(--m) {
-    display: block;
-  }
-}
-
-.c-header__button {
+.c-header__buttons {
   display: flex;
   align-items: center;
+  @media(--xs) {
+    margin-right: 4rem;
+  }
+  @media(--m) {
+    margin-right: 5rem;
+  }
 }
