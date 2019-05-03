@@ -1,0 +1,4 @@
+{
+  "template": "pages/artists.html.njk",
+  "title": "Artists"
+}

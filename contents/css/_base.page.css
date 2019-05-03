@@ -12,13 +12,15 @@ body.is-nav-opened {
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
 .l-wrapper {
   flex-grow: 1;
-  overflow-x: hidden;
 }
 
 a {
@@ -36,7 +38,8 @@ a {
   position: relative;
 }
 
-.responsive-image-wrapper img, .responsive-image-wrapper iframe {
+.responsive-image-wrapper img,
+.responsive-image-wrapper iframe {
   position: absolute;
   top: 0;
   left: 0;

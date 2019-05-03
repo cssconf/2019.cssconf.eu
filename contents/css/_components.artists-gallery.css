@@ -1,0 +1,69 @@
+.c-artists-gallery {
+  --gallery-columns: 1;
+  --gallery-spacing: 2;
+  display: grid;
+  grid-template-columns: repeat(var(--gallery-columns), 1fr);
+  grid-gap: calc(var(--l-unit) * var(--gallery-spacing));
+
+  @media (--m) {
+    --gallery-columns: 3;
+    --gallery-spacing: 4;
+  }
+
+  &__item {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    @media (--m) {
+      &:nth-child(3n + 1) {
+        grid-column-start: 2;
+        grid-column-end: 4;
+      }
+
+      &:nth-child(3n) {
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+    }
+  }
+
+  &__artist {
+    --gallery-border: 4px;
+    border: var(--gallery-border) solid var(--c-black);
+    color: var(--c-black);
+    display: flex;
+    font-weight: bold;
+    padding: calc(var(--l-unit) * var(--gallery-spacing));
+
+    @media (--m) {
+      --gallery-border: 9px;
+    }
+  }
+
+  &__item:nth-child(3n) &__artist {
+    @media (--m) {
+      max-width: 24rem;
+    }
+
+    @media (--l) {
+      max-width: 30rem;
+    }
+  }
+
+  &__image {
+    width: 10rem;
+    height: auto;
+    margin-right: calc(var(--l-unit) * var(--gallery-spacing));
+  }
+
+  &__item:nth-child(3n + 1) &__name,
+  &__item:nth-child(3n) &__name {
+    margin-top: calc(var(--l-unit) * var(--gallery-spacing));
+  }
+
+  &__item:nth-child(3n + 2) &__image {
+    margin-left: calc(var(--l-unit) * var(--gallery-spacing));
+    margin-right: 0;
+    order: 2;
+  }
+}
