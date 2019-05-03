@@ -194,11 +194,7 @@ async function main(params) {
           title = `${data.name}: ${data.talkTitle}`;
         }
 
-        if (sheetId === 'artists') {
-          title = `${data.firstname} ${data.lastname}: ${data.talkTitle}`;
-        }
-
-        if (sheetId === 'team') {
+        if (sheetId === 'team' || sheetId === 'artists') {
           title = `${data.firstname} ${data.lastname}`;
         }
 

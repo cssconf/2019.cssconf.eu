@@ -1,0 +1,42 @@
+{% extends "../layouts/default.html.njk" %}
+
+{% from "../_macros.njk" import pageIntro %}
+
+{% block content %}
+  {% set data = contents.copy.artists['intro.md'] %}
+
+  {{
+    pageIntro(data.metadata.title)
+  }}
+
+  <div class="l-container">
+    <main>
+      {% set artists = contents.artists._.pages
+        | filterObjects('metadata.artist.reviewed', true)
+        | filterObjects('metadata.artist.published', true) %}
+
+      {% if artists.length %}
+        <div class="c-speakers-gallery c-speakers-gallery--artists">
+          {% for artist in artists %}
+            {% set artistData = artist.metadata.artist %}
+            {% set artistName = artistData.firstname + ' ' + artistData.lastname %}
+            <a class="c-speakers-gallery__speaker" href="https://twitter.com/{{ artistData.twitterHandle }}">
+              <div class="c-speakers-gallery__speaker-name">{{ artistName }}</div>
+              <div class="c-speakers-gallery__speaker-image">
+                <img
+                  src="{{ contents.images.cms[artistData.image.filename_500].url }}"
+                  alt=""
+                />
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+    </main>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {% include "../partials/footer.html.njk" %}
+{% endblock %}

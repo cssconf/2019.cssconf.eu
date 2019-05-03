@@ -188,4 +188,8 @@
       }
     }
   }
+
+  &--artists {
+    border-bottom: none;
+  }
 }
