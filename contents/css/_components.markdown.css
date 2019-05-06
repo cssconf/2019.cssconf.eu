@@ -16,7 +16,8 @@
   h3,
   h4,
   h5,
-  hr  {
+  hr,
+  pre  {
     max-width: 50rem;
     margin-left: auto;
     margin-right: auto;
@@ -27,6 +28,26 @@
 
     @media(--xxxl) {
       max-width: 60rem;
+    }
+  }
+
+  hr {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border: 0;
+    border-top: 3px solid var(--c-salmon);
+  }
+
+  pre {
+    padding: 3rem 1.5rem 3rem 3rem;
+    background-color:  var(--c-black);
+    code {
+      background-color: transparent;
+      color: var(--c-salmon);
+      &::selection {
+        background-color: var(--c-salmon);
+        color: var(--c-black);
+      }
     }
   }
 
