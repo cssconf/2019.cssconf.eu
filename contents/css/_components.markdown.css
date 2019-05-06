@@ -15,7 +15,8 @@
   ol,
   h3,
   h4,
-  h5  {
+  h5,
+  hr  {
     max-width: 50rem;
     margin-left: auto;
     margin-right: auto;
