@@ -17,16 +17,16 @@
   h4,
   h5,
   hr,
-  pre  {
+  pre {
     max-width: 50rem;
     margin-left: auto;
     margin-right: auto;
 
-    @media(--l) {
+    @media (--l) {
       max-width: 54rem;
     }
 
-    @media(--xxxl) {
+    @media (--xxxl) {
       max-width: 60rem;
     }
   }
@@ -39,8 +39,9 @@
   }
 
   pre {
-    padding: 3rem 1.5rem 3rem 3rem;
-    background-color:  var(--c-black);
+    padding: 1rem;
+    background-color: var(--c-black);
+    white-space: pre-wrap;
     code {
       background-color: transparent;
       color: var(--c-salmon);
@@ -48,6 +49,10 @@
         background-color: var(--c-salmon);
         color: var(--c-black);
       }
+    }
+
+    @media (--l) {
+      padding: 3rem 1.5rem 3rem 3rem;
     }
   }
 
