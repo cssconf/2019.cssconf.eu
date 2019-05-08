@@ -64,6 +64,13 @@ const sheetParams = {
     dataFieldName: 'speaker',
     contentPath: 'speakers'
   },
+  'bipocit-speakers': {
+    templateGlobals: {
+      template: 'pages/speaker.html.njk'
+    },
+    dataFieldName: 'speaker',
+    contentPath: 'bipocit-space/speakers'
+  },
   sponsors: {
     templateGlobals: {},
     dataFieldName: 'sponsor',

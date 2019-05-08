@@ -1,0 +1,41 @@
+{% extends "../layouts/default.html.njk" %}
+
+{% from "../_macros.njk" import pageIntro %}
+
+{% block content %}
+  {{ pageIntro(page.title) }}
+
+  <div class="l-container">
+    <main>
+      {% set speakers = contents['bipocit-space'].speakers._.pages
+        | filterObjects('metadata.speaker.reviewed', true)
+        | filterObjects('metadata.speaker.published', true) %}
+
+      {% if speakers.length %}
+        <div class="c-artists-gallery">
+          {% for speaker in speakers %}
+            {% set speakerData = speaker.metadata.speaker %}
+            <div class="c-artists-gallery__item">
+              <a class="c-artists-gallery__artist" href="{{ speaker.url }}">
+                <div class="c-artists-gallery__image">
+                  <img
+                    src="{{ contents.images.cms[speakerData.image.filename_500].url }}"
+                    alt="{{ speakerData.name }}"
+                  />
+                </div>
+                <div class="c-artists-gallery__name fz--gamma">
+                  {% set name = speakerData.name | splitString(' ') %}
+                  {{ name | first }}<br>{{ name | last }}
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </main>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {% include "../partials/footer.html.njk" %}
+{% endblock %}
