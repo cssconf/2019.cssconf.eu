@@ -219,11 +219,8 @@ async function main(params) {
         if (sheetId === 'sponsors') {
           imageExtension = 'svg';
         }
-        const imageUrl = data.potraitImageUrl || data.logoUrl;
-
-        if (sheetId !== 'schedule') {
-          data.image = await downloadImage(imageUrl, title, imageExtension);
-        }
+        const imageUrl = data.potraitImageUrl || data.logoUrl || data.image;
+        data.image = await downloadImage(imageUrl, title, imageExtension);
 
         let frontmatterFromContent = {};
 
