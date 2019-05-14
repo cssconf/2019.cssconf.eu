@@ -1,0 +1,20 @@
+{% extends "../layouts/default.html.njk" %}
+
+{% from "../partials/content-grid.html.njk" import contentGrid %}
+{% from "../_macros.njk" import pageIntro %}
+
+{% set newsList = contents.news._.pages
+  | filterObjects('metadata.article.published', true)
+  | filterObjects('metadata.article.reviewed', true)
+  | sortObjects('metadata.date', '2017-01-01', 'date')
+  | reverse %}
+
+{% block content %}
+  {{ pageIntro('News') }}
+
+  <div class="l-container l-container--xxxl">
+    <main class="mt6">
+      {{ contentGrid(newsList, moment) }}
+    </main>
+  </div>
+{% endblock %}
