@@ -1,7 +1,11 @@
 .c-content-grid {
+  --columns-width: 1fr;
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, var(--columns-width));
+  @media (--xs) {
+    --columns-width: minmax(30rem, 1fr);
+  }
   @media (--m) {
     grid-gap: 5rem;
   }
