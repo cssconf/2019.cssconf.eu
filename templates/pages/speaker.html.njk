@@ -1,6 +1,6 @@
 {% extends "../layouts/default.html.njk" %}
 
-{% from "../_macros.njk" import ctaButton, pageIntro, svgIconNew %}
+{% from "../_macros.njk" import pageIntro, svgIconNew %}
 
 {% set speaker = page.metadata.speaker %}
 
@@ -16,7 +16,7 @@
   <div class="l-container">
     <main>
       <div class=" measure-cssconf center">
-        {{ page.html }}        
+        {{ page.html }}
       </div>
 
       <ul class="c-speaker-links list pl0 measure-cssconf center">
@@ -45,9 +45,6 @@
           </li>
         {% endif %}
       </ul>
-      <p class=" measure-cssconf center">
-        {{ ctaButton(buyTicketsLink, '🚀 Buy Ticket', true, false) }}
-      </p>
     </main>
   </div>
 {% endblock %}
