@@ -33,7 +33,7 @@
 
     &::before {
       background-color: var(--c-salmon-light);
-      content: "";
+      content: '';
       left: 2rem;
       height: 100%;
       position: absolute;
@@ -73,6 +73,6 @@
 }
 
 .svg-intro {
-  margin-left: -2.25rem;
-  margin-right: -2.25rem;
+  margin-left: calc(0px - var(--l-gutter));
+  margin-right: calc(0px - var(--l-gutter));
 }
