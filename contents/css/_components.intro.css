@@ -72,6 +72,21 @@
   }
 }
 
+.c-intro--schedule {
+  border-bottom: 0;
+  margin-bottom: 1rem;
+  padding-bottom: 0;
+  padding-top: 2rem;
+
+  .c-intro__title {
+    margin-bottom: 0;
+
+    @media (--xl) {
+      font-size: 12.5rem;
+    }
+  }
+}
+
 .svg-intro {
   margin-left: calc(0px - var(--l-gutter));
   margin-right: calc(0px - var(--l-gutter));

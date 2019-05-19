@@ -32,6 +32,7 @@
 @import '_components.page-header.css';
 @import '_components.schedule.css';
 @import '_components.schedule-item.css';
+@import '_components.schedule-item-events.css';
 @import '_components.speaker-links.css';
 @import '_components.speakers-gallery.css';
 @import '_components.sponsors.css';
