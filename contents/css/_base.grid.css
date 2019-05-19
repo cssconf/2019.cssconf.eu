@@ -22,8 +22,18 @@
     max-width: 112rem;
   }
 
+  &--schedule {
+    padding-left: 0;
+    padding-right: 0;
+
+    @media (--m) {
+      padding-left: var(--l-gutter);
+      padding-right: var(--l-gutter);
+    }
+  }
+
   &--background {
-    @media(--m) {
+    @media (--m) {
       background-image: url('contents:svg/logo-shape.svg');
       background-position: 50% 50%;
       background-repeat: no-repeat;

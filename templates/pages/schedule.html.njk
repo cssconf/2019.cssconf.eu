@@ -3,7 +3,7 @@
 {% block content %}
   {% set data = contents.copy.schedule['main.md'] %}
 
-  <section class="c-intro c-intro--centered">
+  <section class="c-intro c-intro--schedule">
     <div class="l-container">
       <h1 class="c-intro__title">{{ data.metadata.title }}</h1>
       {% if data.metadata.introText %}
@@ -12,7 +12,7 @@
     </div>
   </section>
 
-  <div class="l-container">
+  <div class="l-container l-container--schedule">
     {% set schedulePages = contents.schedule._.pages |
       filterObjects('metadata.schedule.published', true) |
       filterObjects('metadata.schedule.excluded', false) |
@@ -23,34 +23,56 @@
         {% for schedulePage in schedulePages %}
           <li class="c-schedule__item">
             {% set data = schedulePage.metadata.schedule %}
+            {% set bipocitSpace = data.bipocitSpace %}
+            {% set communityLounge = data.communityLounge %}
             {% set speakers = [] if not data.isTalk else contents.speakers._.pages |
               filterObjects('metadata.speaker.talkTitle', data.title) %}
             {% set speaker = null if not data.isTalk else speakers | first %}
 
-            {% if data.isTalk %}
-              <a href="{{ speaker.url }}#talk" target="_blank">
-            {% endif %}
-              <div class="c-schedule-item">
-                <time class="c-schedule-item__time">{{ data.time }}</time>
-                <div class="c-schedule-item__details">
-                  {% if data.isTalk %}
-                    <h2 class="c-schedule-item__title">
-                      {{ speakers | joinObjects(' & ', 'metadata.speaker.name')}}
-                    </h2>
+            <div class="c-schedule-item">
+              <time class="c-schedule-item__time">{{ data.time }}</time>
+              <div class="c-schedule-item__details">
+                {% if data.isTalk %}
+                  <h2 class="mb0 c-schedule-item__title copy">
+                    {{ speakers | joinObjects(' & ', 'metadata.speaker.name')}}
+                  </h2>
+                  <a class="c-schedule-item__talk-title" href="{{ speaker.url }}#talk" target="_blank">
                     {{ data.title }}
-                  {% else %}
-                    <h2 class="c-schedule-item__title">{{ data.title }}</h2>
-                  {% endif %}
-                  {% if data.misc %}
-                    <div class="c-schedule-item__misc">
-                      {{ data.misc | nl2br }}
-                    </div>
-                  {% endif %}
-                </div>
+                  </a>
+                {% else %}
+                  <h2 class="mb0 c-schedule-item__title copy">{{ data.title }}</h2>
+                {% endif %}
+
+                {% if bipocitSpace or communityLounge %}
+                  <div class="c-schedule-item-events">
+                    {% if communityLounge %}
+                      <div class="c-schedule-item-events__event">
+                        <h3 class="mb2 normal c-schedule-item-events__area c-schedule-item-events__area--community-lounge">
+                          Community Lounge
+                        </h3>
+                        <a href="{{ data.communityLoungeLink }}" class="b c-schedule-item-events__name">
+                          {{ communityLounge }}
+                        </a>
+                      </div>
+                    {% endif %}
+                    {% if bipocitSpace %}
+                      <div class="c-schedule-item-events__event">
+                        <h3 class="mb2 normal c-schedule-item-events__area">BIPoCiT Space</h3>
+                        <a href="{{ data.bipocitSpaceLink }}" class="b c-schedule-item-events__name">
+                          {{ bipocitSpace }}
+                        </a>
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endif %}
+
+                {% if data.misc %}
+                  <div class="c-schedule-item__misc copy--mini">
+                    {{ data.misc | nl2br }}
+                  </div>
+                {% endif %}
               </div>
-            {% if data.isTalk %}
-              </a>
-            {% endif %}
+            </div>
           </li>
         {% endfor %}
       </ol>

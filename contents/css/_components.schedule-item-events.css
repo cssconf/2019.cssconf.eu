@@ -1,0 +1,52 @@
+.c-schedule-item-events {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--l-gutter);
+
+  @media (--s) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__event {
+    --schedule-item-event-width: 100%;
+    background-color: #f2f2f2;
+    flex-basis: var(--schedule-item-event-width);
+    margin-bottom: var(--l-gutter);
+    padding: 1rem var(--l-gutter);
+
+    @media (--s) {
+      --schedule-item-event-width: calc(50% - calc(var(--l-gutter) / 2));
+    }
+  }
+
+  &__area {
+    color: var(--c-orange);
+    font-size: 1rem;
+
+    @media (--l) {
+      font-size: 1.5rem;
+      line-height: 1.466666667;
+    }
+
+    &--community-lounge {
+      color: var(--c-blue);
+    }
+  }
+
+  &__name {
+    color: var(--c-black);
+    display: block;
+    font-size: 1.25rem;
+    line-height: 1.2;
+
+    @media (--m) {
+      font-size: 1.5rem;
+      line-height: 1.166666667;
+    }
+
+    @media (--l) {
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,8 +1,27 @@
 .c-schedule {
+  --schedule-border: 4px;
+  border: var(--schedule-border) solid var(--c-black);
   list-style: none;
   padding-left: 0;
 
+  @media (--m) {
+    --schedule-border: 9px;
+  }
+
   &__item {
-    margin-bottom: 3rem;
+    --schedule-item-spacing: calc(var(--l-gutter) / 2);
+    border-bottom: var(--schedule-border) solid var(--c-black);
+    margin-left: var(--schedule-item-spacing);
+    margin-right: var(--schedule-item-spacing);
+    padding-bottom: var(--schedule-item-spacing);
+    padding-top: var(--schedule-item-spacing);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    @media (--m) {
+      --schedule-item-spacing: var(--l-gutter);
+    }
   }
 }
