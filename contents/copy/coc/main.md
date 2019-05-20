@@ -116,9 +116,9 @@ To find out more about ableism and replacement terms please read
 
 Using gendered terms like _"dude"_ or _"guys"_ to address a mixed-gendered group of
 people contributes to furthering exclusion of underrepresented individuals. We
-strongly advise avoiding gendered pronouns as well as gendered terms.
+strongly advise avoiding gendered pronouns as well as gendered terms. If unsure about people's pronouns, we highly recommend to ask people directly for their pronouns first and to check, if there are already any hints provided by themselves (e.g. on badges).
 
-For more information please familiarise yourself with [Geek Feminism wiki guide](http://geekfeminism.wikia.com/wiki/Nonsexist_language).
+For more information please familiarise yourself with [Geek Feminism wiki guide](http://geekfeminism.wikia.com/wiki/Nonsexist_language) and [Wikipedia Third Person Pronoun](https://en.wikipedia.org/wiki/Third-person_pronoun).
 
 ## Attribution
 
