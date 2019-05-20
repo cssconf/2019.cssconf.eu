@@ -120,6 +120,13 @@ strongly advise avoiding gendered pronouns as well as gendered terms. If unsure 
 
 For more information please familiarise yourself with [Geek Feminism wiki guide](http://geekfeminism.wikia.com/wiki/Nonsexist_language) and [Wikipedia Third Person Pronoun](https://en.wikipedia.org/wiki/Third-person_pronoun).
 
+### Racism
+
+Racism is deeply connected to [colonialism](https://en.wikipedia.org/wiki/Colonialism) that has a long history of violence and oppression where a group or individual dominates another group or individual of different race and/or their territories. Addressing individuals or a group of people in a diminutive or derogative way based on their (assumed) race or ethnic background is therefore disrespectful and racist. We do not tolerate any racist behavior and strongly recommend to avoid racist slurs, statements or jokes.
+
+For more information please read [Wikipedia Racism](https://en.wikipedia.org/wiki/Racism).
+
+
 ## Attribution
 
 This Code of Conduct was based on [CSSConf / JSConf AU](http://jsconfau.com),
@@ -127,4 +134,4 @@ This Code of Conduct was based on [CSSConf / JSConf AU](http://jsconfau.com),
 the work of [Valerie Aurora](https://frameshiftconsulting.com/code-of-conduct-training/)
 and [Conference Code of Conduct](http://confcodeofconduct.com/).
 
-Last update: 21 Nov 2017
+Last update: 20 May 2019
