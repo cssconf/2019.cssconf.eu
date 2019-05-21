@@ -29,7 +29,7 @@
 
         <h2>{{ teamTypeTitle.metadata.team.typeTitle }}</h2>
 
-        <div class="c-team">
+        <div class="c-team c-team--{{ teamType }}">
           {% for teamPage in teamPages %}
             {% set teamMember = teamPage.metadata.team %}
             {% set teamMemberImage = contents.images.cms[teamMember.image.filename_500].url %}

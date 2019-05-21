@@ -3,16 +3,16 @@
   grid-gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
 
-  @media(--m) {
+  @media (--m) {
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   }
 
-  @media(--l) {
+  @media (--l) {
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   }
 
   &.c-team--organizers {
-    @media(--m) {
+    @media (--m) {
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
@@ -24,25 +24,26 @@
     margin-bottom: 3rem;
 
     &::before {
+      --person-background-size: 3rem;
       content: '';
       display: block;
       position: absolute;
       top: -1rem;
-      width: 3rem;
-      height: 3rem;
+      width: var(--person-background-size);
+      height: var(--person-background-size);
       background-color: var(--c-salmon-light);
       z-index: -1;
 
-      @media(--s) {
-        width: 4rem;
-        height: 4rem;
+      @media (--s) {
+        --person-background-size: 4rem;
       }
-      @media(--m) {
-        width: 7rem;
-        height: calc(100% + 2rem);
+
+      @media (--m) {
+        --person-background-size: 7rem;
       }
-      @media(--l) {
-        width: 10rem;
+
+      @media (--l) {
+        --person-background-size: 10rem;
       }
     }
   }
@@ -68,17 +69,17 @@
     width: 4.5rem;
     height: 4.5rem;
 
-    @media(--s) {
+    @media (--s) {
       width: 6rem;
       height: 6rem;
     }
 
-    @media(--m) {
+    @media (--m) {
       width: 7rem;
       height: 7rem;
     }
 
-    @media(--l) {
+    @media (--l) {
       width: 10rem;
       height: 10rem;
     }
