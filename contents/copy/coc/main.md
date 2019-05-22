@@ -98,8 +98,7 @@ In case of any doubt, please ask before taking photographs of attendees, speaker
 
 ## Inclusive language
 
-In our commitment to a harassment-free and inclusive environment we strongly
-believe it’s important to pay attention to harmful language patterns.
+In our commitment to a harassment-free and inclusive environment we strongly believe it’s important to pay attention to harmful language patterns and an [intersectional](https://en.wikipedia.org/wiki/Intersectionality) view on discriminations that rarely happen only one-sided. We understand that our list of isms below is by far not complete and believe it is a basic start to raise awareness at our events.
 
 ### Ableism
 
@@ -133,4 +132,4 @@ This Code of Conduct was based on [CSSConf / JSConf AU](http://jsconfau.com),
 the work of [Valerie Aurora](https://frameshiftconsulting.com/code-of-conduct-training/)
 and [Conference Code of Conduct](http://confcodeofconduct.com/).
 
-Last update: 22 May 2019 - Version 1.1
+Last update: 22 May 2019 - Version 1.2
