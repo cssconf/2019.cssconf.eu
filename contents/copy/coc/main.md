@@ -122,7 +122,7 @@ For more information please familiarise yourself with [Geek Feminism wiki guide]
 
 ### Racism
 
-Racism is complex and global, exists among all social classes and is deeply connected to [colonialism](https://en.wikipedia.org/wiki/Colonialism) that has a long history of violence and oppression where a group or individual dominates another group or individual of different race (and their territories). Addressing individuals or a group of people in a diminutive, derogative or questioning way based on their (assumed) race or ethnic background is therefore racist, disrespectful and harmful. We do not tolerate any racist behavior and strongly recommend to avoid any racist slurs, statements or jokes.
+Racism is deeply rooted in our society and global, exists among all social classes and is connected to [colonialism](https://en.wikipedia.org/wiki/Colonialism) that has a long history of violence, oppression and domination of one group or individual over another group or individual of different race, ethnicity, culture, and their territories. Addressing individuals or a group of people in a diminutive, derogative or questioning way based on their (assumed) race and ethnic background is therefore racist, disrespectful and harmful. We do not tolerate any racist behavior, slurs, statements or jokes and will take actions if any reports on this matter reaches us.
 
 For more information please read [Wikipedia Racism](https://en.wikipedia.org/wiki/Racism).
 
@@ -133,4 +133,4 @@ This Code of Conduct was based on [CSSConf / JSConf AU](http://jsconfau.com),
 the work of [Valerie Aurora](https://frameshiftconsulting.com/code-of-conduct-training/)
 and [Conference Code of Conduct](http://confcodeofconduct.com/).
 
-Last update: 21 May 2019
+Last update: 22 May 2019 - Version 1.1
