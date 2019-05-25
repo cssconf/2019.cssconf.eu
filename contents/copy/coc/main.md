@@ -60,7 +60,7 @@ event a better place. You can make a report either personally or anonymously.
 ### Anonymous report
 
 You can [make an anonymous report here](https://docs.google.com/forms/d/e/1FAIpQLSebVmHYCWaf-vfQWA-OhIk3vtIEZwzaEPiTIOH-GOCquUZpjg/viewform).
-We, organisers, can’t follow up an anonymous report with you directly, but we will fully
+We, the organisers, can’t follow up an anonymous report with you directly, but we will fully
 investigate it and take whatever action is necessary to prevent a recurrence.
 
 ### Personal report
