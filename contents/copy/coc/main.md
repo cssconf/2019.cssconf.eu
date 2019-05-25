@@ -170,4 +170,4 @@ This Code of Conduct was based on [CSSConf / JSConf AU](http://jsconfau.com),
 the work of [Valerie Aurora](https://frameshiftconsulting.com/code-of-conduct-training/)
 and [Conference Code of Conduct](http://confcodeofconduct.com/).
 
-Last update: 24 May 2019 - Version 1.3
+Last update: 25 May 2019 - Version 1.4
