@@ -60,16 +60,29 @@ event a better place. You can make a report either personally or anonymously.
 ### Anonymous report
 
 You can [make an anonymous report here](https://docs.google.com/forms/d/e/1FAIpQLSebVmHYCWaf-vfQWA-OhIk3vtIEZwzaEPiTIOH-GOCquUZpjg/viewform).
-We can’t follow up an anonymous report with you directly, but we will fully
+We, organisers, can’t follow up an anonymous report with you directly, but we will fully
 investigate it and take whatever action is necessary to prevent a recurrence.
 
 ### Personal report
 
+*In case of aggression or violence please call the security immediately!*
+
+#### Awareness Team
+
+If you need personal support you can always reach out to the Awareness Team directly. Members of the Awareness Team are [BIPoC](https://2019.cssconf.eu/bipocit-space/#frequently-asked-questions) who are hired and trained to provide personal support and help mediate (**this does not include security work**). They are walking in pairs around the venue and can be identified by blue T-Shirts that read “AWARENESS TEAM” in the front and back. Additionally you can always find two members of the Awareness Team at the registration.
+
+If you would like to report an incident, you can do so via email to [awareness@jsconf.eu](mailto:awareness@jsconf.eu) (Awareness Team). Emails sent to this address are read by the Awareness Team and its Coordination Team which also includes white people (organisers of CSSconf and JSConf EU).
+
+Below you will find the phone numbers which you can call during the main conference hours. The phone will be staffed by the Awareness Team only. If you would like to report anonymously only to the Awareness Team please hide your phone number and reach out to one of the following phone numbers:
+  * [+49 152 363 800 02](tel:+4915236380002)
+  * [+49 152 363 800 07](tel:+4915236380007)
+
+#### Organisers/Curators
+
 You can make a personal report by:
 
 *   Contacting a TEAM member, identified by TEAM buttons.
-*   Emailing us: [contact@cssconf.eu](mailto:contact@cssconf.eu).
-*   Calling us: We’ll publish a phone number that is staffed during main conference hours.
+*   Emailing us: [contact@cssconf.eu](mailto:contact@cssconf.eu)
 
 When taking a personal report, our staff will ensure you are safe and cannot be
 overheard. They may involve other event staff to ensure your report is managed
@@ -81,6 +94,7 @@ anyone who you are.
 Our team will be happy to help you contact hotel/venue security, local law enforcement,
 local support services, provide escorts, or otherwise assist you to feel safe for the
 duration of the event. We value your attendance.
+
 
 ### Important contact numbers
 
