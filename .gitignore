@@ -3,6 +3,8 @@ node_modules
 /.wwwtfrc
 /service-account-credentials.json
 /secrets.tar
+/contents/data/
+!/contents/data/.gitkeep
 /contents/artists/
 /contents/schedule/
 /contents/speakers/

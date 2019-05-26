@@ -1,23 +1,23 @@
- @font-face {
-   font-family: "GT Walsheim Pro";
-   font-display: fallback;
-   font-weight: normal;
-   src: url('contents:fonts/GT-Walsheim-Regular.eot');
-   src: url('contents:fonts/GT-Walsheim-Regular.eot') format('embedded-opentype'),
-   url('contents:fonts/GT-Walsheim-Regular.woff') format('woff'),
-   url('contents:fonts/GT-Walsheim-Regular.ttf') format('truetype');
- }
+@font-face {
+  font-family: 'GT Walsheim Pro';
+  font-display: fallback;
+  font-weight: normal;
+  src: url('contents:fonts/GT-Walsheim-Regular.eot');
+  src: url('contents:fonts/GT-Walsheim-Regular.eot') format('embedded-opentype'),
+    url('contents:fonts/GT-Walsheim-Regular.woff') format('woff'),
+    url('contents:fonts/GT-Walsheim-Regular.ttf') format('truetype');
+}
 
 @font-face {
-  font-family: "GT Walsheim Pro";
+  font-family: 'GT Walsheim Pro';
   font-display: fallback;
   font-weight: bold;
   src: url('contents:fonts/GT-Walsheim-Medium.eot');
   src: url('contents:fonts/GT-Walsheim-Medium.eot') format('embedded-opentype'),
-  url('contents:fonts/GT-Walsheim-Medium.woff') format('woff'),
-  url('contents:fonts/GT-Walsheim-Medium.ttf') format('truetype');
+    url('contents:fonts/GT-Walsheim-Medium.woff') format('woff'),
+    url('contents:fonts/GT-Walsheim-Medium.ttf') format('truetype');
 }
 
 :root {
-  --ff-sans-serif: "GT Walsheim Pro", sans-serif;
+  --ff-sans-serif: 'GT Walsheim Pro', sans-serif;
 }
