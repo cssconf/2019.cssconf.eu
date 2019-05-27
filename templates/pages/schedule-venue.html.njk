@@ -38,8 +38,6 @@
       display: flex;
       align-items: center;
       position: relative;
-      margin-left: 220px;
-      margin-right: 410px;
       height: 100vh;
     }
     section {
@@ -108,10 +106,9 @@
           {% if talkPage %}
             id="talk-{{ talkPage.metadata.speaker.id }}"
           {% else %}
-            id="talk-{{ talk.date }}-{{ talk.startTime | replace(':', '-') }}-{{ talkIndex }}"
+            id="talk-{{ talk.startTime | replace(':', '-') }}-{{ talkIndex }}"
           {% endif %}
           datetime="{{ talk.dateTime }}"
-          sessionlength="{{ talks.length }}"
           class="{{ talk.track | lower | replace(' ', '-') }}">
           <div class="info">
             <header>
