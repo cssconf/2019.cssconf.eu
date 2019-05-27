@@ -6,21 +6,23 @@
   <section class="c-content">
     <div class="l-container">
       {{ svgIconNew(contents, 'intro', width = 1205, height = 458, title = 'CSSconf.EU - Berlin - May 31, 2019') }}
-      <p class="copy--max mt5 mb4 mt6-l mb5-l measure-cssconf center">
-        Dedicated to everyone who loves and writes CSS: CSSconf EU is a one-day, one-track community conference that
-        unites world-class speakers, top-notch engineers &amp; web designers, and many more with an affinity for CSS in
-        Berlin, Germany.
+      <p class="copy--max mt5 mb4 mt6-l mb5-l measure-cssconf center tc">
+        Dedicated to everyone who loves and writes CSS.
       </p>
-      <p class="measure-cssconf center">
+      <p class="measure-cssconf center tc">
         {{ ctaButton(contents['schedule.json'].url, '⏱️ View Schedule', false) }}
       </p>
     </div>
   </section>
   {% include "../partials/speakers-index.html.njk" %}
+
+
+  {% include "../partials/news-list.html.njk" %}
+
   <section class="c-content c-content--salmon">
     <div class="l-container">
       <h2 class="fz--beta mb4">
-        View Schedule
+        Schedule
       </h2>
       <p class="copy mb4 mb5-l measure-cssconf center">
         Plan your CSSconf week: Our detailed schedule of the talk programme and all surrounding events is ready.
@@ -30,19 +32,5 @@
       </p>
     </div>
   </section>
-  <section class="c-content c-content">
-    <div class="l-container">
-      <h2 class="fz--beta mb4">
-        Become a Sponsor
-      </h2>
-      <p class="copy mb4 mb5-l measure-cssconf center">
-        We are currently offering sponsorship packages for CSSconf EU and JSConf EU 2019 – the big 10th anniversary Festival edition.
-        Contact us to learn more about our available packages, or talk with us about your unique idea and custom offers.
-      </p>
-      <p class="copy mb4 mb5-l measure-cssconf center">
-        {{ ctaButton(contents['sponsors.json'].url, '🎗️ Learn More', false) }}
-      </p>
-    </div>
-  </section>
-  {% include "../partials/news-list.html.njk" %}
+
 {% endblock %}
