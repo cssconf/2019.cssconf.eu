@@ -3,6 +3,9 @@ const path = require('path');
 const minify = require('html-minifier').minify;
 const fs = require('fs');
 const imageSize = require('image-size');
+const {
+  scheduleDataPath
+} = require('../scripts/spreadsheet-import/process-schedule');
 
 module.exports = function(env, callback) {
   const optionDefaults = {
@@ -14,12 +17,11 @@ module.exports = function(env, callback) {
   };
 
   env.config.locals.loadSchedule = function(contents) {
-    if (!fs.existsSync('./contents/data/schedule.json')) {
+    if (!fs.existsSync(scheduleDataPath)) {
       console.error('Error: Schedule file was not generated.');
       return null;
     }
-    return JSON.parse(fs.readFileSync('./contents/data/schedule.json'))
-      .actualJson;
+    return JSON.parse(fs.readFileSync(scheduleDataPath)).actualJson;
   };
   env.config.locals.Date = Date;
 
