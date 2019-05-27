@@ -1,5 +1,6 @@
 const fs = require('fs');
 const slug = require('slug');
+const scheduleDataPath = './contents/schedule-data.json';
 
 function buildTrack({ track, who, what, time }) {
   return {
@@ -66,15 +67,14 @@ function getSchedule(scheduleData) {
   return schedule;
 }
 
-module.exports.processSchedule = function(sheet) {
+function processSchedule(sheet) {
   const schedule = {
     info: { generationTime: new Date().toString() },
     schedule: getSchedule(sheet)
   };
 
-  debugger;
   fs.writeFileSync(
-    './contents/data/schedule.json',
+    scheduleDataPath,
     JSON.stringify(
       {
         pageId: 'scheduleJson',
@@ -86,4 +86,9 @@ module.exports.processSchedule = function(sheet) {
       '  '
     )
   );
+}
+
+module.exports = {
+  processSchedule,
+  scheduleDataPath
 };
