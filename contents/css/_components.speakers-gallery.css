@@ -22,6 +22,7 @@
     position: relative;
     font-size: 1.75rem;
     line-height: 1.65rem;
+    z-index: 1;
 
     @media (--m) {
       font-size: 5.5rem;
@@ -79,7 +80,6 @@
 
   &__progress {
     position: relative;
-    z-index: -1;
 
     &-label {
       font-size: 0.875rem;
