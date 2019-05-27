@@ -13,6 +13,7 @@ const {
 const rimraf = promisify(require('rimraf'));
 const mkdirp = require('mkdirp');
 const { downloadImage } = require('./image-download');
+const { processSchedule } = require('./process-schedule');
 const slug = require('slug');
 
 const timeout = promisify(setTimeout);
@@ -55,7 +56,8 @@ const sheetParams = {
   schedule: {
     templateGlobals: {},
     dataFieldName: 'schedule',
-    contentPath: 'schedule'
+    contentPath: 'schedule',
+    parseSchedule: true
   },
   speakers: {
     templateGlobals: {
@@ -184,10 +186,16 @@ async function main(params) {
       console.log(chalk.red('Missing metadata for'), sheetId);
       return;
     }
-    const { templateGlobals, dataFieldName, contentPath } = sheetParams[
-      sheetId
-    ];
+    const {
+      templateGlobals,
+      dataFieldName,
+      contentPath,
+      parseSchedule
+    } = sheetParams[sheetId];
     ensureDirExists(contentPath);
+    if (parseSchedule) {
+      processSchedule(sheets[sheetId]);
+    }
     const records = processSheet(sheets[sheetId]);
 
     console.log(chalk.white('processing sheet %s'), chalk.yellow(sheetId));
