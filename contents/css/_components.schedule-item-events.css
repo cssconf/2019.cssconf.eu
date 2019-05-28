@@ -18,6 +18,15 @@
     @media (--s) {
       --schedule-item-event-width: calc(50% - calc(var(--l-gutter) / 2));
     }
+
+    &:hover, &:focus {
+      background-color: var(--c-salmon-light);
+      color: var(--c-blue);
+      .c-schedule-item-events__name {
+        color: var(--c-blue);
+      }
+    }
+
   }
 
   &__area {
@@ -30,7 +39,7 @@
     }
 
     &--community-lounge {
-      color: var(--c-blue);
+      color: var(--c-violet);
     }
   }
 

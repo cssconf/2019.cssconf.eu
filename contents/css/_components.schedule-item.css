@@ -27,6 +27,23 @@
     width: 100%;
   }
 
+  &__link {
+    color: var(--c-black);
+    display: block;
+    &:hover, &:focus {
+      color: var(--c-blue);
+      .c-schedule-item__img {
+        transform: translateY(-1.5rem) translateX(.75rem) scale(1.75);
+        z-index: 3;
+      }
+    }
+  }
+
+  &__img {
+    max-width: 2.75rem;
+    margin-left: 1rem;
+  }
+
   &__title {
     font-size: 1.3125rem; /* 21 */
     line-height: 1.428751; /* 30 */
@@ -65,6 +82,7 @@
   }
 
   &__misc {
+    color: var(--c-darkgray);    
     b {
       color: var(--c-violet);
       display: inline-block;
