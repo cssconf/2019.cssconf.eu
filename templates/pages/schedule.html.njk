@@ -31,7 +31,8 @@
 
             <div class="c-schedule-item">
               <time class="c-schedule-item__time">{{ data.time }}</time>
-              <div class="c-schedule-item__details">
+              <div class="c-schedule-item__details {% if data.isTalk %}c-schedule-item__details--no-padding{% endif %}
+">
                 {% if data.isTalk %}
                   <a class="c-schedule-item__link" href="{{ speaker.url }}#talk" target="_blank">
                     <h2 class="c-schedule-item__title copy mb0 nt1 flex items-start">

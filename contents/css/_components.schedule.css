@@ -13,8 +13,6 @@
     border-bottom: var(--schedule-border) solid var(--c-black);
     margin-left: var(--schedule-item-spacing);
     margin-right: var(--schedule-item-spacing);
-    padding-bottom: var(--schedule-item-spacing);
-    padding-top: var(--schedule-item-spacing);
 
     &:last-child {
       border-bottom: none;
