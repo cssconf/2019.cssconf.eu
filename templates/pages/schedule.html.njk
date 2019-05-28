@@ -31,37 +31,51 @@
 
             <div class="c-schedule-item">
               <time class="c-schedule-item__time">{{ data.time }}</time>
-              <div class="c-schedule-item__details">
+              <div class="c-schedule-item__details {% if data.isTalk %}c-schedule-item__details--no-padding{% endif %}
+">
                 {% if data.isTalk %}
-                  <h2 class="mb0 c-schedule-item__title copy">
-                    {{ speakers | joinObjects(' & ', 'metadata.speaker.name')}}
-                  </h2>
-                  <a class="c-schedule-item__talk-title" href="{{ speaker.url }}#talk" target="_blank">
-                    {{ data.title }}
+                  <a class="c-schedule-item__link" href="{{ speaker.url }}#talk" target="_blank">
+                    <h2 class="c-schedule-item__title copy mb0 nt1 flex items-start">
+                      <div>
+                        {{ speakers | joinObjects(' & ', 'metadata.speaker.name')}}
+                      </div>
+                      <div class="c-schedule-item__img">
+                        <img
+                          class="mw-100 db"
+                          src="{{ contents.images.cms[speaker.metadata.speaker.image.filename_500].url }}"
+                          alt="{{ speaker.metadata.speaker.name }}"
+                        />
+                      </div>
+                    </h2>
+                    <div class="c-schedule-item__talk-title">
+                      {{ data.title }}
+                    </div>
                   </a>
                 {% else %}
-                  <h2 class="mb0 c-schedule-item__title copy">{{ data.title }}</h2>
+                  <h2 class="mb0 c-schedule-item__title copy">
+                    {{ data.title }}
+                  </h2>
                 {% endif %}
 
                 {% if bipocitSpace or communityLounge %}
                   <div class="c-schedule-item-events">
                     {% if communityLounge %}
-                      <div class="c-schedule-item-events__event">
+                      <a href="{{ data.communityLoungeLink }}" class="c-schedule-item-events__event">
                         <h3 class="mb2 normal c-schedule-item-events__area c-schedule-item-events__area--community-lounge">
                           Community Lounge
                         </h3>
-                        <a href="{{ data.communityLoungeLink }}" class="b c-schedule-item-events__name">
+                        <div class="b c-schedule-item-events__name">
                           {{ communityLounge }}
-                        </a>
-                      </div>
+                        </div>
+                      </a>
                     {% endif %}
                     {% if bipocitSpace %}
-                      <div class="c-schedule-item-events__event">
+                      <a href="{{ data.bipocitSpaceLink }}" class="c-schedule-item-events__event">
                         <h3 class="mb2 normal c-schedule-item-events__area">BIPoCiT Space</h3>
-                        <a href="{{ data.bipocitSpaceLink }}" class="b c-schedule-item-events__name">
+                        <div class="b c-schedule-item-events__name">
                           {{ bipocitSpace }}
-                        </a>
-                      </div>
+                        </div>
+                      </a>
                     {% endif %}
                   </div>
                 {% endif %}

@@ -3,6 +3,7 @@
   --speaker-spacing: 1.8rem;
   border: var(--gallery-border) solid var(--c-black);
   font-weight: bold;
+  background-color: var(--c-white);
 
   @media (--m) {
     --gallery-border: 9px;
@@ -23,6 +24,10 @@
     font-size: 1.75rem;
     line-height: 1.65rem;
     z-index: 1;
+
+    &:nth-child(even) {
+      justify-content: flex-end;
+    }
 
     @media (--m) {
       font-size: 5.5rem;
@@ -45,10 +50,13 @@
     }
 
     &:hover {
-      color: var(--c-black);
-
+      color: var(--c-violet);
       &::after {
         background-color: var(--c-violet);
+      }
+      .c-speakers-gallery__speaker-image {
+        transform: translateY(-1.5rem) scale(1.75);
+        z-index: 3;
       }
     }
 

@@ -7,6 +7,8 @@
   }
 
   &__time {
+    padding-bottom: var(--schedule-item-spacing);
+    padding-top: var(--schedule-item-spacing);
     font-size: 2rem;
     font-weight: bold;
     line-height: 1;
@@ -25,6 +27,31 @@
   &__details {
     padding-left: calc(var(--l-gutter) / 2);
     width: 100%;
+    padding-bottom: var(--schedule-item-spacing);
+    padding-top: var(--schedule-item-spacing);
+    &--no-padding {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+  }
+
+  &__link {
+    padding-bottom: var(--schedule-item-spacing);
+    padding-top: var(--schedule-item-spacing);
+    color: var(--c-black);
+    display: block;
+    &:hover, &:focus {
+      color: var(--c-blue);
+      .c-schedule-item__img {
+        transform: translateY(-1.5rem) translateX(.75rem) scale(1.75);
+        z-index: 3;
+      }
+    }
+  }
+
+  &__img {
+    max-width: 2.75rem;
+    margin-left: 1rem;
   }
 
   &__title {
@@ -65,6 +92,7 @@
   }
 
   &__misc {
+    color: var(--c-darkgray);
     b {
       color: var(--c-violet);
       display: inline-block;

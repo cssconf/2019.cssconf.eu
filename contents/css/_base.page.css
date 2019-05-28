@@ -32,6 +32,26 @@ a {
   }
 }
 
+
+a, button, input {
+  transition-property: color, background-color, border-color, transform;
+  transition-duration: .05s;
+  transition-timing-function: ease-in;
+  &::after, &::before {
+    transition-property: color, background-color, border-color, transform;
+    transition-duration: .05s;
+    transition-timing-function: ease-in;
+  }
+}
+
+.c-speakers-gallery__speaker-image,
+.c-schedule-item__img,
+.c-sponsors__image {
+  transition-property: color, background-color, border-color, transform;
+  transition-duration: .05s;
+  transition-timing-function: ease-in;
+}
+
 .responsive-image-wrapper {
   display: block;
   overflow: hidden;

@@ -26,6 +26,13 @@
     margin: calc(var(--l-gutter) / 2);
     padding: calc(var(--l-gutter) / 2);
 
+    &:hover, &:focus {
+      img {
+        transform: scale(1.25);
+
+      }
+    }
+
     @media (--m) {
       margin: var(--l-gutter);
       padding: var(--l-gutter);
