@@ -1,276 +1,623 @@
 <!doctype html>
 <html generated="{{ Date.now() }}" version="3">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>CSSconf EU 2019 Venue Schedule</title>
-  <script src="https://browser.sentry-cdn.com/5.3.0/bundle.min.js" crossorigin="anonymous"></script>
-  <script>Sentry.init({ dsn: 'https://5159a1c067c14a63b094dd39125b26b6@sentry.io/1468671' });</script>
-  <meta name="viewport" content="width=device-width">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#302e57">
-  <style>
-    @font-face {
-      font-family: "GT Walsheim Pro";
-      font-display: fallback;
-      font-weight: normal;
-      src: url({{ contents.fonts['GT-Walsheim-Regular.eot'].url }});
-      src: url({{ contents.fonts['GT-Walsheim-Regular.eot'].url }}) format('embedded-opentype'),
-      url({{ contents.fonts['GT-Walsheim-Regular.woff'].url }}) format('woff'),
-      url({{ contents.fonts['GT-Walsheim-Regular.ttf'].url }}) format('truetype');
-    }
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>CSSconf EU 2019 Venue Schedule</title>
+    <script src="https://browser.sentry-cdn.com/5.3.0/bundle.min.js" crossorigin="anonymous"></script>
+    <script>
+      Sentry.init({dsn: 'https://5159a1c067c14a63b094dd39125b26b6@sentry.io/1468671'});
+    </script>
+    <meta name="viewport" content="width=device-width">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#302e57">
+    <style>
+      @font-face {
+        font-family: "GT Walsheim Pro";
+        font-display: fallback;
+        font-weight: normal;
+        src: url({{ contents.fonts['GT-Walsheim-Regular.eot'].url }});
+        src: url({{ contents.fonts['GT-Walsheim-Regular.eot'].url }}) format('embedded-opentype'), url({{ contents.fonts['GT-Walsheim-Regular.woff'].url }}) format('woff'), url({{ contents.fonts['GT-Walsheim-Regular.ttf'].url }}) format('truetype');
+      }
 
-    @font-face {
-      font-family: "GT Walsheim Pro";
-      font-display: fallback;
-      font-weight: bold;
-      src: url({{ contents.fonts['GT-Walsheim-Medium.eot'].url }});
-      src: url({{ contents.fonts['GT-Walsheim-Medium.eot'].url }}) format('embedded-opentype'),
-      url({{ contents.fonts['GT-Walsheim-Medium.woff'].url }}) format('woff'),
-      url({{ contents.fonts['GT-Walsheim-Medium.ttf'].url }}) format('truetype');
-    }
-    body {
-      overflow: hidden;
-      height: 100vh;
-      font-family: "GT Walsheim Pro", sans-serif;
-    }
-    .wrapper{
-      display: flex;
-      align-items: center;
-      position: relative;
-      height: 100vh;
-    }
-    section {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .session {
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      align-content: flex-start;
-      align-items: flex-start;
-      flex-direction: column;
-      transform: translateX(-1000px) translateZ(0);
-      display: none;
-    }
-    .session.active {
-      transform: translateX(0) translateZ(0);
-    }
-    .session.previous {
-      transform: translateX(2000px) translateZ(0);
-    }
-    .session.inplay {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .session .info > * {
-      transform: translateY(-1000px) translateZ(0);
-    }
-    .session.active .info > * {
-      transform: translateY(0) translateZ(0) !important;
-    }
-  </style>
-</head>
+      @font-face {
+        font-family: "GT Walsheim Pro";
+        font-display: fallback;
+        font-weight: bold;
+        src: url({{ contents.fonts['GT-Walsheim-Medium.eot'].url }});
+        src: url({{ contents.fonts['GT-Walsheim-Medium.eot'].url }}) format('embedded-opentype'), url({{ contents.fonts['GT-Walsheim-Medium.woff'].url }}) format('woff'), url({{ contents.fonts['GT-Walsheim-Medium.ttf'].url }}) format('truetype');
+      }
+      body {
+        overflow: hidden;
+        height: 100vh;
+        font-family: "GT Walsheim Pro", sans-serif;
+        margin: 0;
+      }
+      .wrapper {
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 100vh;
+      }
+      section {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .session {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        transform: translateX(-1000px) translateZ(0);
+        display: none;
+        background: #fff;
+      }
+      .session.active {
+        transform: translateX(0) translateZ(0);
+        z-index: 10;
+      }
+      .session.previous {
+        transform: translateX(2000px) translateZ(0);
+      }
+      .session.inplay {
+        display: block;
+      }
+      .session .info > * {
+        transform: translateY(-1000px) translateZ(0);
+      }
+      .session.active .info > * {
+        transform: translateY(0) translateZ(0) !important;
+      }
 
-<body>
-<div class="background"></div>
-<div class="wrapper">
-  {% set schedule = loadSchedule() %}
-  {% for session, talks in schedule.schedule %}
-    {% set talkIndex = 0 %}
-    <div
+      .up-next {
+        width: 100%;
+        border-bottom: 18px solid black;
+        font-size: 48px;
+        background: pink;
+      }
+      .up-next-time {
+        font-size: 130px;
+      }
+      .main,
+      .up-next {
+        padding: 50px 210px;
+        box-sizing: border-box;
+      }
+      .main-stage {
+        width: 100%;
+      }
+
+      .other {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 210px;
+      }
+
+      .bipocit-space,
+      .community-lounge {
+        background: #f2f2f2;
+        padding: 40px;
+        box-sizing: border-box;
+        flex-basis: 48%;
+      }
+      .bipocit-space .speaker,
+      .community-lounge .speaker {
+        font-size: 60px;
+      }
+      .bipocit-space .track {
+        color: #FF5743;
+      }
+      .bipocit-space .info {
+        color: black;
+      }
+      .bipocit-space {
+        }
+      .community-lounge .track {
+        color: #2176FF;
+      }
+      .community-lounge .info {
+        color: black;
+      }
+      .info {
+        font-size: 60px;
+        color: #2176FF;
+      }
+      .speaker {
+        font-size: 130px;
+        color: black;
+      }
+      .track {
+        color: black;
+        font-size: 40px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="background"></div>
+    <div class="wrapper">
+      {% set schedule = loadSchedule() %}
+      {% for session, talks in schedule.schedule %}
+        {% set talkIndex = 0 %}
+        <div
       class="session"
       id="session-{{ session | replace(':', '-') }}">
-      <div class=up-next>
+          <div class=up-next>
         up next<br>
-        <b class=up-next-time>{{ session  }}</b>
-      </div>
-      {% for talk in talks %}
-        {% set talkIndex = talkIndex + 1 %}
-        {% set talkPage = '' %}
-        {% for page in contents.speakers._.pages %}
-          {% if page.metadata.speaker.name == talk.who %}
-            {% set talkPage = page %}
-          {% endif %}
-          {% if page.metadata.speaker.talkTitle == talk.what %}
-            {% set talkPage = page %}
-          {% endif %}
-        {% endfor %}
-
-        <section
-          {% if talkPage %}
-            id="talk-{{ talkPage.metadata.speaker.id }}"
-          {% else %}
-            id="talk-{{ talk.startTime | replace(':', '-') }}-{{ talkIndex }}"
-          {% endif %}
-          datetime="{{ talk.dateTime }}"
-          class="{{ talk.track | lower | replace(' ', '-') }}">
-          <div class="info">
-            <header>
-              {% if talk.who %}
-                <b>{{ talk.who }}</b>
-                {{ talk.what }}
-              {% else %}
-                <b>{{ talk.what }}</b>
-              {% endif %}
-            </header>
-            <div class=track>{{ talk.track }}</div>
+            <b class="up-next-time">{{ session  }}</b>
           </div>
-        </section>
-      {% endfor %}
-    </div>
-  {% endfor %}
-</div>
 
-<script id="inline">
-  window.onunhandledrejection = window.onerror = function() {
-    setTimeout(function() {
-      location.reload();
-    }, 5000)
-  };
+          <div class="main">
+            {% for talk in talks %}
+              {% set talkIndex = talkIndex + 1 %}
+              {% if (talk.trackId == "main-stage") or (talk.trackId == null) %}
+                <section
+              id="talk-{{ talk.startTime | replace(':', '-') }}-{{ talkIndex }}"
+              datetime="{{ talk.dateTime }}"
+              class="{{ talk.track | lower | replace(' ', '-') }}">
+                  <div class="info">
+                    <header>
+                      {% if talk.who %}
+                        <b class="speaker">{{ talk.who }}</b>
+                      </br>
+                      {{ talk.what }}
+                    {% else %}
+                      <b>{{ talk.what }}</b>
+                    {% endif %}
+                  </header>
+                  <div class=track>{{ talk.track }}</div>
+                </div>
+              </section>
+            {% endif %}
+          {% endfor %}
+        </div>
 
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js');
-  }
+        <div class="other">
+          {% for talk in talks %}
+            {% set talkIndex = talkIndex + 1 %}
+            {% if (talk.trackId != "main-stage") and (talk.trackId != null) %}
+              <section
+              id="talk-{{ talk.startTime | replace(':', '-') }}-{{ talkIndex }}"
+              datetime="{{ talk.dateTime }}"
+              class="{{ talk.track | lower | replace(' ', '-') }}">
+                <div class="info">
+                  <header>
+                    {% if talk.who %}
+                      <b>{{ talk.who }}</b>
+                      {{ talk.what }}
+                    {% else %}
+                      <b>{{ talk.what }}</b>
+                    {% endif %}
+                  </header>
+                  <div class=track>{{ talk.track }}</div>
+                </div>
+              </section>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
 
-  function activate(doc) {
-    var sections = Array.from(doc.querySelectorAll('.session section'));
+  <script id="inline">
+    window.onunhandledrejection = window.onerror = function () {
+      setTimeout(function () {
+        location.reload();
+      }, 5000)
+    };
 
-    var inFuture = 0;
-    var firstAfterActive = false;
-    sections.forEach(function(section, index) {
-      var session = section.parentElement;
-      var time = Date.parse(section.getAttribute('datetime'));
-      var future = now() < (time + 5 * 60 * 1000); // 5 minutes offset
-      section.setAttribute('in-future', future);
-      if (future && inFuture == 0) {
-        if (!session.classList.contains('active')) {
-          session.classList.add('active');
-        }
-        if (!session.classList.contains('inplay')) {
-          session.classList.add('inplay');
-        }
-        if (session.nextElementSibling) {
-          session.nextElementSibling.classList.add('inplay');
-          if (session.nextElementSibling.nextElementSibling) {
-            session.nextElementSibling.nextElementSibling.classList.add('inplay');
-          }
-        }
-        firstAfterActive = true;
-      } else {
-        firstAfterActive = false;
-      }
-      if (!future) {
-        if (session.classList.contains('active')) {
-          session.classList.remove('active');
-        }
-        if (!session.classList.contains('previous')) {
-          session.classList.add('previous');
-          if (session.previousElementSibling) {
-            session.previousElementSibling.classList.remove('inplay');
-          }
-        }
-      }
-      if (future) {
-        inFuture++;
-      }
-      Array.from(session.querySelectorAll('.info > *')).forEach(function(item) {
-        if (item.style.transform) {
-          return;
-        }
-        var dir0 = '';
-        var dir1 = '';
-        if (Math.random() > 0.5) dir0 = '-';
-        if (Math.random() > 0.5) dir1 = '-';
-        item.style.transform = 'translateY(' + dir0 + '2000px) translateX(' + dir1 + '2000px)';
-      });
-    });
-  }
-
-  var overriddenTime = null;
-  function now() {
-    if (overriddenTime) {
-      return overriddenTime;
+    if ('serviceWorker' in navigator) {
+      navigator
+        .serviceWorker
+        .register('/sw.js');
     }
-    return Date.now();
-  }
 
-  if (location.href.includes('cycle')) {
-    setInterval(function() {
-      var cur = document.querySelector('.active section');
-      overriddenTime = Date.parse(cur.getAttribute('datetime')) + 6 * 60 * 1000;
-      console.info('New time', new Date(overriddenTime))
-    }, 5000);
-  }
+    function activate(doc) {
+      var sections = Array.from(doc.querySelectorAll('.session section'));
 
-  var startTime = 0
-  if (startTime = location.hash.match(/\d+/)) {
-    overriddenTime = startTime[0];
-  }
-
-  var pageLoadTime = Date.now();
-
-  var version = document.documentElement.getAttribute('version');
-  var script = document.getElementById('inline').textContent;
-  var lastText = '';
-  function checkCurrent() {
-    // Reload once per hour at 15 after to be robust for memory leaks.
-    if (Date.now() - pageLoadTime > 60 * 1000 * 60 && new Date().getMinutes() > 15) {
-      console.info('Memory reload')
-      location.href = location.href;
-    }
-    fetch('/schedule/venue/', {cache: 'reload'}).then(function(response) {
-      if (response.ok) {
-        response.text().then(function(text) {
-          var generationTime = text.match(/<html generated=(\d+)/)[1];
-          if (!generationTime) {
-            console.error('Failed to find generation time', text);
-            return;
+      var inFuture = 0;
+      var firstAfterActive = false;
+      sections.forEach(function (section, index) {
+        var session = section.closest('.session');
+        var time = Date.parse(section.getAttribute('datetime'));
+        var future = now() < (time + 5 * 60 * 1000); // 5 minutes offset
+        section.setAttribute('in-future', future);
+        if (future && inFuture == 0) {
+          if (!session.classList.contains('active')) {
+            session
+              .classList
+              .add('active');
           }
-          if (generationTime != document.documentElement.getAttribute('generated')) {
-            var textWithoutTime = text.replace(generationTime, '');
-            if (textWithoutTime == lastText) {
-              console.info('Schedule unchanged except for generation time', generationTime);
+          if (!session.classList.contains('inplay')) {
+            session
+              .classList
+              .add('inplay');
+          }
+          if (session.nextElementSibling) {
+            session
+              .nextElementSibling
+              .classList
+              .add('inplay');
+            if (session.nextElementSibling.nextElementSibling) {
+              session
+                .nextElementSibling
+                .nextElementSibling
+                .classList
+                .add('inplay');
+            }
+          }
+          firstAfterActive = true;
+        } else {
+          firstAfterActive = false;
+        }
+        if (!future) {
+          if (session.classList.contains('active')) {
+            session
+              .classList
+              .remove('active');
+          }
+          if (!session.classList.contains('previous')) {
+            session
+              .classList
+              .add('previous');
+            if (session.previousElementSibling) {
+              session
+                .previousElementSibling
+                .classList
+                .remove('inplay');
+            }
+          }
+        }
+        if (future) {
+          inFuture++;
+        }
+        Array
+          .from(session.querySelectorAll('.info > *'))
+          .forEach(function (item) {
+            if (item.style.transform) {
               return;
             }
-            lastText = textWithoutTime;
-            console.info('Updating schedule', generationTime);
-            var d = new DOMParser()
-            var doc = d.parseFromString(text, 'text/html')
-            activate(doc);
-            setDOM(document, doc.documentElement);
-            // If the version of this file changes, reload
-            if (version != document.documentElement.getAttribute('version')) {
-              location.reload();
-            }
-            // Script changed, reload
-            if (script != document.getElementById('inline').textContent) {
-              location.reload();
-            }
-          } else {
-            console.info('Schedule current', generationTime);
-          }
-        });
-      } else {
-        console.error('Check failed', response);
+            var dir0 = '';
+            var dir1 = '';
+            if (Math.random() > 0.5) 
+              dir0 = '-';
+            if (Math.random() > 0.5) 
+              dir1 = '-';
+            item.style.transform = 'translateY(' + dir0 + '2000px) translateX(' + dir1 + '2000px)';
+          });
+      });
+    }
+
+    var overriddenTime = null;
+    function now() {
+      if (overriddenTime) {
+        return overriddenTime;
       }
+      return Date.now();
+    }
+
+    if (location.href.includes('cycle')) {
+      setInterval(function () {
+        var cur = document.querySelector('.active section');
+        overriddenTime = Date.parse(cur.getAttribute('datetime')) + 6 * 60 * 1000;
+        console.info('New time', new Date(overriddenTime))
+      }, 5000);
+    }
+
+    var startTime = 0
+    if (startTime = location.hash.match(/\d+/)) {
+      overriddenTime = startTime[0];
+    }
+
+    var pageLoadTime = Date.now();
+
+    var version = document
+      .documentElement
+      .getAttribute('version');
+    var script = document
+      .getElementById('inline')
+      .textContent;
+    var lastText = '';
+    function checkCurrent() {
+      // Reload once per hour at 15 after to be robust for memory leaks.
+      if (Date.now() - pageLoadTime > 60 * 1000 * 60 && new Date().getMinutes() > 15) {
+        console.info('Memory reload')
+        location.href = location.href;
+      }
+      fetch('/schedule/venue/', {cache: 'reload'}).then(function (response) {
+        if (response.ok) {
+          response
+            .text()
+            .then(function (text) {
+              var generationTime = text.match(/<html generated=(\d+)/)[1];
+              if (!generationTime) {
+                console.error('Failed to find generation time', text);
+                return;
+              }
+              if (generationTime != document.documentElement.getAttribute('generated')) {
+                var textWithoutTime = text.replace(generationTime, '');
+                if (textWithoutTime == lastText) {
+                  console.info('Schedule unchanged except for generation time', generationTime);
+                  return;
+                }
+                lastText = textWithoutTime;
+                console.info('Updating schedule', generationTime);
+                var d = new DOMParser()
+                var doc = d.parseFromString(text, 'text/html')
+                activate(doc);
+                setDOM(document, doc.documentElement);
+                // If the version of this file changes, reload
+                if (version != document.documentElement.getAttribute('version')) {
+                  location.reload();
+                }
+                // Script changed, reload
+                if (script != document.getElementById('inline').textContent) {
+                  location.reload();
+                }
+              } else {
+                console.info('Schedule current', generationTime);
+              }
+            });
+        } else {
+          console.error('Check failed', response);
+        }
+      });
+    }
+
+    setInterval(checkCurrent, 1000 * 5); // Check every 5 seconds
+    setInterval(activate.bind(null, document), 500);
+  </script>
+
+  <script id="setDOM">
+    // setDOM from https://github.com/DylanPiercey/set-dom under MIT License
+    !function (e) {
+      if ("object" == typeof exports && "undefined" != typeof module) 
+        module.exports = e();
+      else if ("function" == typeof define && define.amd) 
+        define([], e);
+      else {
+        (
+          "undefined" != typeof window
+          ? window
+          : "undefined" != typeof global
+            ? global
+            : "undefined" != typeof self
+              ? self
+              : this).setDOM = e()
+      }
+    }(function () {
+      return function e(t, n, r) {
+        function i(d, a) {
+          if (!n[d]) {
+            if (!t[d]) {
+              var f = "function" == typeof require && require;
+              if (!a && f) 
+                return f(d, !0);
+              if (o) 
+                return o(d, !0);
+              var u = new Error("Cannot find module '" + d + "'");
+              throw u.code = "MODULE_NOT_FOUND",
+              u
+            }
+            var l = n[d] = {
+              exports: {}
+            };
+            t[d][0].call(l.exports, function (e) {
+              var n = t[d][1][e];
+              return i(n || e)
+            }, l, l.exports, e, t, n, r)
+          }
+          return n[d].exports
+        }
+        for (var o = "function" == typeof require && require, d = 0; d < r.length; d++) 
+          i(r[d]);
+        return i
+      }({
+        1: [
+          function (e, t) {
+            "use strict";
+            function n(e, t) {
+              !function (e, t) {
+                if (!e) 
+                  throw new Error("set-dom: " + t)
+              }(e && e.nodeType, "You must provide a valid node to update."),
+              e.nodeType === h && (e = e.documentElement),
+              t.nodeType === v
+                ? i(e, t)
+                : r(
+                  e, "string" == typeof t
+                  ? s(t, e.nodeName)
+                  : t),
+              e[m] || (e[m] = !0, f(e))
+            }
+            function r(e, t) {
+              if (e.nodeType === t.nodeType) 
+                if (e.nodeType === p) {
+                  if (function (e, t) {
+                    return a(e) && a(t) || d(e) === d(t) || e.isEqualNode(t)
+                  }(e, t)) 
+                    return;
+                  if (i(e, t), e.nodeName === t.nodeName) 
+                    !function (e, t) {
+                      var n,
+                        r,
+                        i,
+                        o,
+                        d;
+                      for (n = e.length; n--;) 
+                        r = e[n],
+                        o = r.namespaceURI,
+                        d = r.localName,
+                        (i = t.getNamedItemNS(o, d)) || e.removeNamedItemNS(o, d);
+                      for (n = t.length; n--;) 
+                        r = t[n],
+                        o = r.namespaceURI,
+                        d = r.localName,
+                        (i = e.getNamedItemNS(o, d))
+                          ? i.value !== r.value && (i.value = r.value)
+                          : (t.removeNamedItemNS(o, d), e.setNamedItemNS(r))
+                      }
+                  (e.attributes, t.attributes);
+                  else {
+                    for (var n = t.cloneNode(); e.firstChild;) 
+                      n.appendChild(e.firstChild);
+                    e
+                      .parentNode
+                      .replaceChild(n, e)
+                  }
+                } else 
+                  e.nodeValue !== t.nodeValue && (e.nodeValue = t.nodeValue);
+            else 
+                e
+                  .parentNode
+                  .replaceChild(t, u(e)),
+                f(t)
+            }
+            function i(e, t) {
+              for (var n, i, d, a, l, s, c = e.firstChild, m = t.firstChild, p = 0; c;) 
+                p++,
+                i = o(n = c),
+                c = c.nextSibling,
+                i && (s || (s = {}), s[i] = n);
+              for (c = e.firstChild; m;) 
+                p--,
+                d = m,
+                m = m.nextSibling,
+                s && (a = o(d)) && (l = s[a])
+                  ? (
+                    delete s[a], l !== c
+                    ? e.insertBefore(l, c)
+                    : c = c.nextSibling,
+                  r(l, d))
+                  : c
+                    ? (
+                      n = c, c = c.nextSibling, o(n)
+                      ? (e.insertBefore(d, n), f(d))
+                      : r(n, d))
+                    : (e.appendChild(d), f(d));
+              for (i in s) 
+                p--,
+                e.removeChild(u(s[i]));
+              for (; --p >= 0;) 
+                e.removeChild(u(e.lastChild))
+            }
+            function o(e) {
+              if (e.nodeType === p) {
+                var t = e.getAttribute(n.KEY) || e.id;
+                return t
+                  ? c + t
+                  : void 0
+              }
+            }
+            function d(e) {
+              return e.getAttribute(n.CHECKSUM) || NaN
+            }
+            function a(e) {
+              return null != e.getAttribute(n.IGNORE)
+            }
+            function f(e) {
+              return l(e, "mount")
+            }
+            function u(e) {
+              return l(e, "dismount")
+            }
+            function l(e, t) {
+              if (o(e)) {
+                var n = document.createEvent("Event"),
+                  r = {
+                    value: e
+                  };
+                n.initEvent(t, !1, !1),
+                Object.defineProperty(n, "target", r),
+                Object.defineProperty(n, "srcElement", r),
+                e.dispatchEvent(n)
+              }
+              for (var i = e.firstChild; i;) 
+                i = l(i, t).nextSibling;
+              return e
+            }
+            n.KEY = "data-key",
+            n.IGNORE = "data-ignore",
+            n.CHECKSUM = "data-checksum";
+            var s = e(2),
+              c = "_set-dom-",
+              m = c + "mounted",
+              p = 1,
+              h = 9,
+              v = 11;
+            t.exports = n
+          }, {
+            2: 2
+          }
+        ],
+        2: [
+          function (e, t) {
+            "use strict";
+            function n(e, t) {
+              if (t === i) {
+                if (d) 
+                  return c.innerHTML = e,
+                  c;
+                var n = e.match(p);
+                if (n) {
+                  var o = n[2],
+                    a = n.index + n[1].length,
+                    u = a + o.length;
+                  e = e.slice(0, a) + e.slice(u),
+                  m.innerHTML = o
+                }
+                for (var l = r.parseFromString(e, f), s = l.body; m.firstChild;) 
+                  s.appendChild(m.firstChild);
+                return l.documentElement
+              }
+              return m.innerHTML = e,
+              m.firstChild
+            }
+            var r = window.DOMParser && new window.DOMParser,
+              i = "HTML",
+              o = !1,
+              d = !1,
+              a = "text/html",
+              f = "application/xhtml+xml";
+            try {
+              var u = r
+                  .parseFromString('<wbr class="A"/>', a)
+                  .body
+                  .firstChild,
+                l = document.createElement("div");
+              if (l.appendChild(u), "A" !== l.firstChild.classList[0]) 
+                throw new Error;
+              o = !0
+            } catch (e) {}
+            var s = document
+                .implementation
+                .createHTMLDocument(""),
+              c = s.documentElement,
+              m = s.body;
+            try {
+              c.innerHTML += "",
+              d = !0
+            } catch (e) {
+              r.parseFromString('<wbr class="A"/>', f);
+              var p = /(<body[^>]*>)([\s\S]*)<\/body>/
+            }
+            t.exports = o
+              ? function (e, t) {
+                var o = r.parseFromString(e, a);
+                return o.body
+                  ? t === i
+                    ? o.documentElement
+                    : o.body.firstChild
+                  : n(e, t)
+              }
+              : n
+          }, {}
+        ]
+      }, {}, [1])(1)
     });
-  }
-
-  setInterval(checkCurrent, 1000 * 5);  // Check every 5 seconds
-  setInterval(activate.bind(null, document), 500);
-
-</script>
-
-<script id="setDOM">
-  // setDOM from https://github.com/DylanPiercey/set-dom under MIT License
-  !function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{("undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this).setDOM=e()}}(function(){return function e(t,n,r){function i(d,a){if(!n[d]){if(!t[d]){var f="function"==typeof require&&require;if(!a&&f)return f(d,!0);if(o)return o(d,!0);var u=new Error("Cannot find module '"+d+"'");throw u.code="MODULE_NOT_FOUND",u}var l=n[d]={exports:{}};t[d][0].call(l.exports,function(e){var n=t[d][1][e];return i(n||e)},l,l.exports,e,t,n,r)}return n[d].exports}for(var o="function"==typeof require&&require,d=0;d<r.length;d++)i(r[d]);return i}({1:[function(e,t){"use strict";function n(e,t){!function(e,t){if(!e)throw new Error("set-dom: "+t)}(e&&e.nodeType,"You must provide a valid node to update."),e.nodeType===h&&(e=e.documentElement),t.nodeType===v?i(e,t):r(e,"string"==typeof t?s(t,e.nodeName):t),e[m]||(e[m]=!0,f(e))}function r(e,t){if(e.nodeType===t.nodeType)if(e.nodeType===p){if(function(e,t){return a(e)&&a(t)||d(e)===d(t)||e.isEqualNode(t)}(e,t))return;if(i(e,t),e.nodeName===t.nodeName)!function(e,t){var n,r,i,o,d;for(n=e.length;n--;)r=e[n],o=r.namespaceURI,d=r.localName,(i=t.getNamedItemNS(o,d))||e.removeNamedItemNS(o,d);for(n=t.length;n--;)r=t[n],o=r.namespaceURI,d=r.localName,(i=e.getNamedItemNS(o,d))?i.value!==r.value&&(i.value=r.value):(t.removeNamedItemNS(o,d),e.setNamedItemNS(r))}(e.attributes,t.attributes);else{for(var n=t.cloneNode();e.firstChild;)n.appendChild(e.firstChild);e.parentNode.replaceChild(n,e)}}else e.nodeValue!==t.nodeValue&&(e.nodeValue=t.nodeValue);else e.parentNode.replaceChild(t,u(e)),f(t)}function i(e,t){for(var n,i,d,a,l,s,c=e.firstChild,m=t.firstChild,p=0;c;)p++,i=o(n=c),c=c.nextSibling,i&&(s||(s={}),s[i]=n);for(c=e.firstChild;m;)p--,d=m,m=m.nextSibling,s&&(a=o(d))&&(l=s[a])?(delete s[a],l!==c?e.insertBefore(l,c):c=c.nextSibling,r(l,d)):c?(n=c,c=c.nextSibling,o(n)?(e.insertBefore(d,n),f(d)):r(n,d)):(e.appendChild(d),f(d));for(i in s)p--,e.removeChild(u(s[i]));for(;--p>=0;)e.removeChild(u(e.lastChild))}function o(e){if(e.nodeType===p){var t=e.getAttribute(n.KEY)||e.id;return t?c+t:void 0}}function d(e){return e.getAttribute(n.CHECKSUM)||NaN}function a(e){return null!=e.getAttribute(n.IGNORE)}function f(e){return l(e,"mount")}function u(e){return l(e,"dismount")}function l(e,t){if(o(e)){var n=document.createEvent("Event"),r={value:e};n.initEvent(t,!1,!1),Object.defineProperty(n,"target",r),Object.defineProperty(n,"srcElement",r),e.dispatchEvent(n)}for(var i=e.firstChild;i;)i=l(i,t).nextSibling;return e}n.KEY="data-key",n.IGNORE="data-ignore",n.CHECKSUM="data-checksum";var s=e(2),c="_set-dom-",m=c+"mounted",p=1,h=9,v=11;t.exports=n},{2:2}],2:[function(e,t){"use strict";function n(e,t){if(t===i){if(d)return c.innerHTML=e,c;var n=e.match(p);if(n){var o=n[2],a=n.index+n[1].length,u=a+o.length;e=e.slice(0,a)+e.slice(u),m.innerHTML=o}for(var l=r.parseFromString(e,f),s=l.body;m.firstChild;)s.appendChild(m.firstChild);return l.documentElement}return m.innerHTML=e,m.firstChild}var r=window.DOMParser&&new window.DOMParser,i="HTML",o=!1,d=!1,a="text/html",f="application/xhtml+xml";try{var u=r.parseFromString('<wbr class="A"/>',a).body.firstChild,l=document.createElement("div");if(l.appendChild(u),"A"!==l.firstChild.classList[0])throw new Error;o=!0}catch(e){}var s=document.implementation.createHTMLDocument(""),c=s.documentElement,m=s.body;try{c.innerHTML+="",d=!0}catch(e){r.parseFromString('<wbr class="A"/>',f);var p=/(<body[^>]*>)([\s\S]*)<\/body>/}t.exports=o?function(e,t){var o=r.parseFromString(e,a);return o.body?t===i?o.documentElement:o.body.firstChild:n(e,t)}:n},{}]},{},[1])(1)});
-</script>
+  </script>
 
 </body>
 </html>
