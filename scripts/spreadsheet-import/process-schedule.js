@@ -5,7 +5,7 @@ const scheduleDataPath = './contents/schedule-data.json';
 function buildTrack({ track, who, what, time }) {
   return {
     track,
-    trackId: Boolean(track) ? slug(track, { lower: true }) : null,
+    trackId: Boolean(track) ? slug(track, { lower: true }) : undefined,
     startTime: time,
     dateTime: `2019-05-31 ${time} GMT+0200`,
     who,
@@ -13,19 +13,53 @@ function buildTrack({ track, who, what, time }) {
   };
 }
 
+function getColumn(item, name) {
+  const columns = [
+    'order',
+    'id',
+    'published',
+    'time',
+    'title',
+    'bipocitSpace',
+    'bipocitSpaceSpeaker',
+    'bipocitSpaceLink',
+    'communityLounge',
+    'communityLoungeLink',
+    'liveJsStage',
+    'gdcfpDay',
+    'misc',
+    'excluded',
+    'globalEvent',
+    'speaker',
+    'isTalk',
+    '// startTime',
+    '// duration',
+    '// id from title'
+  ];
+
+  const columnIndex = columns.indexOf(name);
+
+  if (columnIndex === -1) {
+    return;
+  }
+
+  return item[columnIndex];
+}
+
 function getSchedule(scheduleData) {
   const schedule = {};
 
   scheduleData
     .slice(2)
-    .filter(item => !item[11]) // Filter out buffers
+    .filter(item => !getColumn(item, 'excluded'))
     .forEach(item => {
-      const time = item[3];
-      const who = item[13];
-      const what = item[4];
-      const bipocitSpace = item[5];
-      const communityLounge = item[8];
-      const globalEvent = Boolean(item[12]);
+      const time = getColumn(item, 'time');
+      const who = getColumn(item, 'speaker');
+      const what = getColumn(item, 'title');
+      const bipocitSpace = getColumn(item, 'bipocitSpace');
+      const communityLounge = getColumn(item, 'communityLounge');
+      const liveJsStage = getColumn(item, 'liveJsStage');
+      const globalEvent = Boolean(getColumn(item, 'globalEvent'));
 
       schedule[time] = [];
 
@@ -45,7 +79,7 @@ function getSchedule(scheduleData) {
         scheduleItem.push(
           buildTrack({
             track: 'BIPoCiT Space',
-            who: item[6],
+            who: getColumn(item, 'bipocitSpaceSpeaker'),
             what: bipocitSpace,
             time
           })
@@ -56,8 +90,19 @@ function getSchedule(scheduleData) {
         scheduleItem.push(
           buildTrack({
             track: 'Community Lounge',
-            who: null,
+            who: undefined,
             what: communityLounge,
+            time
+          })
+        );
+      }
+
+      if (Boolean(liveJsStage)) {
+        scheduleItem.push(
+          buildTrack({
+            track: 'Live:JS Stage',
+            who: undefined,
+            what: liveJsStage,
             time
           })
         );
