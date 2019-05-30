@@ -112,7 +112,7 @@
         display: inline-block;
       }
       .info b,
-      .talk-title {
+      .other .talk-title {
         margin-bottom: 15px;
       }
       .bipocit-space .track {
@@ -139,16 +139,18 @@
       .global-diversity-cfp-day .info {
         color: black;
       }
-      .info {
+      .main .info {
+        font-size: 60px;
+      }
+      .other .info {
         font-size: 40px;
-        color: #2176FF;
       }
       .info b {
         color: black;
       }
-      .info header div {
+      .main .talk-title {
         color: #2176ff;
-        max-width: 60%;
+        width: 1000px;
       }
       .speaker {
         font-size: 130px;
@@ -157,6 +159,9 @@
       .track {
         color: black;
         font-size: 32px;
+      }
+      #talk-08-30-1 .speaker {
+        font-size: 110px;
       }
     </style>
   </head>
@@ -187,9 +192,9 @@
                     <header>
                       {% if talk.who %}
                         <b class="speaker">{{ talk.who }}</b>
-                        <div>{{ talk.what }}</div>
+                        <div class="talk-title">{{ talk.what }}</div>
                       {% else %}
-                        <b>{{ talk.what }}</b>
+                        <b class="speaker">{{ talk.what }}</b>
                       {% endif %}
                     </header>
                   </div>
@@ -201,7 +206,7 @@
         <div class="other">
           {% for talk in talks %}
             {% set talkIndex = talkIndex + 1 %}
-            {% if (talk.trackId != "main-stage") and (talk.trackId != null) %}
+            {% if (talk.trackId != "main-stage") and (talk.trackId != null) and (talk.what != null) %}
               <section
                 id="talk-{{ talk.startTime | replace(':', '-') }}-{{ talkIndex }}"
                 datetime="{{ talk.dateTime }}"
