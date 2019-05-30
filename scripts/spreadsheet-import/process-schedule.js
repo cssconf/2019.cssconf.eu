@@ -59,6 +59,7 @@ function getSchedule(scheduleData) {
       const bipocitSpace = getColumn(item, 'bipocitSpace');
       const communityLounge = getColumn(item, 'communityLounge');
       const liveJsStage = getColumn(item, 'liveJsStage');
+      const gdcfpDay = getColumn(item, 'gdcfpDay');
       const globalEvent = Boolean(getColumn(item, 'globalEvent'));
 
       schedule[time] = [];
@@ -75,17 +76,6 @@ function getSchedule(scheduleData) {
         })
       );
 
-      if (Boolean(bipocitSpace)) {
-        scheduleItem.push(
-          buildTrack({
-            track: 'BIPoCiT Space',
-            who: getColumn(item, 'bipocitSpaceSpeaker'),
-            what: bipocitSpace,
-            time
-          })
-        );
-      }
-
       if (Boolean(communityLounge)) {
         scheduleItem.push(
           buildTrack({
@@ -97,12 +87,34 @@ function getSchedule(scheduleData) {
         );
       }
 
+      if (Boolean(bipocitSpace)) {
+        scheduleItem.push(
+          buildTrack({
+            track: 'BIPoCiT Space',
+            who: getColumn(item, 'bipocitSpaceSpeaker'),
+            what: bipocitSpace,
+            time
+          })
+        );
+      }
+
       if (Boolean(liveJsStage)) {
         scheduleItem.push(
           buildTrack({
             track: 'Live:JS Stage',
             who: undefined,
             what: liveJsStage,
+            time
+          })
+        );
+      }
+
+      if (Boolean(liveJsStage)) {
+        scheduleItem.push(
+          buildTrack({
+            track: 'Global Diversity CFP Day',
+            who: undefined,
+            what: gdcfpDay,
             time
           })
         );
