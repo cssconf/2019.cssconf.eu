@@ -7,6 +7,7 @@
     "autoprefixer": "^8.0.0",
     "css-mqpacker": "^6.0.1",
     "cssnano": "^3.10.0",
+    "emoji-regex": "^8.0.0",
     "find": "^0.2.9",
     "html-minifier": "^3.5.21",
     "mkdirp": "^0.5.1",

@@ -1,5 +1,6 @@
 const fs = require('fs');
 const slug = require('slug');
+const emojiRegex = require('emoji-regex');
 const scheduleDataPath = './contents/schedule-data.json';
 
 function buildTrack({ track, who, what, time }) {
@@ -46,6 +47,16 @@ function getColumn(item, name) {
   return item[columnIndex];
 }
 
+function normalizeTitle(title) {
+  const emojis = title.match(emojiRegex());
+
+  if (!emojis) {
+    return title;
+  }
+
+  return title.replace(emojiRegex(), '');
+}
+
 function getSchedule(scheduleData) {
   const schedule = {};
 
@@ -55,7 +66,7 @@ function getSchedule(scheduleData) {
     .forEach(item => {
       const time = getColumn(item, 'time');
       const who = getColumn(item, 'speaker');
-      const what = getColumn(item, 'title');
+      const what = normalizeTitle(getColumn(item, 'title'));
       const bipocitSpace = getColumn(item, 'bipocitSpace');
       const communityLounge = getColumn(item, 'communityLounge');
       const liveJsStage = getColumn(item, 'liveJsStage');
