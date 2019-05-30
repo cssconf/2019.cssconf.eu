@@ -6,6 +6,7 @@
   @media (--s) {
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   &__event {
@@ -18,15 +19,17 @@
     @media (--s) {
       --schedule-item-event-width: calc(50% - calc(var(--l-gutter) / 2));
     }
+  }
 
-    &:hover, &:focus {
+  a.c-schedule-item-events__event {
+    &:hover,
+    &:focus {
       background-color: var(--c-salmon-light);
       color: var(--c-blue);
       .c-schedule-item-events__name {
         color: var(--c-blue);
       }
     }
-
   }
 
   &__area {
@@ -40,6 +43,14 @@
 
     &--community-lounge {
       color: var(--c-violet);
+    }
+
+    &--live-js-stage {
+      color: var(--c-green);
+    }
+
+    &--global-diversity-cfp-day {
+      color: var(--c-blue);
     }
   }
 

@@ -1,5 +1,7 @@
 {% extends "../layouts/default.html.njk" %}
 
+{% from "../_macros.njk" import scheduleTrack %}
+
 {% block content %}
   {% set data = contents.copy.schedule['main.md'] %}
 
@@ -25,14 +27,15 @@
             {% set data = schedulePage.metadata.schedule %}
             {% set bipocitSpace = data.bipocitSpace %}
             {% set communityLounge = data.communityLounge %}
+            {% set liveJsStage = data.liveJsStage %}
+            {% set gdcfpDay = data.gdcfpDay %}
             {% set speakers = [] if not data.isTalk else contents.speakers._.pages |
               filterObjects('metadata.speaker.talkTitle', data.title) %}
             {% set speaker = null if not data.isTalk else speakers | first %}
 
             <div class="c-schedule-item">
               <time class="c-schedule-item__time">{{ data.time }}</time>
-              <div class="c-schedule-item__details {% if data.isTalk %}c-schedule-item__details--no-padding{% endif %}
-">
+              <div class="c-schedule-item__details {% if data.isTalk %}c-schedule-item__details--no-padding{% endif %}">
                 {% if data.isTalk %}
                   <a class="c-schedule-item__link" href="{{ speaker.url }}#talk" target="_blank">
                     <h2 class="c-schedule-item__title copy mb0 nt1 flex items-start">
@@ -60,22 +63,16 @@
                 {% if bipocitSpace or communityLounge %}
                   <div class="c-schedule-item-events">
                     {% if communityLounge %}
-                      <a href="{{ data.communityLoungeLink }}" class="c-schedule-item-events__event">
-                        <h3 class="mb2 normal c-schedule-item-events__area c-schedule-item-events__area--community-lounge">
-                          Community Lounge
-                        </h3>
-                        <div class="b c-schedule-item-events__name">
-                          {{ communityLounge }}
-                        </div>
-                      </a>
+                      {{ scheduleTrack('Community Lounge', communityLounge, data.communityLoungeLink) }}
                     {% endif %}
                     {% if bipocitSpace %}
-                      <a href="{{ data.bipocitSpaceLink }}" class="c-schedule-item-events__event">
-                        <h3 class="mb2 normal c-schedule-item-events__area">BIPoCiT Space</h3>
-                        <div class="b c-schedule-item-events__name">
-                          {{ bipocitSpace }}
-                        </div>
-                      </a>
+                      {{ scheduleTrack('BIPoCiT Space', bipocitSpace, data.bipocitSpaceLink) }}
+                    {% endif %}
+                    {% if liveJsStage %}
+                      {{ scheduleTrack('Live:JS Stage', liveJsStage) }}
+                    {% endif %}
+                    {% if gdcfpDay %}
+                      {{ scheduleTrack('Global Diversity CFP Day', gdcfpDay) }}
                     {% endif %}
                   </div>
                 {% endif %}
