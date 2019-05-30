@@ -74,14 +74,14 @@
         width: 100%;
         border-bottom: 18px solid black;
         font-size: 48px;
-        background: pink;
+        background: #FFEDF2;
       }
       .up-next-time {
         font-size: 130px;
       }
       .main,
       .up-next {
-        padding: 50px 210px;
+        padding: 50px 100px;
         box-sizing: border-box;
       }
       .main-stage {
@@ -92,19 +92,28 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin: 0 210px;
+        margin: 0 100px;
       }
 
-      .bipocit-space,
-      .community-lounge {
+      .event {
         background: #f2f2f2;
         padding: 40px;
+        margin-left: 20px;
         box-sizing: border-box;
-        flex-basis: 48%;
+        flex-basis: calc(50% - 40px);
       }
-      .bipocit-space .speaker,
-      .community-lounge .speaker {
-        font-size: 60px;
+      .event:first-child {
+        margin-left: 0;
+      }
+      .event .track {
+        margin-top: 10px;
+      }
+      .info b {
+        display: inline-block;
+      }
+      .info b,
+      .talk-title {
+        margin-bottom: 15px;
       }
       .bipocit-space .track {
         color: #FF5743;
@@ -112,17 +121,34 @@
       .bipocit-space .info {
         color: black;
       }
-      .bipocit-space {
-        }
       .community-lounge .track {
-        color: #2176FF;
+        color: #9a87e6;
       }
       .community-lounge .info {
         color: black;
       }
+      .live-js-stage .track {
+        color: #2fb646;
+      }
+      .live-js-stage .info {
+        color: black;
+      }
+      .global-diversity-cfp-day .track {
+        color: #2176ff;
+      }
+      .global-diversity-cfp-day .info {
+        color: black;
+      }
       .info {
-        font-size: 60px;
+        font-size: 40px;
         color: #2176FF;
+      }
+      .info b {
+        color: black;
+      }
+      .info header div {
+        color: #2176ff;
+        max-width: 60%;
       }
       .speaker {
         font-size: 130px;
@@ -130,7 +156,7 @@
       }
       .track {
         color: black;
-        font-size: 40px;
+        font-size: 32px;
       }
     </style>
   </head>
@@ -145,8 +171,8 @@
       class="session"
       id="session-{{ session | replace(':', '-') }}">
           <div class=up-next>
-        up next<br>
-            <b class="up-next-time">{{ session  }}</b>
+            up next<br>
+            <b class="up-next-time">{{ session }}</b>
           </div>
 
           <div class="main">
@@ -154,39 +180,37 @@
               {% set talkIndex = talkIndex + 1 %}
               {% if (talk.trackId == "main-stage") or (talk.trackId == null) %}
                 <section
-              id="talk-{{ talk.startTime | replace(':', '-') }}-{{ talkIndex }}"
-              datetime="{{ talk.dateTime }}"
-              class="{{ talk.track | lower | replace(' ', '-') }}">
+                  id="talk-{{ talk.startTime | replace(':', '-') }}-{{ talkIndex }}"
+                  datetime="{{ talk.dateTime }}"
+                  class="{{ talk.track | lower | replace(' ', '-') }}">
                   <div class="info">
                     <header>
                       {% if talk.who %}
                         <b class="speaker">{{ talk.who }}</b>
-                      </br>
-                      {{ talk.what }}
-                    {% else %}
-                      <b>{{ talk.what }}</b>
-                    {% endif %}
-                  </header>
-                  <div class=track>{{ talk.track }}</div>
-                </div>
-              </section>
-            {% endif %}
-          {% endfor %}
-        </div>
+                        <div>{{ talk.what }}</div>
+                      {% else %}
+                        <b>{{ talk.what }}</b>
+                      {% endif %}
+                    </header>
+                  </div>
+                </section>
+                {% endif %}
+              {% endfor %}
+            </div>
 
         <div class="other">
           {% for talk in talks %}
             {% set talkIndex = talkIndex + 1 %}
             {% if (talk.trackId != "main-stage") and (talk.trackId != null) %}
               <section
-              id="talk-{{ talk.startTime | replace(':', '-') }}-{{ talkIndex }}"
-              datetime="{{ talk.dateTime }}"
-              class="{{ talk.track | lower | replace(' ', '-') }}">
+                id="talk-{{ talk.startTime | replace(':', '-') }}-{{ talkIndex }}"
+                datetime="{{ talk.dateTime }}"
+                class="event {{ talk.track | lower | replace(' ', '-') | replace(':', '-') }}">
                 <div class="info">
                   <header>
                     {% if talk.who %}
                       <b>{{ talk.who }}</b>
-                      {{ talk.what }}
+                      <div class="talk-title">{{ talk.what }}</div>
                     {% else %}
                       <b>{{ talk.what }}</b>
                     {% endif %}
@@ -281,9 +305,9 @@
             }
             var dir0 = '';
             var dir1 = '';
-            if (Math.random() > 0.5) 
+            if (Math.random() > 0.5)
               dir0 = '-';
-            if (Math.random() > 0.5) 
+            if (Math.random() > 0.5)
               dir1 = '-';
             item.style.transform = 'translateY(' + dir0 + '2000px) translateX(' + dir1 + '2000px)';
           });
@@ -373,9 +397,9 @@
   <script id="setDOM">
     // setDOM from https://github.com/DylanPiercey/set-dom under MIT License
     !function (e) {
-      if ("object" == typeof exports && "undefined" != typeof module) 
+      if ("object" == typeof exports && "undefined" != typeof module)
         module.exports = e();
-      else if ("function" == typeof define && define.amd) 
+      else if ("function" == typeof define && define.amd)
         define([], e);
       else {
         (
@@ -393,9 +417,9 @@
           if (!n[d]) {
             if (!t[d]) {
               var f = "function" == typeof require && require;
-              if (!a && f) 
+              if (!a && f)
                 return f(d, !0);
-              if (o) 
+              if (o)
                 return o(d, !0);
               var u = new Error("Cannot find module '" + d + "'");
               throw u.code = "MODULE_NOT_FOUND",
@@ -411,7 +435,7 @@
           }
           return n[d].exports
         }
-        for (var o = "function" == typeof require && require, d = 0; d < r.length; d++) 
+        for (var o = "function" == typeof require && require, d = 0; d < r.length; d++)
           i(r[d]);
         return i
       }({
@@ -420,7 +444,7 @@
             "use strict";
             function n(e, t) {
               !function (e, t) {
-                if (!e) 
+                if (!e)
                   throw new Error("set-dom: " + t)
               }(e && e.nodeType, "You must provide a valid node to update."),
               e.nodeType === h && (e = e.documentElement),
@@ -433,25 +457,25 @@
               e[m] || (e[m] = !0, f(e))
             }
             function r(e, t) {
-              if (e.nodeType === t.nodeType) 
+              if (e.nodeType === t.nodeType)
                 if (e.nodeType === p) {
                   if (function (e, t) {
                     return a(e) && a(t) || d(e) === d(t) || e.isEqualNode(t)
-                  }(e, t)) 
+                  }(e, t))
                     return;
-                  if (i(e, t), e.nodeName === t.nodeName) 
+                  if (i(e, t), e.nodeName === t.nodeName)
                     !function (e, t) {
                       var n,
                         r,
                         i,
                         o,
                         d;
-                      for (n = e.length; n--;) 
+                      for (n = e.length; n--;)
                         r = e[n],
                         o = r.namespaceURI,
                         d = r.localName,
                         (i = t.getNamedItemNS(o, d)) || e.removeNamedItemNS(o, d);
-                      for (n = t.length; n--;) 
+                      for (n = t.length; n--;)
                         r = t[n],
                         o = r.namespaceURI,
                         d = r.localName,
@@ -461,27 +485,27 @@
                       }
                   (e.attributes, t.attributes);
                   else {
-                    for (var n = t.cloneNode(); e.firstChild;) 
+                    for (var n = t.cloneNode(); e.firstChild;)
                       n.appendChild(e.firstChild);
                     e
                       .parentNode
                       .replaceChild(n, e)
                   }
-                } else 
+                } else
                   e.nodeValue !== t.nodeValue && (e.nodeValue = t.nodeValue);
-            else 
+            else
                 e
                   .parentNode
                   .replaceChild(t, u(e)),
                 f(t)
             }
             function i(e, t) {
-              for (var n, i, d, a, l, s, c = e.firstChild, m = t.firstChild, p = 0; c;) 
+              for (var n, i, d, a, l, s, c = e.firstChild, m = t.firstChild, p = 0; c;)
                 p++,
                 i = o(n = c),
                 c = c.nextSibling,
                 i && (s || (s = {}), s[i] = n);
-              for (c = e.firstChild; m;) 
+              for (c = e.firstChild; m;)
                 p--,
                 d = m,
                 m = m.nextSibling,
@@ -497,10 +521,10 @@
                       ? (e.insertBefore(d, n), f(d))
                       : r(n, d))
                     : (e.appendChild(d), f(d));
-              for (i in s) 
+              for (i in s)
                 p--,
                 e.removeChild(u(s[i]));
-              for (; --p >= 0;) 
+              for (; --p >= 0;)
                 e.removeChild(u(e.lastChild))
             }
             function o(e) {
@@ -534,7 +558,7 @@
                 Object.defineProperty(n, "srcElement", r),
                 e.dispatchEvent(n)
               }
-              for (var i = e.firstChild; i;) 
+              for (var i = e.firstChild; i;)
                 i = l(i, t).nextSibling;
               return e
             }
@@ -557,7 +581,7 @@
             "use strict";
             function n(e, t) {
               if (t === i) {
-                if (d) 
+                if (d)
                   return c.innerHTML = e,
                   c;
                 var n = e.match(p);
@@ -568,7 +592,7 @@
                   e = e.slice(0, a) + e.slice(u),
                   m.innerHTML = o
                 }
-                for (var l = r.parseFromString(e, f), s = l.body; m.firstChild;) 
+                for (var l = r.parseFromString(e, f), s = l.body; m.firstChild;)
                   s.appendChild(m.firstChild);
                 return l.documentElement
               }
@@ -587,7 +611,7 @@
                   .body
                   .firstChild,
                 l = document.createElement("div");
-              if (l.appendChild(u), "A" !== l.firstChild.classList[0]) 
+              if (l.appendChild(u), "A" !== l.firstChild.classList[0])
                 throw new Error;
               o = !0
             } catch (e) {}
