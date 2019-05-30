@@ -172,6 +172,9 @@
       {% set schedule = loadSchedule() %}
       {% for session, talks in schedule.schedule %}
         {% set talkIndex = 0 %}
+        {% if page.metadata.trackIdFilter %}
+          {% set talks = filterSessionsByTrackId(talks, page.metadata.trackIdFilter) %}
+        {% endif %}
         <div
       class="session"
       id="session-{{ session | replace(':', '-') }}">
@@ -355,7 +358,7 @@
         console.info('Memory reload')
         location.href = location.href;
       }
-      fetch('/schedule/venue/', {cache: 'reload'}).then(function (response) {
+      fetch('{{ page.url }}', {cache: 'reload'}).then(function (response) {
         if (response.ok) {
           response
             .text()

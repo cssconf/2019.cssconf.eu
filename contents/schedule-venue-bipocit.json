@@ -1,5 +1,6 @@
 {
   "template": "pages/schedule-venue.html.njk",
-  "title": "B Schedule",
-  "filename": "/schedule/venue/bipocit.html"
+  "filename": "/schedule/venue/bipocit.html",
+  "title": "Schedule BIPoCiT",
+  "trackIdFilter": "bipocit-space"
 }

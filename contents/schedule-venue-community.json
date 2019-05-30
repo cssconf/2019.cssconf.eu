@@ -1,5 +1,6 @@
 {
   "template": "pages/schedule-venue.html.njk",
-  "title": "C Schedule",
-  "filename": "/schedule/venue/community.html"
+  "filename": "/schedule/venue/community.html",
+  "title": "Schedule Community Lounge",
+  "trackIdFilter": "community-lounge"
 }
