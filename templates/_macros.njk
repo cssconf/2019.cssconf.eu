@@ -121,3 +121,14 @@
     {% endfor %}
   </div>
 {% endmacro %}
+
+{% macro scheduleTrack(trackName, title, link) %}
+  {% if link %}<a href="{{ link }}" class="c-schedule-item-events__event">{% else %}<div class="c-schedule-item-events__event">{% endif %}
+    <h3 class="mb2 normal c-schedule-item-events__area c-schedule-item-events__area--{{ trackName | lower | replace(' ', '-') | replace(':', '-') }}">
+      {{ trackName }}
+    </h3>
+    <div class="b c-schedule-item-events__name">
+      {{ title }}
+    </div>
+  {% if link %}</a>{% else %}</div>{% endif %}
+{% endmacro %}
