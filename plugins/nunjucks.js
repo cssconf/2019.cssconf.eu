@@ -23,6 +23,13 @@ module.exports = function(env, callback) {
     }
     return JSON.parse(fs.readFileSync(scheduleDataPath)).actualJson;
   };
+
+  env.config.locals.filterSessionsByTrackId = function(sessions, trackId) {
+    return sessions.filter(
+      session => Boolean(session.trackId) && session.trackId === trackId
+    );
+  };
+
   env.config.locals.Date = Date;
 
   // Load the new nunjucks environment.
