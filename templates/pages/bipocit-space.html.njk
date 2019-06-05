@@ -1,0 +1,38 @@
+{% extends "../layouts/default.html.njk" %}
+
+{% from "../_macros.njk" import pageIntro, teamMemberPortrait %}
+
+{% block content %}
+  {{ pageIntro(page.title) }}
+
+  <div class="l-container">
+    <main>
+      <div class="c-markdown c-markdown--indented-paragraphs">
+        {{ contents.copy['bipocit-space']['main.md'].html | contentUrls(contents) }}
+      </div>
+
+      {% set teamPages = filterTeamByResponsibility(contents.team._.pages, 'BIPoCiT Space') |
+          filterObjects('metadata.team.type', 'team') |
+          filterObjects('metadata.team.published', true) |
+          filterObjects('metadata.team.reviewed', true) |
+          sortObjects('metadata.team.id', 'aaa', 'string') %}
+      {% if teamPages | length > 0 %}
+        <h2 class="mt5" id="bipocit-space-team">BIPoCiT Space Team</h2>
+        <section class="c-team">
+          {% for teamPage in teamPages %}
+            {% set teamMember = teamPage.metadata.team %}
+            {% set teamMemberImage = contents.images.cms[teamMember.image.filename_500].url %}
+            {% set defaultImage = contents.images['avatar-placeholder.jpg'].url %}
+            {% set portraitImage = teamMemberImage if teamMemberImage else defaultImage %}
+
+            {{ teamMemberPortrait(teamMember, portraitImage) }}
+          {% endfor %}
+        </section>
+      {% endif %}
+    </main>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {% include "../partials/footer.html.njk" %}
+{% endblock %}

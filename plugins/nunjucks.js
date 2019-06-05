@@ -30,6 +30,15 @@ module.exports = function(env, callback) {
     );
   };
 
+  env.config.locals.filterTeamByResponsibility = function(
+    teamMembers,
+    responsibility
+  ) {
+    return teamMembers.filter(teamMember =>
+      teamMember.metadata.team.tags.includes(responsibility)
+    );
+  };
+
   env.config.locals.Date = Date;
 
   // Load the new nunjucks environment.
