@@ -34,6 +34,10 @@ module.exports = function(env, callback) {
     teamMembers,
     responsibility
   ) {
+    if (!teamMembers) {
+      return [];
+    }
+
     return teamMembers.filter(teamMember =>
       teamMember.metadata.team.tags.includes(responsibility)
     );
