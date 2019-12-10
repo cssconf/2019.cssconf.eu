@@ -1,6 +1,6 @@
 ---
 title: Sponsors
 introText: >
-  We are currently offering sponsorship packages for CSSconf EU 2019. <a href="mailto:contact@cssconf.eu">Contact us</a> for details
+  Thanks to all the fantastic companies who supported and sponsored our event in 2019
 introImage: sponsors.jpg
 ---
