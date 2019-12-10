@@ -15,7 +15,14 @@
           </div>
           <div class="c-thank-you__image">
             <div class="flex justify-center">
-              <img src="{{ contents.images['thank-you.jpg'].url }}" alt="Thank you">
+              <img
+                src="{{ contents.images['thank-you-small.jpg'].url }}"
+                srcset="
+                  {{ contents.images['thank-you-small.jpg'].url }} 1023w,
+                  {{ contents.images['thank-you-bigger.jpg'].url }}
+                "
+                alt="Thank you"
+              >
             </div>
           </div>
         </div>
