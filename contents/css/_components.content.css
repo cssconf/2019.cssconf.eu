@@ -6,6 +6,15 @@
   background-color: var(--c-salmon-light);
 }
 
+.c-content--thank-you {
+  background-color: #3758f4;
+
+  a:hover {
+    color: var(--c-white);
+    text-decoration: underline;
+  }
+}
+
 .c-content--page-header {
   padding-top: 6.875rem;
 

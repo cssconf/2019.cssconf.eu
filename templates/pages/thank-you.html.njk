@@ -1,0 +1,31 @@
+{% extends "../layouts/default.html.njk" %}
+
+{% from "../_macros.njk" import svgIconNew, ctaButton %}
+
+{% block content %}
+  <section class="c-content c-content--thank-you">
+    <div class="l-container">
+      <div class="c-thank-you">
+        <div class="c-thank-you__elements">
+          <div class="c-thank-you__svg c-thank-you__svg--small">
+            {{ svgIconNew(contents, 'thank-you-small', width = 319, height = 372, title = 'Thank You!') }}
+          </div>
+          <div class="c-thank-you__svg c-thank-you__svg--bigger">
+            {{ svgIconNew(contents, 'thank-you-bigger', width = 1251, height = 775, title = 'Thank You!') }}
+          </div>
+          <div class="c-thank-you__image">
+            <div class="flex justify-center">
+              <img src="{{ contents.images['thank-you.jpg'].url }}" alt="Thank you">
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="copy--max mt5 mb4 mt6-l mb5-l measure-cssconf white">
+        To our incredible team, amazing speakers, great sponsors, and ❤️ YOU ❤️ for making CSSconf EU 2019 beautiful and inspiring.
+      </p>
+      <nav class="copy--max white">
+        <a href="https://www.youtube.com/watch?v=dle9t_DlTI4&list=PL37ZVnwpeshERVKLkJdt5lpjJ1xqEJc17" class="white">Talk Videos</a>
+      </nav>
+    </div>
+  </section>
+{% endblock %}
