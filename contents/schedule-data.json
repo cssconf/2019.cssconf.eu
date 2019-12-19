@@ -1,0 +1,322 @@
+{
+  "pageId": "scheduleJson",
+  "template": "pages/json.html.njk",
+  "filename": ":file.json",
+  "actualJson": {
+    "info": {
+      "generationTime": "Thu Dec 19 2019 13:28:25 GMT-0800 (Pacific Standard Time)"
+    },
+    "schedule": {
+      "08:30": [
+        {
+          "startTime": "08:30",
+          "dateTime": "2019-05-31 08:30 GMT+0200",
+          "who": null,
+          "what": "️ Doors Open, Breakfast"
+        }
+      ],
+      "09:45": [
+        {
+          "track": "Main Stage",
+          "trackId": "main-stage",
+          "startTime": "09:45",
+          "dateTime": "2019-05-31 09:45 GMT+0200",
+          "who": null,
+          "what": "Opening Remarks"
+        }
+      ],
+      "09:50": [
+        {
+          "track": "Main Stage",
+          "trackId": "main-stage",
+          "startTime": "09:50",
+          "dateTime": "2019-05-31 09:50 GMT+0200",
+          "who": null,
+          "what": "Jessica Lord, Brian Brennan: MC Welcome"
+        }
+      ],
+      "10:00": [
+        {
+          "track": "Main Stage",
+          "trackId": "main-stage",
+          "startTime": "10:00",
+          "dateTime": "2019-05-31 10:00 GMT+0200",
+          "who": "Andrés Cuervo",
+          "what": "Why do we call HTML tags \"tags\"? A journey through the history of CSS, mathematics, and CS to find out!"
+        }
+      ],
+      "10:35": [
+        {
+          "track": "Main Stage",
+          "trackId": "main-stage",
+          "startTime": "10:35",
+          "dateTime": "2019-05-31 10:35 GMT+0200",
+          "who": "Rachel Andrew",
+          "what": "Hello subgrid!"
+        }
+      ],
+      "11:05": [
+        {
+          "startTime": "11:05",
+          "dateTime": "2019-05-31 11:05 GMT+0200",
+          "who": null,
+          "what": "️ Coffee Break"
+        },
+        {
+          "track": "Community Lounge",
+          "trackId": "community-lounge",
+          "startTime": "11:05",
+          "dateTime": "2019-05-31 11:05 GMT+0200",
+          "what": "Stories of Gratitude"
+        },
+        {
+          "track": "BIPoCiT Space",
+          "trackId": "bipocit-space",
+          "startTime": "11:05",
+          "dateTime": "2019-05-31 11:05 GMT+0200",
+          "who": "Nakeema Stefflbauer",
+          "what": "Getting Comfortable with Discomfort"
+        },
+        {
+          "track": "Live:JS Stage",
+          "trackId": "livejs-stage",
+          "startTime": "11:05",
+          "dateTime": "2019-05-31 11:05 GMT+0200",
+          "what": "Meet & Greet / NERDDISCO & 2xAA"
+        },
+        {
+          "track": "Global Diversity CFP Day",
+          "trackId": "global-diversity-cfp-day",
+          "startTime": "11:05",
+          "dateTime": "2019-05-31 11:05 GMT+0200",
+          "what": "Bio Writing Mini-Game<br><small>at Lunch Area (F2)</small>"
+        }
+      ],
+      "11:25": [
+        {
+          "track": "Main Stage",
+          "trackId": "main-stage",
+          "startTime": "11:25",
+          "dateTime": "2019-05-31 11:25 GMT+0200",
+          "who": "Chen Hui Jing",
+          "what": "Using DevTools to understand modern CSS layouts"
+        }
+      ],
+      "12:00": [
+        {
+          "track": "Main Stage",
+          "trackId": "main-stage",
+          "startTime": "12:00",
+          "dateTime": "2019-05-31 12:00 GMT+0200",
+          "who": "Jason Pamental",
+          "what": "Modern Typographic Systems with Variable Fonts"
+        }
+      ],
+      "12:35": [
+        {
+          "track": "Main Stage",
+          "trackId": "main-stage",
+          "startTime": "12:35",
+          "dateTime": "2019-05-31 12:35 GMT+0200",
+          "who": "Gil Tayar",
+          "what": "Don’t Believe the Rumors: Writing Tests for CSS is Possible"
+        }
+      ],
+      "13:05": [
+        {
+          "startTime": "13:05",
+          "dateTime": "2019-05-31 13:05 GMT+0200",
+          "who": null,
+          "what": " Lunch"
+        },
+        {
+          "track": "Community Lounge",
+          "trackId": "community-lounge",
+          "startTime": "13:05",
+          "dateTime": "2019-05-31 13:05 GMT+0200",
+          "what": "Stories of Gratitude"
+        },
+        {
+          "track": "Live:JS Stage",
+          "trackId": "livejs-stage",
+          "startTime": "13:05",
+          "dateTime": "2019-05-31 13:05 GMT+0200",
+          "what": "Performance / NOSIGNAL & halfbyte / Rumyra & DESTROY WITH SCIENCE"
+        },
+        {
+          "track": "Global Diversity CFP Day",
+          "trackId": "global-diversity-cfp-day",
+          "startTime": "13:05",
+          "dateTime": "2019-05-31 13:05 GMT+0200",
+          "what": null
+        }
+      ],
+      "14:20": [
+        {
+          "track": "Main Stage",
+          "trackId": "main-stage",
+          "startTime": "14:20",
+          "dateTime": "2019-05-31 14:20 GMT+0200",
+          "who": "Ben Ilegbodu",
+          "what": "Let’s web dev like it’s 1999!"
+        }
+      ],
+      "14:55": [
+        {
+          "track": "Main Stage",
+          "trackId": "main-stage",
+          "startTime": "14:55",
+          "dateTime": "2019-05-31 14:55 GMT+0200",
+          "who": "Manuel Rego",
+          "what": "Improving Website Performance with CSS Containment"
+        }
+      ],
+      "15:30": [
+        {
+          "track": "Main Stage",
+          "trackId": "main-stage",
+          "startTime": "15:30",
+          "dateTime": "2019-05-31 15:30 GMT+0200",
+          "who": "Estefany Aguilar",
+          "what": "CSS Logical Properties"
+        }
+      ],
+      "16:00": [
+        {
+          "startTime": "16:00",
+          "dateTime": "2019-05-31 16:00 GMT+0200",
+          "who": null,
+          "what": "️ Coffee Break"
+        },
+        {
+          "track": "Community Lounge",
+          "trackId": "community-lounge",
+          "startTime": "16:00",
+          "dateTime": "2019-05-31 16:00 GMT+0200",
+          "what": "Computing Pioneers"
+        },
+        {
+          "track": "BIPoCiT Space",
+          "trackId": "bipocit-space",
+          "startTime": "16:00",
+          "dateTime": "2019-05-31 16:00 GMT+0200",
+          "who": "Priyanka Naik",
+          "what": "Accessibility Checklist for Everyone"
+        },
+        {
+          "track": "Live:JS Stage",
+          "trackId": "livejs-stage",
+          "startTime": "16:00",
+          "dateTime": "2019-05-31 16:00 GMT+0200",
+          "what": "Meet & Greet / LiveJS Jaaam"
+        },
+        {
+          "track": "Global Diversity CFP Day",
+          "trackId": "global-diversity-cfp-day",
+          "startTime": "16:00",
+          "dateTime": "2019-05-31 16:00 GMT+0200",
+          "what": "Proposal Writing Mini-Game<br><small>at Lunch Area (F2)</small>"
+        }
+      ],
+      "16:30": [
+        {
+          "track": "Main Stage",
+          "trackId": "main-stage",
+          "startTime": "16:30",
+          "dateTime": "2019-05-31 16:30 GMT+0200",
+          "who": "Alex Tait",
+          "what": "Class Clash"
+        }
+      ],
+      "17:05": [
+        {
+          "track": "Main Stage",
+          "trackId": "main-stage",
+          "startTime": "17:05",
+          "dateTime": "2019-05-31 17:05 GMT+0200",
+          "who": "Elyse Holladay",
+          "what": "A Working Theory of Components"
+        }
+      ],
+      "17:30": [
+        {
+          "startTime": "17:30",
+          "dateTime": "2019-05-31 17:30 GMT+0200",
+          "who": null,
+          "what": "️ Coffee Break"
+        },
+        {
+          "track": "Community Lounge",
+          "trackId": "community-lounge",
+          "startTime": "17:30",
+          "dateTime": "2019-05-31 17:30 GMT+0200",
+          "what": "Open Source Open Session"
+        }
+      ],
+      "17:45": [
+        {
+          "track": "Main Stage",
+          "trackId": "main-stage",
+          "startTime": "17:45",
+          "dateTime": "2019-05-31 17:45 GMT+0200",
+          "who": "Samuel Richard",
+          "what": "Design System Magic with CSS Houdini"
+        }
+      ],
+      "18:20": [
+        {
+          "track": "Main Stage",
+          "trackId": "main-stage",
+          "startTime": "18:20",
+          "dateTime": "2019-05-31 18:20 GMT+0200",
+          "who": "Sareh Heidari",
+          "what": "Closing Keynote"
+        }
+      ],
+      "18:45": [
+        {
+          "track": "Main Stage",
+          "trackId": "main-stage",
+          "startTime": "18:45",
+          "dateTime": "2019-05-31 18:45 GMT+0200",
+          "who": null,
+          "what": "Closing Remarks"
+        }
+      ],
+      "18:55": [
+        {
+          "track": "Main Stage",
+          "trackId": "main-stage",
+          "startTime": "18:55",
+          "dateTime": "2019-05-31 18:55 GMT+0200",
+          "who": null,
+          "what": " Family Photo"
+        }
+      ],
+      "19:05": [
+        {
+          "startTime": "19:05",
+          "dateTime": "2019-05-31 19:05 GMT+0200",
+          "who": null,
+          "what": " CSSconf Dinner"
+        }
+      ],
+      "20:30": [
+        {
+          "startTime": "20:30",
+          "dateTime": "2019-05-31 20:30 GMT+0200",
+          "who": null,
+          "what": "JSConf Opening Evening (open for all CSSconf attendees)"
+        }
+      ],
+      "22:30": [
+        {
+          "startTime": "22:30",
+          "dateTime": "2019-05-31 22:30 GMT+0200",
+          "who": null,
+          "what": " Doors close"
+        }
+      ]
+    }
+  }
+}
