@@ -36,7 +36,7 @@
     "build": "wintersmith build && npm run-script purify-css",
     "purify-css": "node scripts/purify-css.js",
     "ci:import": "WWWTF_CREDENTIALS_PATH=. node scripts/spreadsheet-import -p",
-    "ci:build": "npm run-script ci:import && npm run-script build"
+    "ci:build": "npm run-script build"
   },
   "browserslist": [
     "last 2 versions"
