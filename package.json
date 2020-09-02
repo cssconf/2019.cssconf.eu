@@ -45,7 +45,7 @@
     "chalk": "^2.4.1",
     "commander": "^2.14.1",
     "get-port": "^3.2.0",
-    "googleapis": "^27.0.0",
+    "googleapis": "^39.1.0",
     "image-size": "^0.6.2",
     "image-type": "^3.0.0",
     "js-yaml": "^3.11.0",
