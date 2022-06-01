@@ -24,7 +24,7 @@
     "postcss-url": "^8.0.0",
     "prettier": "^1.10.2",
     "purify-css": "^1.2.6",
-    "sharp": "^0.21.0",
+    "sharp": "^0.30.5",
     "svgo": "^1.0.3",
     "svgstore": "^2.0.2",
     "typogr": "^0.6.8",
