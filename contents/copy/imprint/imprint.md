@@ -4,7 +4,7 @@ title: Imprint
 
 Neighbourhoodie Software GmbH<br />
 Lausitzer Str. 10<br />
-12047 Berlin, Germany<br />
+10999 Berlin, Germany<br />
 Phone: +49 (0) 30 4397262-0<br />
 [hi@neighbourhood.ie](mailto:hi@neighbourhood.ie)
 
