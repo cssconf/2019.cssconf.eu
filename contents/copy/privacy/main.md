@@ -9,19 +9,13 @@ As being responsible for this website, we take the protection of your personal d
 
 ## Responsible for the Website
 
-SinnerSchrader Deutschland GmbH | SinnerSchrader Group
-Völckersstraße 38 22765 Hamburg
-Germany
-Managing Board: Matthias Schrader (CEO), Jürgen Alker, Dr. Axel Averdung, Holger Blank, Thomas Dyckhoff, Dr. Lars Finke, Martin Gassner, Peggy Hutchinson
+Neighbourhoodie Software GmbH, Lausitzer Str. 10, 10999 Berlin, Germany.
+Managing Board: Simone Haas (CEO), Jan Lehnardt (CEO)
 
 ## Responsible for Data Protection
 
-SinnerSchrader Deutschland GmbH | SinnerSchrader Group
-Data Protection Officer
-Völckersstraße 38
-22765 Hamburg
-Germany
-[datenschutz-de@sinnerschrader.com](mailto:datenschutz-de@sinnerschrader.com)
+Neighbourhoodie Software GmbH, Lausitzer Str. 10, 10999 Berlin, Germany.
+[hi@neighbourhood.ie](mailto:hi@neighbourhood.ie)
 
 ### Visiting our Website
 
@@ -80,7 +74,7 @@ In case we process personal data of you, you are so called "affected" within the
   Without prejudice to any other administrative or judicial remedy, you have the right of appeal to a supervisory authority, in particular in the Member State where you reside, work or suspect of infringement, if you believe that the processing of personal data concerning you is contrary to the GDPR.<br><br>
   The supervisory authority to which the complaint has been lodged shall inform the complainant of the status and results of the complaint, including the possibility of a judicial remedy according to Art. 78 GDPR.
 
-In order to process your request (please mail: [datenschutz-de@sinnerschrader.com](mailto:datenschutz-de@sinnerschrader.com)), we are obliged to check your identity carefully. Please understand that we reserve the right - depending on the criticality of the data - to request further information or proof of identity. This serves in particular to protect your personal data from unauthorized access by third parties. We would like to point out that we reserve the right not to process requests that are received inappropriately frequently or without corresponding proof of identity. We will inform you of this in writing (via E-Mail).
+In order to process your request (please mail: [hi@neighbourhood.ie](mailto:hi@neighbourhood.ie)), we are obliged to check your identity carefully. Please understand that we reserve the right - depending on the criticality of the data - to request further information or proof of identity. This serves in particular to protect your personal data from unauthorized access by third parties. We would like to point out that we reserve the right not to process requests that are received inappropriately frequently or without corresponding proof of identity. We will inform you of this in writing (via E-Mail).
 
 ## Children
 
@@ -136,7 +130,7 @@ You will be asked to consent to the use of your personal data to receive our new
 
 **CSSconf EU**
 
-“By entering your e-mail address and clicking the button below, you confirm that you are 16 years or older. You agree that the CSSconf EU (represented by SinnerSchrader Deutschland GmbH, Völckersstraße 38, 22765 Hamburg) will use the data and information provided by you in connection with the use of the newsletter to regularly send you information about the CSSconf EU by e-mail. By clicking below, you agree that CSSconf EU may process your information in accordance with these terms. You can change your mind at any time by clicking the unsubscribe link in the footer of any e-mail you receive from us, or by contacting us at contact@cssconf.eu. CSSconf EU will treat your information with respect. For further information, please see our privacy policy on our website.”
+“By entering your e-mail address and clicking the button below, you confirm that you are 16 years or older. You agree that the CSSconf EU (represented by Neighbourhoodie Software GmbH, Lausitzer Str. 10, 10999 Berlin, Germany) will use the data and information provided by you in connection with the use of the newsletter to regularly send you information about the CSSconf EU by e-mail. By clicking below, you agree that CSSconf EU may process your information in accordance with these terms. You can change your mind at any time by clicking the unsubscribe link in the footer of any e-mail you receive from us, or by contacting us at contact@cssconf.eu. CSSconf EU will treat your information with respect. For further information, please see our privacy policy on our website.”
 
 ### Statistical survey and analysis
 
@@ -178,9 +172,9 @@ Our intention in providing the following information is to give you an overview 
 
 ### Data processing on our Facebook fan page ###
 When you visit our fan page (www.facebook.com/cssconfeu), Facebook Ltd., 4 Grand CanalSquare, Grand Canal Harbour, D2 Dublin, Ireland, collects, stores and processes your personal data in accordance with Facebook’s data policy.
-es cookies to store and further process this information, and these cookies are stored onthe various devices of the visitors to the Facebook fan page, especially when the visitors are registered members of Facebook. As a result, Facebook can display targeted advertising on its own platform and also on third-party pages. Facebook does not publish in full and we do not know to whatextent Facebook uses the above-mentioned data for its own purposes, to what extent activities on the Facebook fan page are associated with individual users, how long Facebook stores this data andwhether data is disclosed to third parties. 
+es cookies to store and further process this information, and these cookies are stored onthe various devices of the visitors to the Facebook fan page, especially when the visitors are registered members of Facebook. As a result, Facebook can display targeted advertising on its own platform and also on third-party pages. Facebook does not publish in full and we do not know to whatextent Facebook uses the above-mentioned data for its own purposes, to what extent activities on the Facebook fan page are associated with individual users, how long Facebook stores this data andwhether data is disclosed to third parties.
 Facebook, Inc., the US parent company of Facebook Ireland Ltd., is certified under the EU-US Privacy Shield and has thus declared that it complies with the European level of data protection and the accompanying data policies. As the operator of the Facebook fan page, we cannot rule out the possibility that data belonging to users of the Facebook fan page will be transferred to and processed in third countries, nor can we exclude any related risks.
-For further information, please also see Facebook’s data policy: https://facebook.com/about/privacy/ 
+For further information, please also see Facebook’s data policy: https://facebook.com/about/privacy/
 Facebook furthermore offers the option of objecting to specific forms of data processing; you will find related information and opt-out choices at https://www.facebook.com/settings?tab=ads.
 We use the statistics services Facebook Insights for the purpose of designing and continually updating our pages as needed. This service records your activity on our page and sends it to us in the form of anonymised statistics. This allows us to gain an insight among other things into the activity of the visitors to our fan page, page views, the reach of contributions, views and average duration of video playbacks, information about which countries and cities our visitors come from as well as statistics on the gender balance of our visitors.
 In addition, Facebook records data if you interact with our page as a registered Facebook user (e.g. if you click a Like button, send us a message, or post a comment). These interactions are also recordedComment [1]: There is no section on social media in the privacy policy of your website, please include this headline. and provided in the statistics by Facebook; we as the operator are unable to exert an influence on this. It is therefore not possible for us as the fan page operator to deactivate this function or to prevent data from being generated and processed. It is not possible for us as the fan page operator to identify individual users or to access individual user profiles on the basis of the insights automatically provided by Facebook.
